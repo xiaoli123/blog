@@ -34,21 +34,23 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="阿城的blog" type="application/atom+xml" />
+
 
 
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description">
+<meta name="description" content="阿城的个人博客~">
 <meta property="og:type" content="website">
-<meta property="og:title" content="阿城的blog">
+<meta property="og:title" content="categories">
 <meta property="og:url" content="http://qiutongcheng.com/categories/index.html">
 <meta property="og:site_name" content="阿城的blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2015-10-03T16:20:43.226Z">
+<meta property="og:description" content="阿城的个人博客~">
+<meta property="og:updated_time" content="2015-10-03T17:31:18.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿城的blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="阿城的个人博客~">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -244,6 +246,13 @@
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
           
@@ -315,7 +324,20 @@
     NexT.Mist
   </a>
 </div>
-
+<br/>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="showDays"></span>
+<script>
+var birthDay = new Date("11/20/2014");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+---
+<span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
 
  </div>
     </footer>
@@ -386,6 +408,10 @@
 
   
   
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
 
   
   <script type="text/javascript" src="/js/lazyload.js"></script>

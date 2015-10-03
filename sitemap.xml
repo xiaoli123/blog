@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutongcheng.com/tags/index.html</loc>
+    <lastmod>2015-10-03T17:33:46.592Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutongcheng.com/about/index.html</loc>
+    <lastmod>2015-10-03T17:31:38.956Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutongcheng.com/categories/index.html</loc>
+    <lastmod>2015-10-03T17:31:18.727Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutongcheng.com/post/test.html</loc>
     <lastmod>2015-10-03T17:18:34.442Z</lastmod>
   </url>
@@ -14,21 +29,6 @@
   <url>
     <loc>http://qiutongcheng.com/post/hello-world.html</loc>
     <lastmod>2015-10-03T16:37:17.188Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutongcheng.com/about/index.html</loc>
-    <lastmod>2015-10-03T16:30:13.071Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutongcheng.com/tags/index.html</loc>
-    <lastmod>2015-10-03T16:20:46.295Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutongcheng.com/categories/index.html</loc>
-    <lastmod>2015-10-03T16:20:43.226Z</lastmod>
   </url>
   
 </urlset>
