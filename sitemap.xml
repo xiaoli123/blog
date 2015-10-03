@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutongcheng.com/post/test.html</loc>
+    <lastmod>2015-10-03T17:18:34.442Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutongcheng.com/404.html</loc>
     <lastmod>2015-10-03T16:58:34.603Z</lastmod>
   </url>
