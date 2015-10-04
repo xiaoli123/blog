@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutongcheng.com/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
+    <lastmod>2015-10-04T05:16:47.877Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutongcheng.com/tags/index.html</loc>
     <lastmod>2015-10-03T17:33:46.592Z</lastmod>
   </url>
@@ -17,18 +22,8 @@
   </url>
   
   <url>
-    <loc>http://qiutongcheng.com/post/test.html</loc>
-    <lastmod>2015-10-03T17:18:34.442Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://qiutongcheng.com/404.html</loc>
     <lastmod>2015-10-03T16:58:34.603Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutongcheng.com/post/hello-world.html</loc>
-    <lastmod>2015-10-03T16:37:17.188Z</lastmod>
   </url>
   
 </urlset>
