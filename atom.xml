@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[阿城的blog]]></title>
+  <title><![CDATA[阿城|blog]]></title>
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://qiutongcheng.com/"/>
+  <link href="http://qiutc.me/"/>
   <updated>2015-10-04T05:16:47.877Z</updated>
-  <id>http://qiutongcheng.com/</id>
+  <id>http://qiutc.me/</id>
   
   <author>
     <name><![CDATA[阿城]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[使用hexo+github搭建静态博客]]></title>
-    <link href="http://qiutongcheng.com/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html"/>
-    <id>http://qiutongcheng.com/post/使用hexo-github搭建静态博客.html</id>
+    <link href="http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html"/>
+    <id>http://qiutc.me/post/使用hexo-github搭建静态博客.html</id>
     <published>2015-10-04T03:01:31.000Z</published>
     <updated>2015-10-04T05:16:47.877Z</updated>
     <content type="html"><![CDATA[<h1 id="认识hexo">认识hexo</h1><p>&#8195;&#8195;hexo是一款基于Node.js的静态博客框架，可以生成静态文件并且一键部署到github pages上，并且他可以使用markdown来编写文章，十分简单。</p>
@@ -109,17 +109,17 @@
 <p>他有许多优点：</]]>
     </summary>
     
-      <category term="blog" scheme="http://qiutongcheng.com/tags/blog/"/>
+      <category term="blog" scheme="http://qiutc.me/tags/blog/"/>
     
-      <category term="hexo" scheme="http://qiutongcheng.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://qiutc.me/tags/hexo/"/>
     
-      <category term="nodejs" scheme="http://qiutongcheng.com/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://qiutc.me/tags/nodejs/"/>
     
-      <category term="教程" scheme="http://qiutongcheng.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="http://qiutc.me/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="nodejs" scheme="http://qiutongcheng.com/categories/nodejs/"/>
+      <category term="nodejs" scheme="http://qiutc.me/categories/nodejs/"/>
     
-      <category term="教程" scheme="http://qiutongcheng.com/categories/nodejs/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="http://qiutc.me/categories/nodejs/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
