@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2015-10-04T05:16:47.877Z</updated>
+  <updated>2015-10-14T03:40:36.805Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -15,11 +15,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[AARRR运营模型]]></title>
+    <link href="http://qiutc.me/post/AARRR%E8%BF%90%E8%90%A5%E6%A8%A1%E5%9E%8B.html"/>
+    <id>http://qiutc.me/post/AARRR运营模型.html</id>
+    <published>2015-10-14T03:28:09.000Z</published>
+    <updated>2015-10-14T03:40:36.805Z</updated>
+    <content type="html"><![CDATA[<h1 id="前提：">前提：</h1><p>目前许多产品认为只要推广了，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。<br><br><br>AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大概的结构：<br><img src="/img/aarrr.png" alt="AARRR"></p>
+<hr>
+<h1 id="何为AARRR模型？">何为AARRR模型？</h1><p>简单来讲，AARRR模型分为  Acquisition（推广）、activation（提高活跃度）、retention（提高留存）、revenue（获取收入）、refer（自传播）。</p>
+<h2 id="1-_推广（Acquisition）">1. 推广（Acquisition）</h2><p>这是一款产品推出的第一步，把产品推广出去，获取用户量，没有用户用何运营。目前一款APP推广主要有这些渠道：各大应用商店、论坛帖吧、RP、刷机预装、线下推广扫码等、……<br>在这个阶段，最初大家关心的数据是下载量，然而下载了不一定安装，安装了不一定激活，激活了不一定留存。在推广的时候应该分渠道分析数据，一款产品不会符合所有人的需求和兴趣的，只有分析产品本身和数据，找到合适的目标人群，有针对性的推广，才能获取到高质量的用户。从另一方面来说，获取用户也是需要成本的，之后会在第四个环节revenue来说明，应该做的是找准产品的目标人群，选择最合适的推广渠道，获取高质量用户，个人观点认同“流量经济已过、之后的趋势是粉丝经济”。</p>
+<h2 id="2-提高活跃度（Activation）">2.提高活跃度（Activation）</h2><p>在第一步的时候获取用户的渠道许许多多，许多用户并不是主动获取的，针对自己的产品选择适合的推广渠道前面已经说明过了。<br>衡量活跃度我们可能马上想到的就是 DAU（日活跃用户）、MAU（月活跃用户）。这两个也是运营人员必看的指标，注意的是还是需要根据自身产品来选择合适的用户指标。<br>对一个产品来说，往往用户第一次使用的前几十秒觉得了用户是否感兴趣。<br>提高活跃度主要有一下方法：</p>
+<ul>
+<li>（1）产品本身设计时需要考虑：通过签到、每日任务、每日推送等等方法来诱导用户周期性使用，当然产品本身也是需要做好，用户才会有兴趣。</li>
+<li>（2）有规律的版本更新：每一次有效的版本更新都会刺激活跃用户。</li>
+<li>（3）Notification :使用Notification 也需要小心，选择合适的内容、选择合适的频率、选择合适的时段。</li>
+</ul>
+<h2 id="3-提高留存（retention）">3.提高留存（retention）</h2><p> 一款应用的生命周期如下：渠道–点击–下载–安装–激活–留存–卸载<br> 如何提高生命周期、提高用户使用价值主要靠提高留存。<br> 保留一个老用户的成本远远要低于获取一个新用户的成本，获取用户之后需要做的是分析用户数据，提高留存率。有些产品不分析用户为何流失，另一方面却又一直不断开拓新用户，造成了用户大量流失，运营成本大大增加的情况。</p>
+<h2 id="4-获取收入（revenue）">4.获取收入（revenue）</h2><p>收入是应用运营最核心的一点，产品的收入方式主要：付费应用、应用内付费、广告、渠道手续费获利….。付费应用在国内不大现实，毕竟没有这样的用户习惯，应用内付费大多出现在游戏应用，主要要做的是设计产品的时候就应该设计好盈利模式，运营时把用户最大化转化为价值。收入还和CAC（用户获取成本）大大关联，利润=收入-成本，成本来说除掉开发成本等等其实主要大头就是CAC了，如何平衡CAC和用户实际带来的成本需要最大化用户的价值。</p>
+<h2 id="5-自传播（refer）">5.自传播（refer）</h2><p> 随着移动社交网络的兴起，自传播成为运营的一大方面，基于移动社交网络的病毒式营销，用户自驱动的传播推广产品，二次获取用户，把AARRR的金字塔陀螺式的上升增长，把运营提高到更高的一个层次。利用用户邀请新用户，用户在自己的社交圈内推广产品，二次获取新用户。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="前提：">前提：</h1><p>目前许多产品认为只要推广了，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至]]>
+    </summary>
+    
+      <category term="产品" scheme="http://qiutc.me/tags/%E4%BA%A7%E5%93%81/"/>
+    
+      <category term="运营" scheme="http://qiutc.me/tags/%E8%BF%90%E8%90%A5/"/>
+    
+      <category term="产品" scheme="http://qiutc.me/categories/%E4%BA%A7%E5%93%81/"/>
+    
+      <category term="运营" scheme="http://qiutc.me/categories/%E4%BA%A7%E5%93%81/%E8%BF%90%E8%90%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[使用hexo+github搭建静态博客]]></title>
     <link href="http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html"/>
     <id>http://qiutc.me/post/使用hexo-github搭建静态博客.html</id>
     <published>2015-10-04T03:01:31.000Z</published>
-    <updated>2015-10-04T05:16:47.877Z</updated>
+    <updated>2015-10-14T03:25:48.477Z</updated>
     <content type="html"><![CDATA[<h1 id="认识hexo">认识hexo</h1><p>&#8195;&#8195;hexo是一款基于Node.js的静态博客框架，可以生成静态文件并且一键部署到github pages上，并且他可以使用markdown来编写文章，十分简单。</p>
 <p>他有许多优点：</p>
 <ul>
@@ -55,8 +89,8 @@
 <h2 id="站点的_config-yml_配置">站点的_config.yml 配置</h2><h3 id="站点建立时间">站点建立时间</h3><p>例如 <code>© 2015 - 2016</code><br>在文件添加：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">since</span>: <span class="string">2015</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="头像设置">头像设置</h3><p>/images/avatar.jpg //头像图片放置在主题的 source/images/<br>在文件添加：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">avatar:</span> <span class="regexp">/images/</span>avatar.png</span><br></pre></td></tr></table></figure></p>
 <h3 id="侧边栏社交链接">侧边栏社交链接</h3><p>增加 social<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Social links</span></span><br><span class="line">social:</span><br><span class="line">  GitHub: https:<span class="comment">//github.com/tongchengqiu</span></span><br><span class="line">  Twitter: https:<span class="comment">//twitter.com/tongchengqiu</span></span><br><span class="line">  Zhihu: http:<span class="comment">//www.zhihu.com/people/tongchengqiu</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="友情链接">友情链接</h3><h1 id="标题">标题</h1><p>links_title: 友情链接</p>
-<h1 id="链接">链接</h1><p>links:<br>  Hexo: <a href="http://hexo.io/" target="_blank" rel="external">http://hexo.io/</a><br>  Lmintlcx: <a href="http://blog.lmintlcx.com/" target="_blank" rel="external">http://blog.lmintlcx.com/</a></p>
+<h2 id="友情链接">友情链接</h2><h3 id="标题">标题</h3><p>links_title: 友情链接</p>
+<h3 id="链接">链接</h3><p>links:<br>  Hexo: <a href="http://hexo.io/" target="_blank" rel="external">http://hexo.io/</a><br>  Lmintlcx: <a href="http://blog.lmintlcx.com/" target="_blank" rel="external">http://blog.lmintlcx.com/</a></p>
 <h2 id="命令的使用">命令的使用</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">hexo help <span class="preprocessor">#查看帮助</span></span><br><span class="line">hexo init <span class="preprocessor">#初始化目录</span></span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> <span class="preprocessor">#新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="preprocessor">#新建页面</span></span><br><span class="line">hexo generate <span class="preprocessor">#生成网页, 可以在public目录查看整个网站的文件</span></span><br><span class="line">hexo <span class="keyword">server</span> <span class="preprocessor">#本地预览,'Ctrl+C'关闭</span></span><br><span class="line">hexo deploy <span class="preprocessor">#部署.deploy目录</span></span><br><span class="line">hexo clean <span class="preprocessor">#清除缓存, 建议每次执行命令前先清理缓存</span></span><br><span class="line">hexo n == hexo <span class="keyword">new</span></span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo <span class="keyword">server</span></span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
 <h2 id="写文章">写文章</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"文章标题"</span></span><br></pre></td></tr></table></figure>
 <p>然后到_post 目录下打开 文章标题.md<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title: 文章标题</span><br><span class="line">date: <span class="number">2015</span>-<span class="number">10</span>-<span class="number">3</span> <span class="number">11</span>:<span class="number">11</span>:<span class="number">11</span></span><br><span class="line">tags:</span><br><span class="line">- 标签<span class="number">1</span></span><br><span class="line">- 标签<span class="number">2</span></span><br><span class="line">- 标签<span class="number">3</span></span><br><span class="line">categories: [分类<span class="number">1</span>,分类<span class="number">2</span>,分类<span class="number">3</span>]</span><br><span class="line">---</span><br><span class="line">正文, 使用 Markdown 语法书写</span><br></pre></td></tr></table></figure></p>
