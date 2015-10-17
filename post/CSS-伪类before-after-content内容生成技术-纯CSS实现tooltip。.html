@@ -31,7 +31,7 @@
 
 
 
-  <meta name="keywords" content="产品,运营," />
+  <meta name="keywords" content="CSS,前端,教程," />
 
 
 
@@ -42,17 +42,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon1.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前提：目前许多产品认为只要推广了，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大概">
+<meta name="description" content="一、介绍before/afterCSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。应用before/和after也比较简单，举个例子：12345a:after &amp;#123;      content:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AARRR运营模型">
-<meta property="og:url" content="http://qiutc.me/post/AARRR运营模型.html">
+<meta property="og:title" content="CSS 伪类before/after content内容生成技术----纯CSS实现tooltip">
+<meta property="og:url" content="http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html">
 <meta property="og:site_name" content="阿城|blog">
-<meta property="og:description" content="前提：目前许多产品认为只要推广了，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大概">
-<meta property="og:image" content="http://qiutc.me/img/aarrr.png">
-<meta property="og:updated_time" content="2015-10-17T07:28:27.637Z">
+<meta property="og:description" content="一、介绍before/afterCSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。应用before/和after也比较简单，举个例子：12345a:after &amp;#123;      content:">
+<meta property="og:updated_time" content="2015-10-17T07:40:05.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AARRR运营模型">
-<meta name="twitter:description" content="前提：目前许多产品认为只要推广了，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大概">
+<meta name="twitter:title" content="CSS 伪类before/after content内容生成技术----纯CSS实现tooltip">
+<meta name="twitter:description" content="一、介绍before/afterCSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。应用before/和after也比较简单，举个例子：12345a:after &amp;#123;      content:">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +61,7 @@
   };
 </script>
 
-  <title> AARRR运营模型 | 阿城|blog </title>
+  <title> CSS 伪类before/after content内容生成技术----纯CSS实现tooltip | 阿城|blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -187,7 +186,7 @@
           
           
             
-              AARRR运营模型
+              CSS 伪类before/after content内容生成技术----纯CSS实现tooltip
             
           
         </h1>
@@ -196,8 +195,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-14T11:28:09+08:00" content="2015-10-14">
-            2015-10-14
+          <time itemprop="dateCreated" datetime="2015-10-17T15:30:41+08:00" content="2015-10-17">
+            2015-10-17
           </time>
         </span>
 
@@ -206,8 +205,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/产品/" itemprop="url" rel="index">
-                  <span itemprop="name">产品</span>
+                <a href="/categories/前端/" itemprop="url" rel="index">
+                  <span itemprop="name">前端</span>
                 </a>
               </span>
 
@@ -218,8 +217,20 @@
 
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/产品/运营/" itemprop="url" rel="index">
-                  <span itemprop="name">运营</span>
+                <a href="/categories/前端/教程/" itemprop="url" rel="index">
+                  <span itemprop="name">教程</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/前端/教程/CSS/" itemprop="url" rel="index">
+                  <span itemprop="name">CSS</span>
                 </a>
               </span>
 
@@ -234,8 +245,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/post/AARRR运营模型.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="post/AARRR运营模型.html" itemprop="commentsCount"></span>
+              <a href="/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -249,19 +260,21 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前提：">前提：</h1><p>目前许多产品认为只要推广了，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。<br><br><br>AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大概的结构：<br><img src="/img/aarrr.png" alt="AARRR"></p>
-<hr>
-<h1 id="何为AARRR模型？">何为AARRR模型？</h1><p>简单来讲，AARRR模型分为  Acquisition（推广）、activation（提高活跃度）、retention（提高留存）、revenue（获取收入）、refer（自传播）。</p>
-<h2 id="1-_推广（Acquisition）">1. 推广（Acquisition）</h2><p>这是一款产品推出的第一步，把产品推广出去，获取用户量，没有用户用何运营。目前一款APP推广主要有这些渠道：各大应用商店、论坛帖吧、RP、刷机预装、线下推广扫码等、……<br>在这个阶段，最初大家关心的数据是下载量，然而下载了不一定安装，安装了不一定激活，激活了不一定留存。在推广的时候应该分渠道分析数据，一款产品不会符合所有人的需求和兴趣的，只有分析产品本身和数据，找到合适的目标人群，有针对性的推广，才能获取到高质量的用户。从另一方面来说，获取用户也是需要成本的，之后会在第四个环节revenue来说明，应该做的是找准产品的目标人群，选择最合适的推广渠道，获取高质量用户，个人观点认同“流量经济已过、之后的趋势是粉丝经济”。</p>
-<h2 id="2-提高活跃度（Activation）">2.提高活跃度（Activation）</h2><p>在第一步的时候获取用户的渠道许许多多，许多用户并不是主动获取的，针对自己的产品选择适合的推广渠道前面已经说明过了。<br>衡量活跃度我们可能马上想到的就是 DAU（日活跃用户）、MAU（月活跃用户）。这两个也是运营人员必看的指标，注意的是还是需要根据自身产品来选择合适的用户指标。<br>对一个产品来说，往往用户第一次使用的前几十秒觉得了用户是否感兴趣。<br>提高活跃度主要有一下方法：</p>
-<ul>
-<li>（1）产品本身设计时需要考虑：通过签到、每日任务、每日推送等等方法来诱导用户周期性使用，当然产品本身也是需要做好，用户才会有兴趣。</li>
-<li>（2）有规律的版本更新：每一次有效的版本更新都会刺激活跃用户。</li>
-<li>（3）Notification :使用Notification 也需要小心，选择合适的内容、选择合适的频率、选择合适的时段。</li>
+        <span itemprop="articleBody"><h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。<br>应用before/和after也比较简单，举个例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">a</span>:<span class="value">after &#123;</span><br><span class="line">      content: <span class="string">" after "</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">display</span>:<span class="value">  block</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">coloe</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以在浏览器看到，a标签元素后面多出了一段文字 after。（在CSS3中伪类元素使用是如a::after的，不过目前两者并无多大区别）。<br>（伪元素不可通过DOM使用，IE6/7对该属性不支持）</p>
+<p>after和before伪元素有许多用处，还可以简化代码，比如可以写一个计数器、tip小三角形、清除浮动……特别在CSS3中新加的一些属性更是丰富了它的应用，这里有个小教程，用before/after伪元素来实现一个纯CSS3的tooltip。</p>
+<h1 id="二、tooltip实现教程">二、tooltip实现教程</h1><p>这里我们主要是用草after/before伪元素content中的attr属性，先来看看实现后的样子：</p>
+<h2 id="1-实现样式">1.实现样式</h2><h2 id="2-代码">2.代码</h2><p>鼠标hover button之后，出现一个tooltip小标签。<br>代码先贴上：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">        <span class="class">.btn</span> <span class="rules">&#123;</span><br><span class="line">            <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">200px</span> auto</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">20px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">20px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#fff</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#6bdf4e</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#6bdf4e</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer</span></span>;</span><br><span class="line">        &#125;</span></span><br><span class="line">        <span class="rule"><span class="attribute">.btn</span>:<span class="value">:after &#123;</span><br><span class="line">            content: <span class="function">attr</span>(data-tip)</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">12px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(-<span class="number">50%</span>)</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">16px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#000</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#fff</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">cursor</span>:<span class="value"> default</span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="rule"><span class="attribute">.btn</span>:<span class="value">:before &#123;</span><br><span class="line">            content: <span class="string">" "</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translateX</span>(-<span class="number">50%</span>)</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">3px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">border-left</span>:<span class="value"> <span class="number">6px</span> solid transparent</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">border-right</span>:<span class="value"> <span class="number">6px</span> solid transparent</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">9px</span> solid <span class="hexcolor">#000</span></span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="rule"><span class="attribute">.btn</span>:<span class="value">hover::after,</span><br><span class="line">        .btn:hover::before &#123;</span><br><span class="line">            display: block</span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span> <span class="attribute">data-tip</span>=<span class="value">"ToolTip"</span>&gt;</span>button<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-实现过程">3.实现过程</h2><ul>
+<li>一. 创建一个标签，然后在标签内加上一个属性 data-[] = “ToolTip”,[]表示的是自定义的属性名称，引号里面是tooltip需要显示的内容。</li>
+<li>二. 给标签加样式，position设置为relative，因为之后伪元素需要设置绝对定位来设置位置。</li>
+<li>三. 给after加样式，after是需要显示的tooltip，通过content: attr(data-tip);拿到需要显示的内容，设置绝对定位，调整位置。</li>
+<li>四. 给before加样式，before需要设置成一个小三角tip放在after下面。</li>
+<li>五. 给after/before的display都设置为none。</li>
+<li>六. 给需要tooltip的元素伪类选择hover时设置after/before的display为block，这里需要注意的是after/before默认display为inline，所以我们前面创建调试是display应该先设置为block。</li>
+<li>七. 打开浏览器查看效果~</li>
 </ul>
-<h2 id="3-提高留存（retention）">3.提高留存（retention）</h2><p> 一款应用的生命周期如下：渠道–点击–下载–安装–激活–留存–卸载<br> 如何提高生命周期、提高用户使用价值主要靠提高留存。<br> 保留一个老用户的成本远远要低于获取一个新用户的成本，获取用户之后需要做的是分析用户数据，提高留存率。有些产品不分析用户为何流失，另一方面却又一直不断开拓新用户，造成了用户大量流失，运营成本大大增加的情况。</p>
-<h2 id="4-获取收入（revenue）">4.获取收入（revenue）</h2><p>收入是应用运营最核心的一点，产品的收入方式主要：付费应用、应用内付费、广告、渠道手续费获利….。付费应用在国内不大现实，毕竟没有这样的用户习惯，应用内付费大多出现在游戏应用，主要要做的是设计产品的时候就应该设计好盈利模式，运营时把用户最大化转化为价值。收入还和CAC（用户获取成本）大大关联，利润=收入-成本，成本来说除掉开发成本等等其实主要大头就是CAC了，如何平衡CAC和用户实际带来的成本需要最大化用户的价值。</p>
-<h2 id="5-自传播（refer）">5.自传播（refer）</h2><p> 随着移动社交网络的兴起，自传播成为运营的一大方面，基于移动社交网络的病毒式营销，用户自驱动的传播推广产品，二次获取用户，把AARRR的金字塔陀螺式的上升增长，把运营提高到更高的一个层次。利用用户邀请新用户，用户在自己的社交圈内推广产品，二次获取新用户。</p>
+<h1 id="三、tip">三、tip</h1><p>关于after/before还有许多有趣有用的用法，感兴趣的同学可以研究研究哦~</p>
 </span>
       
     </div>
@@ -270,9 +283,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/产品/" rel="tag">#产品</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
-            <a href="/tags/运营/" rel="tag">#运营</a>
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+            <a href="/tags/教程/" rel="tag">#教程</a>
           
         </div>
       
@@ -281,13 +296,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html" rel="prev">CSS 伪类before/after content内容生成技术----纯CSS实现tooltip</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/使用hexo-github搭建静态博客.html" rel="next">使用hexo+github搭建静态博客</a>
+              <a href="/post/AARRR运营模型.html" rel="next">AARRR运营模型</a>
             
           </div>
         </div>
@@ -302,10 +315,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="post/AARRR运营模型.html"
-     data-title="AARRR运营模型"
+        <div class="ds-share flat" data-thread-key="post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html"
+     data-title="CSS 伪类before/after content内容生成技术----纯CSS实现tooltip"
      data-content=""
-     data-url="http://qiutc.me/post/AARRR运营模型.html">
+     data-url="http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -331,8 +344,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="post/AARRR运营模型.html"
-                   data-title="AARRR运营模型" data-url="http://qiutc.me/post/AARRR运营模型.html">
+              <div class="ds-thread" data-thread-key="post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html"
+                   data-title="CSS 伪类before/after content内容生成技术----纯CSS实现tooltip" data-url="http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html">
               </div>
             
           </div>
@@ -445,7 +458,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前提："><span class="nav-number">1.</span> <span class="nav-text">前提：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#何为AARRR模型？"><span class="nav-number">2.</span> <span class="nav-text">何为AARRR模型？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_推广（Acquisition）"><span class="nav-number">2.1.</span> <span class="nav-text">1. 推广（Acquisition）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-提高活跃度（Activation）"><span class="nav-number">2.2.</span> <span class="nav-text">2.提高活跃度（Activation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-提高留存（retention）"><span class="nav-number">2.3.</span> <span class="nav-text">3.提高留存（retention）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-获取收入（revenue）"><span class="nav-number">2.4.</span> <span class="nav-text">4.获取收入（revenue）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-自传播（refer）"><span class="nav-number">2.5.</span> <span class="nav-text">5.自传播（refer）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、介绍before/after"><span class="nav-number">1.</span> <span class="nav-text">一、介绍before/after</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、tooltip实现教程"><span class="nav-number">2.</span> <span class="nav-text">二、tooltip实现教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-实现样式"><span class="nav-number">2.1.</span> <span class="nav-text">1.实现样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码"><span class="nav-number">2.2.</span> <span class="nav-text">2.代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-实现过程"><span class="nav-number">2.3.</span> <span class="nav-text">3.实现过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、tip"><span class="nav-number">3.</span> <span class="nav-text">三、tip</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
