@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[CSS 伪类before/after content内容生成技术----纯CSS实现tooltip]]></title>
-    <link href="http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip%E3%80%82.html"/>
-    <id>http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip。.html</id>
+    <link href="http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html"/>
+    <id>http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip.html</id>
     <published>2015-10-17T07:30:41.000Z</published>
     <updated>2015-10-17T07:41:37.476Z</updated>
     <content type="html"><![CDATA[<h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。<br>应用before/和after也比较简单，举个例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">a</span>:<span class="value">after &#123;</span><br><span class="line">      content: <span class="string">" after "</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">display</span>:<span class="value">  block</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">coloe</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
