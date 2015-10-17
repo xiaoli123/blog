@@ -49,7 +49,7 @@
 <meta property="og:site_name" content="阿城|blog">
 <meta property="og:description" content="一、介绍before/afterCSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。应用before/和after也比较简单，举个例子：12345a:after &amp;#123;      content:">
 <meta property="og:image" content="http://qiutc.me/img/after&before-demo.png">
-<meta property="og:updated_time" content="2015-10-17T07:41:37.476Z">
+<meta property="og:updated_time" content="2015-10-17T07:56:31.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 伪类before/after content内容生成技术----纯CSS实现tooltip">
 <meta name="twitter:description" content="一、介绍before/afterCSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。应用before/和after也比较简单，举个例子：12345a:after &amp;#123;      content:">
@@ -276,7 +276,8 @@
 <li>六. 给需要tooltip的元素伪类选择hover时设置after/before的display为block，这里需要注意的是after/before默认display为inline，所以我们前面创建调试是display应该先设置为block。</li>
 <li>七. 打开浏览器查看效果~</li>
 </ul>
-<h1 id="三、tip">三、tip</h1><p>关于after/before还有许多有趣有用的用法，感兴趣的同学可以研究研究哦~</p>
+<h1 id="三、对于不支持伪元素的IE6/7">三、对于不支持伪元素的IE6/7</h1><p>解决方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $beforeAfter = <span class="function"><span class="keyword">function</span>(<span class="params">dom</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.querySelector || !dom &amp;&amp; dom.nodeType !== <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> content = dom.getAttribute(<span class="string">"data-content"</span>) || <span class="string">''</span>;     </span><br><span class="line">    <span class="keyword">var</span> before = <span class="built_in">document</span>.createElement(<span class="string">"before"</span>)</span><br><span class="line">        , after = <span class="built_in">document</span>.createElement(<span class="string">"after"</span>);</span><br><span class="line">    before.innerHTML = content;</span><br><span class="line">    after.innerHTML = content;</span><br><span class="line">    dom.insertBefore(before, dom.firstChild);</span><br><span class="line">    dom.appendChild(after);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="四、tip">四、tip</h1><p>关于after/before还有许多有趣有用的用法，感兴趣的同学可以研究研究哦~</p>
 </span>
       
     </div>
@@ -460,7 +461,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、介绍before/after"><span class="nav-number">1.</span> <span class="nav-text">一、介绍before/after</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、tooltip实现教程"><span class="nav-number">2.</span> <span class="nav-text">二、tooltip实现教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-实现样式"><span class="nav-number">2.1.</span> <span class="nav-text">1.实现样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码"><span class="nav-number">2.2.</span> <span class="nav-text">2.代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-实现过程"><span class="nav-number">2.3.</span> <span class="nav-text">3.实现过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、tip"><span class="nav-number">3.</span> <span class="nav-text">三、tip</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、介绍before/after"><span class="nav-number">1.</span> <span class="nav-text">一、介绍before/after</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、tooltip实现教程"><span class="nav-number">2.</span> <span class="nav-text">二、tooltip实现教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-实现样式"><span class="nav-number">2.1.</span> <span class="nav-text">1.实现样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码"><span class="nav-number">2.2.</span> <span class="nav-text">2.代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-实现过程"><span class="nav-number">2.3.</span> <span class="nav-text">3.实现过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、对于不支持伪元素的IE6/7"><span class="nav-number">3.</span> <span class="nav-text">三、对于不支持伪元素的IE6/7</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、tip"><span class="nav-number">4.</span> <span class="nav-text">四、tip</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

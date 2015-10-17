@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2015-10-17T07:41:37.476Z</updated>
+  <updated>2015-10-17T07:56:31.882Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html"/>
     <id>http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip.html</id>
     <published>2015-10-17T07:30:41.000Z</published>
-    <updated>2015-10-17T07:41:37.476Z</updated>
+    <updated>2015-10-17T07:56:31.882Z</updated>
     <content type="html"><![CDATA[<h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。<br>应用before/和after也比较简单，举个例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">a</span>:<span class="value">after &#123;</span><br><span class="line">      content: <span class="string">" after "</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">display</span>:<span class="value">  block</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">coloe</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以在浏览器看到，a标签元素后面多出了一段文字 after。（在CSS3中伪类元素使用是如a::after的，不过目前两者并无多大区别）。<br>（伪元素不可通过DOM使用，IE6/7对该属性不支持）</p>
 <p>after和before伪元素有许多用处，还可以简化代码，比如可以写一个计数器、tip小三角形、清除浮动……特别在CSS3中新加的一些属性更是丰富了它的应用，这里有个小教程，用before/after伪元素来实现一个纯CSS3的tooltip。</p>
@@ -35,7 +35,8 @@
 <li>六. 给需要tooltip的元素伪类选择hover时设置after/before的display为block，这里需要注意的是after/before默认display为inline，所以我们前面创建调试是display应该先设置为block。</li>
 <li>七. 打开浏览器查看效果~</li>
 </ul>
-<h1 id="三、tip">三、tip</h1><p>关于after/before还有许多有趣有用的用法，感兴趣的同学可以研究研究哦~</p>
+<h1 id="三、对于不支持伪元素的IE6/7">三、对于不支持伪元素的IE6/7</h1><p>解决方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $beforeAfter = <span class="function"><span class="keyword">function</span>(<span class="params">dom</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.querySelector || !dom &amp;&amp; dom.nodeType !== <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> content = dom.getAttribute(<span class="string">"data-content"</span>) || <span class="string">''</span>;     </span><br><span class="line">    <span class="keyword">var</span> before = <span class="built_in">document</span>.createElement(<span class="string">"before"</span>)</span><br><span class="line">        , after = <span class="built_in">document</span>.createElement(<span class="string">"after"</span>);</span><br><span class="line">    before.innerHTML = content;</span><br><span class="line">    after.innerHTML = content;</span><br><span class="line">    dom.insertBefore(before, dom.firstChild);</span><br><span class="line">    dom.appendChild(after);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="四、tip">四、tip</h1><p>关于after/before还有许多有趣有用的用法，感兴趣的同学可以研究研究哦~</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，]]>
