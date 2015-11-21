@@ -31,7 +31,7 @@
 
 
 
-  <meta name="keywords" content="产品,运营," />
+  <meta name="keywords" content="FE,React-Native,learning notes," />
 
 
 
@@ -42,17 +42,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon1.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前提：目前许多产品认为只要推广了1，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大">
+<meta name="description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+React-Native for Android 的环境搭建要求：
+前提 OS X (假设大家有用Mac了😏ß);
+Homebrew (包管理器)(用来安装Watchman 和 Flow);
+安装node.js 4.0 或者以上;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AARRR运营模型">
-<meta property="og:url" content="http://qiutc.me/post/AARRR运营模型.html">
+<meta property="og:title" content="[RN]1.环境搭建--React-Native learning notes">
+<meta property="og:url" content="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
 <meta property="og:site_name" content="阿城|blog">
-<meta property="og:description" content="前提：目前许多产品认为只要推广了1，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大">
-<meta property="og:image" content="http://qiutc.me/img/aarrr.png">
-<meta property="og:updated_time" content="2015-11-12T09:09:52.000Z">
+<meta property="og:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+React-Native for Android 的环境搭建要求：
+前提 OS X (假设大家有用Mac了😏ß);
+Homebrew (包管理器)(用来安装Watchman 和 Flow);
+安装node.js 4.0 或者以上;">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_1.png">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_2.png">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_3.png">
+<meta property="og:updated_time" content="2015-11-21T14:26:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AARRR运营模型">
-<meta name="twitter:description" content="前提：目前许多产品认为只要推广了1，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大">
+<meta name="twitter:title" content="[RN]1.环境搭建--React-Native learning notes">
+<meta name="twitter:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+React-Native for Android 的环境搭建要求：
+前提 OS X (假设大家有用Mac了😏ß);
+Homebrew (包管理器)(用来安装Watchman 和 Flow);
+安装node.js 4.0 或者以上;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +76,7 @@
   };
 </script>
 
-  <title> AARRR运营模型 | 阿城|blog </title>
+  <title> [RN]1.环境搭建--React-Native learning notes | 阿城|blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -187,7 +201,7 @@
           
           
             
-              AARRR运营模型
+              [RN]1.环境搭建--React-Native learning notes
             
           
         </h1>
@@ -196,8 +210,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-14T11:28:09+08:00" content="2015-10-14">
-            2015-10-14
+          <time itemprop="dateCreated" datetime="2015-11-21T20:57:35+08:00" content="2015-11-21">
+            2015-11-21
           </time>
         </span>
 
@@ -206,8 +220,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/产品/" itemprop="url" rel="index">
-                  <span itemprop="name">产品</span>
+                <a href="/categories/React-Native/" itemprop="url" rel="index">
+                  <span itemprop="name">React-Native</span>
                 </a>
               </span>
 
@@ -218,8 +232,20 @@
 
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/产品/运营/" itemprop="url" rel="index">
-                  <span itemprop="name">运营</span>
+                <a href="/categories/React-Native/learning-notes/" itemprop="url" rel="index">
+                  <span itemprop="name">learning notes</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/React-Native/learning-notes/FE/" itemprop="url" rel="index">
+                  <span itemprop="name">FE</span>
                 </a>
               </span>
 
@@ -234,8 +260,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/post/AARRR运营模型.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="post/AARRR运营模型.html" itemprop="commentsCount"></span>
+              <a href="/post/RN-1-环境搭建-React-Native-learning-notes.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -249,19 +275,27 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前提：">前提：</h1><p>目前许多产品认为只要推广了1，获取大量用户流量，只看重下载量和激活量，以此来衡量一个产品，出现了“重推广，轻运营”的情况。然而何为留存率，是用户下载了APP并且打开甚至注册了吗？不，下载了不一定会继续使用留存，何时留存？当产品满足甚至超出用户期望，产品核心定位人群瞄准该用户，用户有再次打开使用时才是留存率。<br><br><br>AARRR运营模型更加的符合当前移动APP的运营模式。何为AARRR，下面一张图给出大概的结构：<br><img src="/img/aarrr.png" alt="AARRR"></p>
-<hr>
-<h1 id="何为AARRR模型？">何为AARRR模型？</h1><p>简单来讲，AARRR模型分为  Acquisition（推广）、activation（提高活跃度）、retention（提高留存）、revenue（获取收入）、refer（自传播）。</p>
-<h2 id="1-_推广（Acquisition）">1. 推广（Acquisition）</h2><p>这是一款产品推出的第一步，把产品推广出去，获取用户量，没有用户用何运营。目前一款APP推广主要有这些渠道：各大应用商店、论坛帖吧、RP、刷机预装、线下推广扫码等、……<br>在这个阶段，最初大家关心的数据是下载量，然而下载了不一定安装，安装了不一定激活，激活了不一定留存。在推广的时候应该分渠道分析数据，一款产品不会符合所有人的需求和兴趣的，只有分析产品本身和数据，找到合适的目标人群，有针对性的推广，才能获取到高质量的用户。从另一方面来说，获取用户也是需要成本的，之后会在第四个环节revenue来说明，应该做的是找准产品的目标人群，选择最合适的推广渠道，获取高质量用户，个人观点认同“流量经济已过、之后的趋势是粉丝经济”。</p>
-<h2 id="2-提高活跃度（Activation）">2.提高活跃度（Activation）</h2><p>在第一步的时候获取用户的渠道许许多多，许多用户并不是主动获取的，针对自己的产品选择适合的推广渠道前面已经说明过了。<br>衡量活跃度我们可能马上想到的就是 DAU（日活跃用户）、MAU（月活跃用户）。这两个也是运营人员必看的指标，注意的是还是需要根据自身产品来选择合适的用户指标。<br>对一个产品来说，往往用户第一次使用的前几十秒觉得了用户是否感兴趣。<br>提高活跃度主要有一下方法：</p>
-<ul>
-<li>（1）产品本身设计时需要考虑：通过签到、每日任务、每日推送等等方法来诱导用户周期性使用，当然产品本身也是需要做好，用户才会有兴趣。</li>
-<li>（2）有规律的版本更新：每一次有效的版本更新都会刺激活跃用户。</li>
-<li>（3）Notification :使用Notification 也需要小心，选择合适的内容、选择合适的频率、选择合适的时段。</li>
-</ul>
-<h2 id="3-提高留存（retention）">3.提高留存（retention）</h2><p> 一款应用的生命周期如下：渠道–点击–下载–安装–激活–留存–卸载<br> 如何提高生命周期、提高用户使用价值主要靠提高留存。<br> 保留一个老用户的成本远远要低于获取一个新用户的成本，获取用户之后需要做的是分析用户数据，提高留存率。有些产品不分析用户为何流失，另一方面却又一直不断开拓新用户，造成了用户大量流失，运营成本大大增加的情况。</p>
-<h2 id="4-获取收入（revenue）">4.获取收入（revenue）</h2><p>收入是应用运营最核心的一点，产品的收入方式主要：付费应用、应用内付费、广告、渠道手续费获利….。付费应用在国内不大现实，毕竟没有这样的用户习惯，应用内付费大多出现在游戏应用，主要要做的是设计产品的时候就应该设计好盈利模式，运营时把用户最大化转化为价值。收入还和CAC（用户获取成本）大大关联，利润=收入-成本，成本来说除掉开发成本等等其实主要大头就是CAC了，如何平衡CAC和用户实际带来的成本需要最大化用户的价值。</p>
-<h2 id="5-自传播（refer）">5.自传播（refer）</h2><p> 随着移动社交网络的兴起，自传播成为运营的一大方面，基于移动社交网络的病毒式营销，用户自驱动的传播推广产品，二次获取用户，把AARRR的金字塔陀螺式的上升增长，把运营提高到更高的一个层次。利用用户邀请新用户，用户在自己的社交圈内推广产品，二次获取新用户。</p>
+        <span itemprop="articleBody"><h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<h1 id="React-Native_for_Android_的环境搭建">React-Native for Android 的环境搭建</h1><h3 id="要求：">要求：</h3><ol>
+<li>前提 OS X (假设大家有用Mac了😏ß);</li>
+<li><a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> (包管理器)(用来安装Watchman 和 Flow);</li>
+<li>安装<a href="https://nodejs.org/" target="_blank" rel="external">node.js</a> 4.0 或者以上;</li>
+<li>安装 watchman(文件监控) ,在命令行: <code>brew install watchman</code>;</li>
+<li>安装 flow ,在命令行: <code>brew install flow</code>;</li>
+<li>安装最新的 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a>;</li>
+<li>安装 SDK ,在命令行: <code>brew install android-idk</code>;</li>
+<li>配置 android 环境:<br>在 ~/.bashrc, ~/.bash_profile写入<br>  <code>export ANDROID_HOME=/usr/local/opt/android-sdk</code>;<br>(在这一步可以先到~目录下，然后如果没有.bashrc，就创建一个，然后vim .bashrc，然后写入上面代码，按esc键，输入<code>:wq</code>，然后自动保存退出，.bash_profile同理);</li>
+<li>配置 SDK:<br>新开一个shell窗口：运行 <code>android</code>,<br>会弹出 Android SDK Manager窗口，<br>安装下列选项:<br><img src="/img/RN_img_1.png" alt=""><br><img src="/img/RN_img_2.png" alt=""><br>(tip: 这一步可能需要翻墙);</li>
+<li>安装 <a href="https://www.genymotion.com/#!/download/freemium/mac/classical" target="_blank" rel="external">Genymotion</a> (android 的模拟器,推荐使用这个吧);</li>
+<li>安装react native 的命令行工具包,在命令行: <code>npm install -g react-native-cli</code>;</li>
+<li>命令行进入需要创建的文件夹目录下: <code>react-native init AwesomeProject</code>，会自动获取下载react native的包（建议翻墙）;</li>
+<li><p>项目的目录结构如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="tag">android</span>           <span class="id">#android</span>需要的文件夹</span><br><span class="line">├── <span class="tag">ios</span>               <span class="id">#ios</span>需要的文件夹</span><br><span class="line">├── <span class="tag">node_modules</span>      <span class="id">#npm</span>包文件夹</span><br><span class="line">├── <span class="tag">index</span><span class="class">.android</span><span class="class">.js</span>  <span class="id">#android</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">├── <span class="tag">index</span><span class="class">.ios</span><span class="class">.js</span>      <span class="id">#ios</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">└── <span class="tag">package</span><span class="class">.json</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开Genymotion,下载安装最新的android模拟器，打开;</p>
+</li>
+<li>在文件夹下运行命令行: <code>react-native run-android</code>,等待安装，<br>然后android的模拟器就会出现：<br><img src="/img/RN_img_3.png" alt=""><br>ß<h2 id="完成！">完成！</h2></li>
+</ol>
 </span>
       
     </div>
@@ -270,9 +304,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/产品/" rel="tag">#产品</a>
+            <a href="/tags/FE/" rel="tag">#FE</a>
           
-            <a href="/tags/运营/" rel="tag">#运营</a>
+            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+          
+            <a href="/tags/learning-notes/" rel="tag">#learning notes</a>
           
         </div>
       
@@ -281,13 +317,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip.html" rel="prev">CSS 伪类before/after content内容生成技术----纯CSS实现tooltip</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/使用hexo-github搭建静态博客.html" rel="next">使用hexo+github搭建静态博客</a>
+              <a href="/post/如何使用webpack—webpack-howto.html" rel="next">如何使用webpack—webpack-howto</a>
             
           </div>
         </div>
@@ -302,10 +336,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="post/AARRR运营模型.html"
-     data-title="AARRR运营模型"
+        <div class="ds-share flat" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html"
+     data-title="[RN]1.环境搭建--React-Native learning notes"
      data-content=""
-     data-url="http://qiutc.me/post/AARRR运营模型.html">
+     data-url="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -331,8 +365,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="post/AARRR运营模型.html"
-                   data-title="AARRR运营模型" data-url="http://qiutc.me/post/AARRR运营模型.html">
+              <div class="ds-thread" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html"
+                   data-title="[RN]1.环境搭建--React-Native learning notes" data-url="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
               </div>
             
           </div>
@@ -445,7 +479,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前提："><span class="nav-number">1.</span> <span class="nav-text">前提：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#何为AARRR模型？"><span class="nav-number">2.</span> <span class="nav-text">何为AARRR模型？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_推广（Acquisition）"><span class="nav-number">2.1.</span> <span class="nav-text">1. 推广（Acquisition）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-提高活跃度（Activation）"><span class="nav-number">2.2.</span> <span class="nav-text">2.提高活跃度（Activation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-提高留存（retention）"><span class="nav-number">2.3.</span> <span class="nav-text">3.提高留存（retention）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-获取收入（revenue）"><span class="nav-number">2.4.</span> <span class="nav-text">4.获取收入（revenue）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-自传播（refer）"><span class="nav-number">2.5.</span> <span class="nav-text">5.自传播（refer）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tip:"><span class="nav-number">1.</span> <span class="nav-text">tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native_for_Android_的环境搭建"><span class="nav-number">2.</span> <span class="nav-text">React-Native for Android 的环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求："><span class="nav-number">2.0.1.</span> <span class="nav-text">要求：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成！"><span class="nav-number">2.1.</span> <span class="nav-text">完成！</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2015-10-29T10:52:54.000Z</updated>
+  <updated>2015-11-21T14:26:48.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -13,6 +13,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[[RN]1.环境搭建--React-Native learning notes]]></title>
+    <link href="http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html"/>
+    <id>http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html</id>
+    <published>2015-11-21T12:57:35.000Z</published>
+    <updated>2015-11-21T14:26:48.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<h1 id="React-Native_for_Android_的环境搭建">React-Native for Android 的环境搭建</h1><h3 id="要求：">要求：</h3><ol>
+<li>前提 OS X (假设大家有用Mac了😏ß);</li>
+<li><a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> (包管理器)(用来安装Watchman 和 Flow);</li>
+<li>安装<a href="https://nodejs.org/" target="_blank" rel="external">node.js</a> 4.0 或者以上;</li>
+<li>安装 watchman(文件监控) ,在命令行: <code>brew install watchman</code>;</li>
+<li>安装 flow ,在命令行: <code>brew install flow</code>;</li>
+<li>安装最新的 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a>;</li>
+<li>安装 SDK ,在命令行: <code>brew install android-idk</code>;</li>
+<li>配置 android 环境:<br>在 ~/.bashrc, ~/.bash_profile写入<br>  <code>export ANDROID_HOME=/usr/local/opt/android-sdk</code>;<br>(在这一步可以先到~目录下，然后如果没有.bashrc，就创建一个，然后vim .bashrc，然后写入上面代码，按esc键，输入<code>:wq</code>，然后自动保存退出，.bash_profile同理);</li>
+<li>配置 SDK:<br>新开一个shell窗口：运行 <code>android</code>,<br>会弹出 Android SDK Manager窗口，<br>安装下列选项:<br><img src="/img/RN_img_1.png" alt=""><br><img src="/img/RN_img_2.png" alt=""><br>(tip: 这一步可能需要翻墙);</li>
+<li>安装 <a href="https://www.genymotion.com/#!/download/freemium/mac/classical" target="_blank" rel="external">Genymotion</a> (android 的模拟器,推荐使用这个吧);</li>
+<li>安装react native 的命令行工具包,在命令行: <code>npm install -g react-native-cli</code>;</li>
+<li>命令行进入需要创建的文件夹目录下: <code>react-native init AwesomeProject</code>，会自动获取下载react native的包（建议翻墙）;</li>
+<li><p>项目的目录结构如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="tag">android</span>           <span class="id">#android</span>需要的文件夹</span><br><span class="line">├── <span class="tag">ios</span>               <span class="id">#ios</span>需要的文件夹</span><br><span class="line">├── <span class="tag">node_modules</span>      <span class="id">#npm</span>包文件夹</span><br><span class="line">├── <span class="tag">index</span><span class="class">.android</span><span class="class">.js</span>  <span class="id">#android</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">├── <span class="tag">index</span><span class="class">.ios</span><span class="class">.js</span>      <span class="id">#ios</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">└── <span class="tag">package</span><span class="class">.json</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开Genymotion,下载安装最新的android模拟器，打开;</p>
+</li>
+<li>在文件夹下运行命令行: <code>react-native run-android</code>,等待安装，<br>然后android的模拟器就会出现：<br><img src="/img/RN_img_3.png" alt=""><br>ß<h2 id="完成！">完成！</h2></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<h1 id="React-Native_for_Androi]]>
+    </summary>
+    
+      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+    
+      <category term="React-Native" scheme="http://qiutc.me/tags/React-Native/"/>
+    
+      <category term="learning notes" scheme="http://qiutc.me/tags/learning-notes/"/>
+    
+      <category term="React-Native" scheme="http://qiutc.me/categories/React-Native/"/>
+    
+      <category term="learning notes" scheme="http://qiutc.me/categories/React-Native/learning-notes/"/>
+    
+      <category term="FE" scheme="http://qiutc.me/categories/React-Native/learning-notes/FE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[如何使用webpack—webpack-howto]]></title>
