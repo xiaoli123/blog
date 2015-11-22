@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2015-11-21T14:26:48.000Z</updated>
+  <updated>2015-11-22T08:42:08.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -13,6 +13,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[[RN]2.样式style--React-Native learning notes]]></title>
+    <link href="http://qiutc.me/post/RN-2-%E6%A0%B7%E5%BC%8Fstyle-React-Native-learning-notes.html"/>
+    <id>http://qiutc.me/post/RN-2-样式style-React-Native-learning-notes.html</id>
+    <published>2015-11-22T08:27:03.000Z</published>
+    <updated>2015-11-22T08:42:08.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<p>😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏</p>
+<h1 id="React-Native_for_Android_样式的使用。">React-Native for Android 样式的使用。</h1><p>React-Native 编写的应用的样式不是靠css来实现的，而是依赖javascript来为你的应用来添加样式，先不讨论这样做的好处与坏处，因为这个实现方法本身就存在着很多争议，我们主要关注他的样式的语法和特性。</p>
+<h1 id="声明样式:">声明样式:</h1><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> styles = StyleSheet.create(&#123;</span><br><span class="line">     <span class="keyword">base</span>: &#123;</span><br><span class="line">          width: <span class="number">38</span>,</span><br><span class="line">          height: <span class="number">38</span>,</span><br><span class="line">     &#125;,</span><br><span class="line">     background: &#123;</span><br><span class="line">          backgroundColor: <span class="string">'#222222'</span>,</span><br><span class="line">     &#125;,</span><br><span class="line">     active: &#123;</span><br><span class="line">          borderWidth: <span class="number">2</span>,</span><br><span class="line">          borderColor: ‘<span class="preprocessor">#ff00ff',</span></span><br><span class="line">     &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>从语法来看：调用了React-Native的一个构造方法，传入一个对象生成style，如果你写过React就应该很熟悉这种写法，和React的React.createCladd()语法是一样的，传入对象的key就相当于类名（我是这么理解），每个类也是一个对象，可以配置各种样式参数，总体来说和CSS的写法差不多，差别上把CSS的命名又“-”连字符改成驼峰写法，然后长度不用加单位“px”，字符串比如色值需要加引号写成字符串。<br>其实也是和React的行内样式写法的语法一样。</p>
+<h1 id="样式的使用:">样式的使用:</h1><p>所有的核心组件都支持样式属性<br><code>&lt;View style={style.base} /&gt;</code><br>当你需要设置多个属性类的时候，可以传入一个数组<br><code>&lt;View style={[style.base,style.backgroundColor]} /&gt;</code><br>在两个样式又冲突的情况下，以右边的值优先，有些情况下可以加一些条件判断样式是否加载，比如，<br><code>&lt;View style={[style.base,this.state.active&amp;&amp;style.active]} /&gt;</code><br>你也可以在组件中render样式，然而这种做法不推荐，其实就像一般html页面中行内样式不推荐一样，<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;View</span><br><span class="line">  style=&#123;[styles.base,&#123;<span class="variable">width</span>:<span class="keyword">this</span>.state.<span class="variable">width</span>, <span class="variable">height</span>:<span class="keyword">this</span>.state.<span class="variable">width</span>*<span class="keyword">this</span>.state.aspectRatio&#125;]&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="布局_–_flexbox">布局 – flexbox</h1><p>React-Native 采用flexbox布局方式，flexbox是css3引入的布局模型－－弹性盒子模型，旨在通过弹性的方式对齐和分布容器中的item，使其适应不同的宽度和高度。<br>在 React-Native 中的flexbox 是css3中flexbox的一个子集，并不支持所有的flexbox属性。<br>flexbox  布局分为flexbox container 和 flexbox item ：如下图<br><img src="/img/RN_img_4.png" alt=""><br>flexbox 是一个属性的集合，有些是属于container的有些湿属于item的。<br>可以看下面这幅图：<br><img src="/img/RN_img_5.png" alt=""><br>对于 container 有 main axis（主轴）和cross axis（交叉轴）。main size 和 cross size 分别是container主轴方向的交叉轴方向的宽度，main start 和 main end 分别是主轴的起始和结点，其他同理，container里面包含items。<br>下面介绍一下属性：</p>
+<h2 id="container的属性：">container的属性：</h2><ul>
+<li><p>flexDirection: ‘ row ‘ | ‘ column ‘<br>主轴的方向，水平 | 垂直，默认是 column ，item会按照主轴方向排列。</p>
+</li>
+<li><p>flexWrap: ‘ warp ‘ | ‘ nowrap ’<br>flexbox 会默认将所有元素基于一行，这个属性表示是否折行。</p>
+</li>
+<li><p>alignItems: ‘ flex-start ’ | ’ flex-end ’ | ’ center ’ | ‘ stretch ‘<br>表示item在 cross axis 上的对齐方式，基于cross axis的顶部｜基于cross axis的底部｜基于cross axis的中部｜布满整个。</p>
+</li>
+<li><p>justifyContent: ‘ flex-start ’ | ‘ flex-end ‘ | ‘ center ‘ | ‘ space-between ‘ | ’space-around’<br>表示item在 main axis 上的对齐方式，基于主轴开始｜基于主轴结束｜居中｜左右两边对齐，item间隔相等｜每个item两端间隔相等。</p>
+</li>
+</ul>
+<h2 id="item的属性">item的属性</h2><ul>
+<li><p>flex: num<br>item 所占的比例大小。</p>
+</li>
+<li><p>alignSelf:‘ flex-start ’ | ’ flex-end ’ | ’ center ’ | ‘ stretch ‘<br>它允许项目中当个item和其他itemsyou不一样的对齐方式，会覆盖alignitems的属性。</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<p>😏😏😏😏😏😏😏😏😏😏😏😏😏😏]]>
+    </summary>
+    
+      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+    
+      <category term="React-Native" scheme="http://qiutc.me/tags/React-Native/"/>
+    
+      <category term="learning notes" scheme="http://qiutc.me/tags/learning-notes/"/>
+    
+      <category term="React-Native" scheme="http://qiutc.me/categories/React-Native/"/>
+    
+      <category term="learning notes" scheme="http://qiutc.me/categories/React-Native/learning-notes/"/>
+    
+      <category term="FE" scheme="http://qiutc.me/categories/React-Native/learning-notes/FE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[[RN]1.环境搭建--React-Native learning notes]]></title>
