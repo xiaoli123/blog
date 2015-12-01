@@ -1055,7 +1055,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff98d4;
+  background: #7770a1;
 }
 .sidebar-nav {
   margin: 0;
@@ -2187,6 +2187,63 @@ ul li {
   max-width: 100%;
   width: auto;
   margin: 0;
+}
+.page-home .posts-expand .post-body span:hover {
+  color: rgba(24,101,136,0.8);
+}
+.header {
+  background: url("../images/banner.jpg") no-repeat;
+  background-size: 100% auto;
+  background-position: center top;
+}
+@media (max-width: 767px) {
+  .header {
+    background: #f5f5f5;
+  }
+}
+.header-inner {
+  padding: 50px 0 300px 0;
+}
+@media (max-width: 767px) {
+  .header-inner {
+    padding: 10px;
+  }
+}
+.one-column .main-inner {
+  max-width: 800px;
+  width: auto;
+}
+#content {
+  max-width: 800px;
+  width: auto;
+}
+@media (min-width: 767px) {
+  .one-column .header-inner {
+    width: 100%;
+  }
+  .site-nav .menu li a {
+    color: #fff;
+    font-size: 16px;
+  }
+  .menu {
+    position: relative;
+    top: -30px;
+    right: 30px;
+  }
+  .site-nav .menu li a:hover {
+    background: rgba(0,0,0,0.5);
+  }
+  .site-meta .brand .site-title {
+    color: #fff;
+    font-weight: normal;
+    font-size: 50px;
+  }
+  .site-meta {
+    position: relative;
+    left: 50%;
+    margin-left: -120px;
+    top: 150px;
+  }
 }
 .post-body p img {
   margin: 0 auto;
