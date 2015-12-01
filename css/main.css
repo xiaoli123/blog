@@ -1055,7 +1055,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f4425d;
+  background: #e352ff;
 }
 .sidebar-nav {
   margin: 0;
@@ -1969,7 +1969,7 @@ ul li {
 }
 .logo-line-before,
 .logo-line-after {
-  display: block;
+  display: none;
   overflow: hidden;
   margin: 0 auto;
   width: 75%;
