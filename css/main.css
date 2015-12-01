@@ -1055,7 +1055,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e47945;
+  background: #337857;
 }
 .sidebar-nav {
   margin: 0;
@@ -1144,7 +1144,7 @@ body {
   border: none;
 }
 .footer-inner {
-  text-align: center;
+  text-align: center !important;
 }
 .with-love {
   display: inline-block;
@@ -1156,10 +1156,6 @@ body {
 }
 .powered-by {
   margin-right: 10px;
-}
-.powered-by::after {
-  content: "|";
-  padding-left: 10px;
 }
 .cc-license {
   margin-top: 10px;
