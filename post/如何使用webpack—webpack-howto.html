@@ -81,6 +81,7 @@
 <![endif]-->
   
 
+
   <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
@@ -170,7 +171,6 @@
 
   
 </nav>
-
  </div>
     </header>
 
@@ -540,12 +540,12 @@
   由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
-<div class="theme-info">
+<!--div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
-</div>
+</div--!>
 <br/>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="showDays"></span>
@@ -615,158 +615,298 @@ document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
 
   
   
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+% include '../bootstrap.scrollspy.swig' %}
 
 
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
+ript type="text/javascript" id="sidebar.toc.highlight">
 
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
+document).ready(function () {
 
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
+ar tocSelector = '.post-toc';
 
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+r $tocSelector = $(tocSelector);
+    v
+ activeCurrentSelector = '.active-current';
+
+    $
+
+elector
+      .o
+'activate.bs.scrollspy', function () {
+        v
+ $currentActiveElement = $(tocSelector + ' .active').last();
+
+        r
+
+eCurrentActiveClass();
+        $cur
+ntActiveElement.addClass('active-current');
+
+        $toc
+
+ctor[0].scrollTop = $currentActiveElement.position().top;
       })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
+
+n('clear
+s.scrollspy', function () {
+        removeCur
+ntActiveClass();
       });
 
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
+    fun
+ion remov
+
+rentActiveClass () {
+      $(tocSelector +
+ ' + activeCurrentSelector)
+        .removeClass(a
+iveCurrentSelector.substring(1));
     }
 
-    function processTOC () {
+    function pro
+ssTOC
+
+{
       getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
+
+   toggleTOCOverflowIndi
+tors();
     }
 
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
+    function getTOCMa
+eight
 
-      $tocSelector.css('height', height);
+{
+      var height = $('.sidebar'
+height() -
+                   $tocSelector.
+sition().top -
+                   $('.post-toc-i
+icator-bottom').height();
+
+      $tocSelector.css('height',
+
+ht);
 
       return height;
     }
 
-    function toggleTOCOverflowIndicators () {
+    fun
+
+n toggleTOCOverflowI
+icato
+
+) {
       tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+        '.pos
+toc-indicator-top',
+
+tocSelector.scrollTop() > 0 ? 'sho
+ : 'hide'
       );
 
       tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+
+'.post-t
+
+ndicator-bottom',
+        $
+cSelector.scrollTop() >= $tocSelector
+ind('ol').height() - $tocSelector.height() ? 'hide' : 'show'
       )
     }
 
-    $(document).on('sidebar.motion.complete', function () {
+    $(document).on('sidebar.motion
+omplete
+ func
+
+ () {
       processTOC();
     });
 
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
+    $('body').scrollspy(
+target: tocSelector
+);
+
+
+ndow).on('resize', function () {
+      if ( $('.s
+ebar').hasClass('sidebar-active') ) {
+
+    processTOC();
       }
     });
 
-    onScroll($tocSelector);
+    onScroll($tocSel
+tor);
 
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
+    function o
+croll (
+ement)
 
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
+    element.on('mousewheel
 
-          toggleTOCOverflowIndicators();
+ouseScroll', function (event) {
+
+       var oe = event.originalEvent;
+          var delta = oe.wh
+lDelta || -oe.detail;
+
+          this.s
+ollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          e
+
+.preventDefault();
+
+          toggleTOCOverflowIndicator
+);
       });
     }
 
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
+    function
+
+verflowIndicator (indicator, action) {
+
+   var $i
+icato
+
+$(indicator);
+      var opacity = action === 'show' ? 0
+ : 0;
       $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
+
+    $indicator.velocity('stop').velocity({
+
+   opacity: opacity
+
+, { duration: 100 }) :
+        $indicator.stop
+.animate({
+          opaci
+: opacity
         }, 100);
-    }
+
 
   });
 </script>
 
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
+<script type="tex
+javascript" id="sidebar.na
+>
+  $(document).
+ady(f
 
-    $('.sidebar-nav li').on('click', function () {
+ion (
+{
+    var
+
+l = $('html');
+    var TAB_ANIMATE_DURATION = 20
+
+    var hasVelocity = $.isFuncti
+(html.velocity);
+
+    $('
+idebar-nav li').on('click', functio
+() {
       var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
+      var activeTab
+
+sName = 'sidebar-nav-active';
+      var activePane
+lassName = 'sidebar-panel
+ctive';
+      if (item.hasClass(activeTabClassName))
+
         return;
       }
 
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
+      var currentTarget = $('.
++ activePanelClassName);
+      var target = $(
+' + item.data('
+rget'))
 
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+     hasVelocity ?
+        currentTarget.velocity('trans
+ion.slideUpOut', TAB_ANIMATE_DURATION, function
+
+
           target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
+
+         .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURA
+ON)
+
+ddClass(activePanelClassName)
         }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMAT
+DURATION, function () {
+          currentTar
+t.hide();
+
+      target
             .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
+            .css({'opacity': 0, 'display': 'bloc
+})
+            .animate({ opaci
+: 1 }, TAB_ANIMA
+_DURATION, function
+) {
+              currentTarget.removeClass(activePa
+lClassName);
               target.addClass(activePanelClassName);
-            });
+
+    });
         });
 
-      item.siblings().removeClass(activeTabClassName);
+      item.siblings().removeClass(activeT
+ClassName);
       item.addClass(activeTabClassName);
-    });
+   });
 
-    $('.post-toc a').on('click', function (e) {
+    $('
+ost-toc a')
+
+'click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
+
+var targetSelector = escapeSelector(this
+etAttri
+
+('href'));
+      var offset = $(targetSelector)
+ffset().top;
+      hasVel
+ity ?
         html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
+          of
+et: offset  + 'px',
           mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
+
+  }) :
+        $('h
+l, body').stop().animate({
+          scrollTop: of
+et
         }, 500);
     });
 
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
+
+ Expand sidebar on post d
+ail page by
+fault, when post has a toc.
+    var $toc
+ntent = $('.post-toc-conten
+);
+    if (isDes
+op() &&
+
+FIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.
+ml().trim().length > 0) {
+        displaySide
+r();
       }
     }
   });
