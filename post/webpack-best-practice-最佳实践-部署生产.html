@@ -53,7 +53,8 @@ package.json 命令配置既然是需要用到的是实际项目的">
 <meta property="og:description" content="前言最近一段时间在项目中使用了webpack和React来开发，总之来说也是遇到了许多坑，webpack毕竟还是比较新的技术，而且也很难有一个很好的构建案例来适应所有的项目，总之，在看了许多项目demo和官方文档以及官方推荐的tutorials之后，也算是自己总结出的一套最佳实践吧。
 代码代码可以在我的Github上。可以戳这里～～。
 package.json 命令配置既然是需要用到的是实际项目的">
-<meta property="og:updated_time" content="2015-12-02T04:13:49.000Z">
+<meta property="og:image" content="http://qiutc.me/img/webpack.png">
+<meta property="og:updated_time" content="2015-12-02T04:24:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack-best-practice-最佳实践-部署生产">
 <meta name="twitter:description" content="前言最近一段时间在项目中使用了webpack和React来开发，总之来说也是遇到了许多坑，webpack毕竟还是比较新的技术，而且也很难有一个很好的构建案例来适应所有的项目，总之，在看了许多项目demo和官方文档以及官方推荐的tutorials之后，也算是自己总结出的一套最佳实践吧。
@@ -279,7 +280,8 @@ package.json 命令配置既然是需要用到的是实际项目的">
       
 
       
-        <span itemprop="articleBody"><h1 id="前言">前言</h1><p>最近一段时间在项目中使用了webpack和React来开发，总之来说也是遇到了许多坑，webpack毕竟还是比较新的技术，而且也很难有一个很好的构建案例来适应所有的项目，总之，在看了许多项目demo和官方文档以及官方推荐的tutorials之后，也算是自己总结出的一套最佳实践吧。</p>
+        <span itemprop="articleBody"><p><img src="/img/webpack.png" alt="webpack"></p>
+<h1 id="前言">前言</h1><p>最近一段时间在项目中使用了webpack和React来开发，总之来说也是遇到了许多坑，webpack毕竟还是比较新的技术，而且也很难有一个很好的构建案例来适应所有的项目，总之，在看了许多项目demo和官方文档以及官方推荐的tutorials之后，也算是自己总结出的一套最佳实践吧。</p>
 <h2 id="代码">代码</h2><p>代码可以在我的<a href="https://github.com/TongchengQiu/webpack-best-practice" target="_blank" rel="external">Github</a>上。<br><a href="https://github.com/TongchengQiu/webpack-best-practice" target="_blank" rel="external">可以戳这里～～</a>。</p>
 <h1 id="package-json_命令配置">package.json 命令配置</h1><p>既然是需要用到的是实际项目的构建，那么必然就要考虑开发环境和生产环境下的配置项了：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"webpack --progress --colors --watch"</span>,</span><br><span class="line">    <span class="string">"watch"</span>: <span class="string">"webpack-dev-server --hot --progress --colors"</span>,</span><br><span class="line">    <span class="string">"dist"</span>: <span class="string">"NODE_ENV=production webpack --progress --colors"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以在目录下执行 <code>npm run build</code> , <code>npm run watch</code> , <code>npm run dist</code><br>解释一下:</p>
