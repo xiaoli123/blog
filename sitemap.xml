@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
+    <lastmod>2015-12-11T04:36:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
     <lastmod>2015-12-08T06:27:17.000Z</lastmod>
   </url>
