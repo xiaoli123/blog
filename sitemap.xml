@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
+    <lastmod>2015-12-21T09:09:38.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
     <lastmod>2015-12-11T04:36:31.000Z</lastmod>
   </url>
