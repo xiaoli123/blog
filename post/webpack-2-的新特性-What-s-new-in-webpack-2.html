@@ -43,20 +43,23 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
-主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。12345import &amp;#123; currentPage, r">
+<meta name="description" content="原文 What’s new in webpack 2
+webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
+主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。12345i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack 2 的新特性 - What's new in webpack 2">
 <meta property="og:url" content="http://qiutc.me/post/webpack-2-的新特性-What-s-new-in-webpack-2.html">
 <meta property="og:site_name" content="阿城的blog">
-<meta property="og:description" content="webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
-主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。12345import &amp;#123; currentPage, r">
+<meta property="og:description" content="原文 What’s new in webpack 2
+webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
+主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。12345i">
 <meta property="og:image" content="http://qiutc.me/img/webpack.png">
-<meta property="og:updated_time" content="2016-02-04T12:44:18.000Z">
+<meta property="og:updated_time" content="2016-02-04T12:46:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack 2 的新特性 - What's new in webpack 2">
-<meta name="twitter:description" content="webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
-主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。12345import &amp;#123; currentPage, r">
+<meta name="twitter:description" content="原文 What’s new in webpack 2
+webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
+主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。12345i">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -250,6 +253,7 @@
 
       
         <span itemprop="articleBody"><p><img src="/img/webpack.png" alt="webpack"></p>
+<p>原文 <a href="https://gist.github.com/sokra/27b24881210b56bbaff7" target="_blank" rel="external">What’s new in webpack 2</a></p>
 <h1 id="webpack_2_中的新特性">webpack 2 中的新特性</h1><p>创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。</p>
 <h1 id="主要的变化">主要的变化</h1><h2 id="ES6_Modules">ES6 Modules</h2><p>webpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 <code>import</code>和<code>export</code>了，而不用把他们转化成 CommonJS 来处理了。<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123; currentPage, readPage &#125; from "./book"<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">currentPage === 0<span class="comment">;</span></span><br><span class="line">readPage()<span class="comment">;</span></span><br><span class="line">currentPage === 1<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// book.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> currentPage = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">readPage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    currentPage++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="string">"This is a book"</span>;</span><br></pre></td></tr></table></figure>
