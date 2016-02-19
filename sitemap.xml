@@ -2,22 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8-React-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6.html</loc>
+    <lastmod>2016-02-19T07:26:59.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/webpack-2-%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7-What-s-new-in-webpack-2.html</loc>
     <lastmod>2016-02-04T12:46:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html</loc>
+    <loc>http://qiutc.me/post/RN-2-%E6%A0%B7%E5%BC%8Fstyle-React-Native-learning-notes.html</loc>
     <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
@@ -27,17 +22,27 @@
   </url>
   
   <url>
+    <loc>http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html</loc>
+    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
+    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
     <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/RN-2-%E6%A0%B7%E5%BC%8Fstyle-React-Native-learning-notes.html</loc>
+    <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
     <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
+    <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
     <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
