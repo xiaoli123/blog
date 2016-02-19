@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-02-19T07:26:59.000Z</updated>
+  <updated>2016-02-19T07:39:13.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://qiutc.me/post/%E4%BD%BF%E7%94%A8-React-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6.html"/>
     <id>http://qiutc.me/post/使用-React-实现一个轮播组件.html</id>
     <published>2016-02-19T06:03:49.000Z</published>
-    <updated>2016-02-19T07:26:59.000Z</updated>
+    <updated>2016-02-19T07:39:13.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/react.png" alt="React"></p>
-<h1 id="tip">tip</h1><p>React 刚出来不久，组件还比较少，不像 jquery 那样已经有很多现成的插件了，当是就自己写了一个基于 React 的轮播组件，当然只是一个小 demo，刚刚有用 es6 的语法重新改了改，就想着写一个小教程给新手，如何实现一个 React 的小组件。<br>先放上仓库地址，可以先 clone 来看看代码：<a href="https://github.com/TongchengQiu/react-slider" target="_blank" rel="external">https://github.com/TongchengQiu/react-slider</a>。<br>react-slider 使一个图片轮播的组件，支持的配置有 图片（必须好不好，要不然轮播毛）、轮播图片的速度、是否自动轮播、自动轮播的时候鼠标放上去是否暂停、自动轮播速度、是否需要前后箭头、是否需要 dot （我不知道怎么表述好，反正意思你懂）。</p>
+<h1 id="tip">tip</h1><p>React 刚出来不久，组件还比较少，不像 jquery 那样已经有很多现成的插件了，当是就自己写了一个基于 React 的轮播组件，当然只是一个小 demo，刚刚有用 es6 的语法重新改了改，就想着写一个小教程给新手，如何实现一个 React 的小组件。<br>先放上仓库地址，可以先 clone 来看看代码：<a href="https://github.com/TongchengQiu/react-slider" target="_blank" rel="external">https://github.com/TongchengQiu/react-slider</a>。<br>react-slider 是一个图片轮播的组件，支持的配置有 图片（必须好不好，要不然轮播毛）、轮播图片的速度、是否自动轮播、自动轮播的时候鼠标放上去是否暂停、自动轮播速度、是否需要前后箭头、是否需要 dot （我不知道怎么表述好，反正意思你懂）。</p>
 <h1 id="第一步，需求">第一步，需求</h1><p>首先，写一个组件必须先考虑改组件的需求有哪些，支持的配置需要哪些。<br>如上已经说了改组件的需求：</p>
 <ul>
 <li>轮播的图片</li>
