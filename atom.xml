@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-03-01T02:37:40.000Z</updated>
+  <updated>2016-03-01T02:43:46.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,8 +19,9 @@
     <link href="http://qiutc.me/post/JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%80-%E7%BF%BB%E8%AF%91.html"/>
     <id>http://qiutc.me/post/JavaScript中的函数式编程一-翻译.html</id>
     <published>2016-03-01T01:32:47.000Z</published>
-    <updated>2016-03-01T02:37:40.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="tips">tips</h1><p>原文链接: <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_blank" rel="external">http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/</a>;<br>原文作者: <a href="http://jrsinclair.com/about.html" target="_blank" rel="external">James Sinclair</a>;</p>
+    <updated>2016-03-01T02:43:46.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/img/js.jpeg" alt="js"></p>
+<h1 id="tips">tips</h1><p>原文链接: <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_blank" rel="external">http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/</a>;<br>原文作者: <a href="http://jrsinclair.com/about.html" target="_blank" rel="external">James Sinclair</a>;</p>
 <h1 id="JavaScript_函数式编程">JavaScript 函数式编程</h1><p>这篇文章是介绍函数式编程的四篇文章中的第一篇。在这篇文章中，我们来看一下让 JavaScript 成为适合函数式编程的组成部分，并且看看为什么它将会是很有用的。</p>
 <ul>
 <li>Part1 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_blank" rel="external">组成部分和动机</a>,</li>
@@ -49,7 +50,8 @@
 <p>这变得更简洁了，并且更易于维护，这种把函数座位参数传递的能力是我们看到了更多的可能性，在下一节我们将会看到如何使用这种能力是数组变得更友好。<br>未亡待续…<br>阅读下一节～</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="tips">tips</h1><p>原文链接: <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_b]]>
+    <![CDATA[<p><img src="/img/js.jpeg" alt="js"></p>
+<h1 id="tips">tips</h1><p>原文链接: <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to]]>
     </summary>
     
       <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
