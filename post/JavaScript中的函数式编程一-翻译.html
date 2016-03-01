@@ -1,0 +1,750 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta baidu-gxt-verify-token="ca8f032797b876ef3be37c3d492168a0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="阿城的个人博客~" />
+
+
+
+  <meta name="keywords" content="JavaScript,前端,教程,翻译," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="阿城的blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="tips原文链接: http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/;原文作者: James Sinclair;
+JavaScript 函数式编程这篇文章是介绍函数式编程的四篇文章中的第一篇。在这篇文章中，我们来看一下让 JavaScript 成为适合函数式编程的组成部分，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的函数式编程一(翻译)">
+<meta property="og:url" content="http://qiutc.me/post/JavaScript中的函数式编程一-翻译.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="tips原文链接: http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/;原文作者: James Sinclair;
+JavaScript 函数式编程这篇文章是介绍函数式编程的四篇文章中的第一篇。在这篇文章中，我们来看一下让 JavaScript 成为适合函数式编程的组成部分，">
+<meta property="og:updated_time" content="2016-03-01T02:37:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中的函数式编程一(翻译)">
+<meta name="twitter:description" content="tips原文链接: http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/;原文作者: James Sinclair;
+JavaScript 函数式编程这篇文章是介绍函数式编程的四篇文章中的第一篇。在这篇文章中，我们来看一下让 JavaScript 成为适合函数式编程的组成部分，">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> JavaScript中的函数式编程一(翻译) | 阿城的blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">阿城的blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              JavaScript中的函数式编程一(翻译)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-03-01T09:32:47+08:00" content="2016-03-01">
+            2016-03-01
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                  <span itemprop="name">JavaScript</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/post/JavaScript中的函数式编程一-翻译.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="post/JavaScript中的函数式编程一-翻译.html" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="tips">tips</h1><p>原文链接: <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_blank" rel="external">http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/</a>;<br>原文作者: <a href="http://jrsinclair.com/about.html" target="_blank" rel="external">James Sinclair</a>;</p>
+<h1 id="JavaScript_函数式编程">JavaScript 函数式编程</h1><p>这篇文章是介绍函数式编程的四篇文章中的第一篇。在这篇文章中，我们来看一下让 JavaScript 成为适合函数式编程的组成部分，并且看看为什么它将会是很有用的。</p>
+<ul>
+<li>Part1 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_blank" rel="external">组成部分和动机</a>,</li>
+<li>Part2 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/" target="_blank" rel="external">使用数组和列表</a>,</li>
+<li>Part3 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-functions/" target="_blank" rel="external">生成函数的函数</a>,</li>
+<li>Part4 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-functions/" target="_blank" rel="external">使用函数式编程的风格</a>,</li>
+</ul>
+<h1 id="什么是函数？">什么是函数？</h1><p>为什么函数式 JavaScript 如此夸大其词呢？为什么它叫做函数式？它不是像任何人去写一个功能失调或者没有函数式的 JavaScript。它的好处是什么？你的烦恼是什么？<br>对于我来讲，学习函数式编程就像得到了一个<a href="http://youtu.be/4yr_etbfZtQ" target="_blank" rel="external">多功能食品料理机</a>一样：</p>
+<ul>
+<li>它的前提是需要一些学习成本</li>
+<li>你可以告诉你的朋友和家人它是多么令人惊喜</li>
+<li>它们将会开始怀疑你是不是加入了某个异教团<br>但是，它确实让很多任务变得简单，它甚至可以自动处理一些在某些方面相当无聊和浪费时间的东西。</li>
+</ul>
+<h1 id="组成">组成</h1><p>在我们去思考这为什么是个好主意之前，让我们用 JavaScript 的一些基本特性去实现函数式编程。在 JavaScript 中，有两个关键的组成部分：变量和函数，变量就像一个容器，我们可以把一些东西放在里面，就像这样：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> myContainer</span> = <span class="string">"Hey everybody! Come see how good I look!"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码创建的一个容器，并且将一个字符串放在了里面。<br>在另一方面，函数，它是一种途径可以绑定一些指令用于我们可以再使用它，它还能让事情变得有条理，因此我们不用一下子去考虑每一件事情。我们可以创建一个函数像这样：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span></span> <span class="built_in">log</span>(someVariable) &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(someVariable);</span><br><span class="line">    <span class="keyword">return</span> someVariable;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们可以这样调用它：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">log</span>(myContainer);</span><br><span class="line"><span class="comment">// Hey everybody! Come see how good I look!</span></span><br></pre></td></tr></table></figure></p>
+<p>当时，如果你之前了解过一些 JavaScript ，就会知道我们还可以像下面这样编写和调用函数：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span> = <span class="function"><span class="keyword">function</span><span class="params">(someVariable)</span></span> &#123;</span><br><span class="line">    console.<span class="built_in">log</span>(someVariable);</span><br><span class="line">    <span class="keyword">return</span> someVariable;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">log</span>(myContainer);</span><br><span class="line">// Hey everybody<span class="comment">! Come see how good I look!</span></span><br></pre></td></tr></table></figure></p>
+<p>让我们仔细观察，当我们用这种方式定义一个函数的时候，相当于我们创造一个叫做 <code>log</code> 的变量，然后把一个函数赋值给它。事实也确实如此。我们的 <code>log()</code> 函数是一个变量，这意味着我们可以对他做和其他变量一样的事情。<br>让我们试一试，或许我们可以把一个函数作为一个参数传给另一个函数：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> classyMessage = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Stay classy San Diego!"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(classyMessage);</span><br><span class="line"><span class="comment">// [Function]</span></span><br></pre></td></tr></table></figure></p>
+<p>hahahaha，好像没什么有用的惊喜啊，让我们尝试用不同的方式：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span><span class="params">(thing)</span> </span>&#123;</span><br><span class="line">    thing();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sayBigDeal = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> message = <span class="string">"I’m kind of a big deal"</span>;</span><br><span class="line">    log(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doSomething(sayBigDeal);</span><br><span class="line"><span class="comment">// I’m kind of a big deal</span></span><br></pre></td></tr></table></figure></p>
+<p>这应该不会让你感到非常激动，当时它让那些计算机科学家非常地激动。它能够把函数放在一个变量中，有时候可以这么说“函数是 JavaScript 中的第一类对象”。这意味着处理对待函数和其他的数据类型就像对象或者字符串没什么两样。并且这一个小的特性将会惊人地有用，为了搞明白为什么，我们得谈一谈 DRY 原则。</p>
+<h1 id="不要重复">不要重复</h1><p>程序猿喜欢说 DRY 原则 ———— 不要重复你自己，它的意思是说，如果你需要去多次执行同样的任务，把它们绑定在一类可以重复使用的包里面（就像函数），这样的话，如果你想要调整任务设置的话，你只需在一个地方改动就行了——函数。<br>让我们看看这个例子，我们使用一个轮播库在页面上放三个轮播组件：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el1 = <span class="built_in">document</span>.getElementById(<span class="string">'main-carousel'</span>);</span><br><span class="line"><span class="keyword">var</span> slider1 = <span class="keyword">new</span> Carousel(el1, <span class="number">3000</span>);</span><br><span class="line">slider1.init();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> el2 = <span class="built_in">document</span>.getElementById(<span class="string">'news-carousel'</span>);</span><br><span class="line"><span class="keyword">var</span> slider2 = <span class="keyword">new</span> Carousel(el2, <span class="number">5000</span>);</span><br><span class="line">slider2.init();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> el3 = <span class="built_in">document</span>.getElementById(<span class="string">'events-carousel'</span>);</span><br><span class="line"><span class="keyword">var</span> slider3 = <span class="keyword">new</span> Carousel(el3, <span class="number">7000</span>);</span><br><span class="line">slider3.init();</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码有些重复，我们想要给页面上的元素初始化一个轮播组件，并且每个都带有一个特定的 ID ，让我们看看如何在函数中去初始化一个轮播组件，然后给每个 ID 调用这个函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initialiseCarousel</span>(<span class="params">id, frequency</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    <span class="keyword">var</span> slider = <span class="keyword">new</span> Carousel(el, frequency);</span><br><span class="line">    slider.init();</span><br><span class="line">    <span class="keyword">return</span> slider;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">initialiseCarousel(<span class="string">'main-carousel'</span>, <span class="number">3000</span>);</span><br><span class="line">initialiseCarousel(<span class="string">'news-carousel'</span>, <span class="number">5000</span>);</span><br><span class="line">initialiseCarousel(<span class="string">'events-carousel'</span>, <span class="number">7000</span>);</span><br></pre></td></tr></table></figure></p>
+<p>这样，代码就非常简洁了并且很好去维护。我们可以遵循下面一个准则：当我们需要对不同的数据做一系列相同的操作的时候，我们可以把这些操作包装在一个函数中。当是如果这些操作也存在一些不同呢？<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> unicornEl = <span class="built_in">document</span>.getElementById(<span class="string">'unicorn'</span>);</span><br><span class="line">unicornEl.className += <span class="string">' magic'</span>;</span><br><span class="line">spin(unicornEl);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fairyEl = <span class="built_in">document</span>.getElementById(<span class="string">'fairy'</span>);</span><br><span class="line">fairyEl.className += <span class="string">' magic'</span>;</span><br><span class="line">sparkle(fairyEl);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> kittenEl = <span class="built_in">document</span>.getElementById(<span class="string">'kitten'</span>);</span><br><span class="line">kittenEl.className += <span class="string">' magic'</span>;</span><br><span class="line">rainbowTrail(kittenEl);</span><br></pre></td></tr></table></figure></p>
+<p>去重构这些代码有些复杂，它确实是一个重复的模式，但是我们给每个元素调用了不同的函数，我们可以第一步先包装 <code>document.getElementById()</code> 的调用和添加 <code>className</code> 的操作到一个函数，这样可以降低一些重复度：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addMagicClass</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    element.className += <span class="string">' magic'</span>;</span><br><span class="line">    <span class="keyword">return</span> element;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> unicornEl = addMagicClass(<span class="string">'unicorn'</span>);</span><br><span class="line">spin(unicornEl);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fairyEl = addMagicClass(<span class="string">'fairy'</span>);</span><br><span class="line">sparkle(fairyEl);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> kittenEl = addMagicClass(<span class="string">'kitten'</span>);</span><br><span class="line">rainbow(kittenEl);</span><br></pre></td></tr></table></figure></p>
+<p>但是我们怎样让他变得更 DRY 一些呢？如果你记得 JavaScript 可以允许我们把一个函数作为一个参数传给另一个函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addMagic</span>(<span class="params">id, effect</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    element.className += <span class="string">' magic'</span>;</span><br><span class="line">    effect(element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addMagic(<span class="string">'unicorn'</span>, spin);</span><br><span class="line">addMagic(<span class="string">'fairy'</span>, sparkle);</span><br><span class="line">addMagic(<span class="string">'kitten'</span>, rainbow);</span><br></pre></td></tr></table></figure></p>
+<p>这变得更简洁了，并且更易于维护，这种把函数座位参数传递的能力是我们看到了更多的可能性，在下一节我们将会看到如何使用这种能力是数组变得更友好。<br>未亡待续…<br>阅读下一节～</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+            <a href="/tags/教程/" rel="tag">#教程</a>
+          
+            <a href="/tags/翻译/" rel="tag">#翻译</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/使用-React-实现一个轮播组件.html" rel="next">使用 React 实现一个轮播组件</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="post/JavaScript中的函数式编程一-翻译.html"
+     data-title="JavaScript中的函数式编程一(翻译)"
+     data-content=""
+     data-url="http://qiutc.me/post/JavaScript中的函数式编程一-翻译.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="post/JavaScript中的函数式编程一-翻译.html"
+                   data-title="JavaScript中的函数式编程一(翻译)" data-url="http://qiutc.me/post/JavaScript中的函数式编程一-翻译.html">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/qtc_avatar.jpg" alt="阿城" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">阿城</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">阿城的个人博客~</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tongchengqiu" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/tongchengqiu" target="_blank">Twitter</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/tongchengqiu" target="_blank">Zhihu</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/tongchengqiu" target="_blank">Weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tips"><span class="nav-number">1.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript_函数式编程"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 函数式编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是函数？"><span class="nav-number">3.</span> <span class="nav-text">什么是函数？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组成"><span class="nav-number">4.</span> <span class="nav-text">组成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不要重复"><span class="nav-number">5.</span> <span class="nav-text">不要重复</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿城</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<br/>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="showDays"></span>
+<script>
+var birthDay = new Date("10/03/2015");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+---
+<span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
