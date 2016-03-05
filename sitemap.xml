@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%BA%8C-%E7%BF%BB%E8%AF%91.html</loc>
+    <lastmod>2016-03-05T04:22:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%80-%E7%BF%BB%E8%AF%91.html</loc>
-    <lastmod>2016-03-01T02:43:46.000Z</lastmod>
+    <lastmod>2016-03-05T04:22:21.000Z</lastmod>
   </url>
   
   <url>
@@ -18,11 +23,6 @@
   
   <url>
     <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html</loc>
     <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
@@ -48,6 +48,11 @@
   
   <url>
     <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
+    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html</loc>
     <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
