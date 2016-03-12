@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/categories/index.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/tags/index.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/RN-2-%E6%A0%B7%E5%BC%8Fstyle-React-Native-learning-notes.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/404.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/AARRR%E8%BF%90%E8%90%A5%E6%A8%A1%E5%9E%8B.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/about/index.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%BA%8C-%E7%BF%BB%E8%AF%91.html</loc>
     <lastmod>2016-03-05T04:22:31.000Z</lastmod>
   </url>
@@ -19,71 +84,6 @@
   <url>
     <loc>http://qiutc.me/post/webpack-2-%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7-What-s-new-in-webpack-2.html</loc>
     <lastmod>2016-02-04T12:46:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/RN-2-%E6%A0%B7%E5%BC%8Fstyle-React-Native-learning-notes.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/AARRR%E8%BF%90%E8%90%A5%E6%A8%A1%E5%9E%8B.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/404.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/tags/index.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/categories/index.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/about/index.html</loc>
-    <lastmod>2016-02-02T09:31:14.000Z</lastmod>
   </url>
   
 </urlset>
