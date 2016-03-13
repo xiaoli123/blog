@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
-    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+    <loc>http://qiutc.me/post/A-Gentle-Introduction-to-Functional-JavaScript-part-1.html</loc>
+    <lastmod>2016-03-12T02:26:04.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
+    <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
     <lastmod>2016-03-12T01:38:01.000Z</lastmod>
   </url>
   
@@ -52,12 +52,17 @@
   </url>
   
   <url>
+    <loc>http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html</loc>
+    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/AARRR%E8%BF%90%E8%90%A5%E6%A8%A1%E5%9E%8B.html</loc>
     <lastmod>2016-03-12T01:38:01.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html</loc>
+    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
     <lastmod>2016-03-12T01:38:01.000Z</lastmod>
   </url>
   
@@ -69,11 +74,6 @@
   <url>
     <loc>http://qiutc.me/post/JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%BA%8C-%E7%BF%BB%E8%AF%91.html</loc>
     <lastmod>2016-03-05T04:22:31.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/JavaScript%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%80-%E7%BF%BB%E8%AF%91.html</loc>
-    <lastmod>2016-03-05T04:22:21.000Z</lastmod>
   </url>
   
   <url>
