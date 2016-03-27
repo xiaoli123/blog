@@ -362,6 +362,11 @@ dd {
   width: 100%;
   height: 100%;
 }
+.post-body-btn {
+  text-decoration: none;
+  border: none;
+  color: #777;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -1055,7 +1060,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7ad4;
+  background: #ff87d6;
 }
 .sidebar-nav {
   margin: 0;

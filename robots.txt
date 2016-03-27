@@ -1,5 +1,5 @@
 # robots.txt
  User-agent: Baiduspider
- Disallow: /
+ Disallow:
  User-agent: Googlebot
  Disallow:

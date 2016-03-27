@@ -33,7 +33,7 @@
 
 
 
-  <meta name="keywords" content="FE,React-Native,learning notes," />
+  <meta name="keywords" content="JavaScript,前端,教程,翻译," />
 
 
 
@@ -44,31 +44,20 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
-React-Native for Android 的环境搭建要求：
-前提 OS X (假设大家有用Mac了😏ß);
-Homebrew (包管理器)(用来安装Watchman 和 Flow);
-安装node.js 4.0 或者以上;">
+<meta name="description" content="tips原文链接: http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/;原文作者: James Sinclair;
+JavaScript 函数式编程这篇文章是介绍javascript函数式编程系列中的第四篇文章，在上一篇文章中我们学习到了如何在数组和列表中使用函数式编程，在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[RN]1.环境搭建--React-Native learning notes">
-<meta property="og:url" content="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
+<meta property="og:title" content="JavaScript中的函数式编程三(翻译)">
+<meta property="og:url" content="http://qiutc.me/post/a-gentle-introduction-to-functional-javascript-part-3.html">
 <meta property="og:site_name" content="阿城的blog">
-<meta property="og:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
-React-Native for Android 的环境搭建要求：
-前提 OS X (假设大家有用Mac了😏ß);
-Homebrew (包管理器)(用来安装Watchman 和 Flow);
-安装node.js 4.0 或者以上;">
-<meta property="og:image" content="http://qiutc.me/img/RN_img_1.png">
-<meta property="og:image" content="http://qiutc.me/img/RN_img_2.png">
-<meta property="og:image" content="http://qiutc.me/img/RN_img_3.png">
-<meta property="og:updated_time" content="2016-03-12T01:38:01.000Z">
+<meta property="og:description" content="tips原文链接: http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/;原文作者: James Sinclair;
+JavaScript 函数式编程这篇文章是介绍javascript函数式编程系列中的第四篇文章，在上一篇文章中我们学习到了如何在数组和列表中使用函数式编程，在">
+<meta property="og:image" content="http://qiutc.me/img/js.jpeg">
+<meta property="og:updated_time" content="2016-03-27T07:04:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[RN]1.环境搭建--React-Native learning notes">
-<meta name="twitter:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
-React-Native for Android 的环境搭建要求：
-前提 OS X (假设大家有用Mac了😏ß);
-Homebrew (包管理器)(用来安装Watchman 和 Flow);
-安装node.js 4.0 或者以上;">
+<meta name="twitter:title" content="JavaScript中的函数式编程三(翻译)">
+<meta name="twitter:description" content="tips原文链接: http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/;原文作者: James Sinclair;
+JavaScript 函数式编程这篇文章是介绍javascript函数式编程系列中的第四篇文章，在上一篇文章中我们学习到了如何在数组和列表中使用函数式编程，在">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -86,7 +75,7 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
 })();
 </script>
 
-  <title> [RN]1.环境搭建--React-Native learning notes | 阿城的blog </title>
+  <title> JavaScript中的函数式编程三(翻译) | 阿城的blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -213,7 +202,7 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
           
           
             
-              [RN]1.环境搭建--React-Native learning notes
+              JavaScript中的函数式编程三(翻译)
             
           
         </h1>
@@ -222,8 +211,8 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-11-21T20:57:35+08:00" content="2015-11-21">
-            2015-11-21
+          <time itemprop="dateCreated" datetime="2016-03-13T20:30:08+08:00" content="2016-03-13">
+            2016-03-13
           </time>
         </span>
 
@@ -232,8 +221,8 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/React-Native/" itemprop="url" rel="index">
-                  <span itemprop="name">React-Native</span>
+                <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                  <span itemprop="name">JavaScript</span>
                 </a>
               </span>
 
@@ -248,8 +237,8 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/post/RN-1-环境搭建-React-Native-learning-notes.html#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html" itemprop="commentsCount"></span>
+              <a href="/post/a-gentle-introduction-to-functional-javascript-part-3.html#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="post/a-gentle-introduction-to-functional-javascript-part-3.html" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -263,27 +252,29 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
       
 
       
-        <span itemprop="articleBody"><h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
-<h1 id="React-Native_for_Android_的环境搭建">React-Native for Android 的环境搭建</h1><h3 id="要求：">要求：</h3><ol>
-<li>前提 OS X (假设大家有用Mac了😏ß);</li>
-<li><a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> (包管理器)(用来安装Watchman 和 Flow);</li>
-<li>安装<a href="https://nodejs.org/" target="_blank" rel="external">node.js</a> 4.0 或者以上;</li>
-<li>安装 watchman(文件监控) ,在命令行: <code>brew install watchman</code>;</li>
-<li>安装 flow ,在命令行: <code>brew install flow</code>;</li>
-<li>安装最新的 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a>;</li>
-<li>安装 SDK ,在命令行: <code>brew install android-idk</code>;</li>
-<li>配置 android 环境:<br>在 ~/.bashrc, ~/.bash_profile写入<br>  <code>export ANDROID_HOME=/usr/local/opt/android-sdk</code>;<br>(在这一步可以先到~目录下，然后如果没有.bashrc，就创建一个，然后vim .bashrc，然后写入上面代码，按esc键，输入<code>:wq</code>，然后自动保存退出，.bash_profile同理);</li>
-<li>配置 SDK:<br>新开一个shell窗口：运行 <code>android</code>,<br>会弹出 Android SDK Manager窗口，<br>安装下列选项:<br><img src="/img/RN_img_1.png" alt=""><br><img src="/img/RN_img_2.png" alt=""><br>(tip: 这一步可能需要翻墙);</li>
-<li>安装 <a href="https://www.genymotion.com/#!/download/freemium/mac/classical" target="_blank" rel="external">Genymotion</a> (android 的模拟器,推荐使用这个吧);</li>
-<li>安装react native 的命令行工具包,在命令行: <code>npm install -g react-native-cli</code>;</li>
-<li>命令行进入需要创建的文件夹目录下: <code>react-native init AwesomeProject</code>，会自动获取下载react native的包（建议翻墙）;</li>
-<li><p>项目的目录结构如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="tag">android</span>           <span class="id">#android</span>需要的文件夹</span><br><span class="line">├── <span class="tag">ios</span>               <span class="id">#ios</span>需要的文件夹</span><br><span class="line">├── <span class="tag">node_modules</span>      <span class="id">#npm</span>包文件夹</span><br><span class="line">├── <span class="tag">index</span><span class="class">.android</span><span class="class">.js</span>  <span class="id">#android</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">├── <span class="tag">index</span><span class="class">.ios</span><span class="class">.js</span>      <span class="id">#ios</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">└── <span class="tag">package</span><span class="class">.json</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开Genymotion,下载安装最新的android模拟器，打开;</p>
-</li>
-<li>在文件夹下运行命令行: <code>react-native run-android</code>,等待安装，<br>然后android的模拟器就会出现：<br><img src="/img/RN_img_3.png" alt=""><br>ß<h2 id="完成！">完成！</h2></li>
-</ol>
+        <span itemprop="articleBody"><p><img src="/img/js.jpeg" alt="js"></p>
+<h1 id="tips">tips</h1><p>原文链接: <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/" target="_blank" rel="external">http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/</a>;<br>原文作者: <a href="http://jrsinclair.com/about.html" target="_blank" rel="external">James Sinclair</a>;</p>
+<h1 id="JavaScript_函数式编程">JavaScript 函数式编程</h1><p>这篇文章是介绍javascript函数式编程系列中的第四篇文章，在上一篇文章中我们学习到了如何在数组和列表中使用函数式编程，在这篇文章中，我们研究一些可以创造函数的高阶函数。</p>
+<ul>
+<li>Part1 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/" target="_blank" rel="external">组成部分和动机</a>,</li>
+<li>Part2 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-arrays/" target="_blank" rel="external">使用数组和列表</a>,</li>
+<li>Part3 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-functions/" target="_blank" rel="external">生成函数的函数</a>,</li>
+<li>Part4 <a href="http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-functions/" target="_blank" rel="external">使用函数式编程的风格</a>,</li>
+</ul>
+<h1 id="创建函数的函数">创建函数的函数</h1><p>（真拗口－默默吐槽）<br>在上一篇文章的末尾，我说过仅仅把处理一系列过程到函数并不适用于所有情况，因为如果只是创造一个执行一系列过程的函数有时候会让我们的代码失控起来。我的意思是说我吗一开始抽象收集了一些命令道一个函数中，然后抽象出for循环到<code>map</code>和<code>reduce</code>中，接下来我们应该做的是抽象重构一部分来创造函数。我们开始使用函数去创造函数，这将会非常有用并且我们的代码也会更加幽雅，但是这看起来可能会和你平常写的javascript有点不同。</p>
+<h1 id="更多的创建块">更多的创建块</h1><p>能够创建函数的函数通常称为高阶函数，为了去理解它，我看需要重新看看javascript的一些特性，它们让高阶函数成为可能。</p>
+<h2 id="闭包和作用域">闭包和作用域</h2><p>javascript中让人很头疼的特性中有一个是一个函数可以被“看见”。在javascript中，如果你定义了一个变量在一个函数中，在这个函数的外部就不能“看见”这一个变量，比如：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> thing = <span class="string">'bat'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sing = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// This function can 'see' thing</span></span><br><span class="line">    <span class="keyword">var</span> line = <span class="string">'Twinkle, twinkle, little '</span> + thing;</span><br><span class="line">    log(line);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">sing();</span><br><span class="line"><span class="comment">// Twinkle, twinkle, little bat</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Outside the function we can't see message though</span></span><br><span class="line">log(line);</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>然而，如果你在一个函数中定义课一个函数，里面的函数可以“看见”外面的这个函数里面的变量：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> outerVar = <span class="string">'Hatter'</span>;</span><br><span class="line">    <span class="keyword">var</span> inner = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="comment">// We can 'see' outerVar here</span></span><br><span class="line">         <span class="built_in">console</span>.log(outerVar);</span><br><span class="line">         <span class="comment">// Hatter</span></span><br><span class="line"></span><br><span class="line">         <span class="keyword">var</span> innerVar = <span class="string">'Dormouse'</span>;</span><br><span class="line">         <span class="comment">// innerVar is only visible here inside inner()</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// innerVar is not visible here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个特性我们习以为常，但是如果我们把变量作为参数传递进来，我们就很难去梳理那个函数可以“看见”哪个变量。他然我们一开始很困扰，但是请耐心：让我们看看你在哪里定义的函数，再找出哪些变量是在那个地方可以访问到的。它们可能并不会如你预期的那个在调用函数的那个地方。</p>
+<h2 id="特别的参数变量">特别的参数变量</h2><p>在你创建一个函数的同时，它同样创建了一个特别的参数－－<code>arguments</code>，它就像一个数组。它包含了被传到这个函数的参数，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> showArgs = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">showArgs(<span class="string">'Tweedledee'</span>, <span class="string">'Tweedledum'</span>);</span><br><span class="line"><span class="comment">//=&gt; &#123; '0': 'Tweedledee', '1': 'Tweedledum' &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>注意输出，它更像一个key都是整数的对象而不是一个数组，事实确实如此。<br>有趣的是<code>arguments</code>包含了所有被传到这个函数的参数而不管函数的参数被定义了几个。所以，如果你调用一个函数并且传递给他额外的参数，它们都可以在<code>arguments</code>里面的到：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">showArgs(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'i'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>);</span><br><span class="line"><span class="regexp">//</span>=&gt; &#123; <span class="string">'0'</span><span class="symbol">:</span> <span class="string">'a'</span>, <span class="string">'1'</span><span class="symbol">:</span> <span class="string">'l'</span>, <span class="string">'2'</span><span class="symbol">:</span> <span class="string">'i'</span>, <span class="string">'3'</span><span class="symbol">:</span> <span class="string">'c'</span>, <span class="string">'4'</span><span class="symbol">:</span> <span class="string">'e'</span></span><br></pre></td></tr></table></figure></p>
+<p><code>arguments</code>已有<code>length</code>，就像数组一样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> argsLen = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length);</span><br><span class="line">&#125;</span><br><span class="line">argsLen(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'i'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>);</span><br><span class="line"><span class="comment">//=&gt; 5</span></span><br></pre></td></tr></table></figure></p>
+<p>让<code>arguments</code>像是数组一样访问是很有用的，饿哦吗可以把<code>arguments</code>转化成一个真正的数组通过<code>call</code>方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> showArgsAsArray = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(args);</span><br><span class="line">&#125;</span><br><span class="line">showArgsAsArray(<span class="string">'Tweedledee'</span>, <span class="string">'Tweedledum'</span>);</span><br><span class="line"><span class="comment">//=&gt; [ 'Tweedledee', 'Tweedledum' ]</span></span><br></pre></td></tr></table></figure></p>
+<p>这个<code>arguments</code>变量在创造函数中可以让我们得到传递进来的参数的数量，我们离的更近了。</p>
+<h2 id="call_和_apply">call 和 apply</h2><p>在之前的数组中，我们看到了他有<code>reduce</code>和<code>map</code>这样的方法，函数自然也有他的方法。<br>普通的方法调用函数是在函数后面写一个小括号，然后把参数写在里面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">twinkleTwinkle</span>(<span class="params">thing</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Twinkle, twinkle, little '</span> + thing);</span><br><span class="line">&#125;</span><br><span class="line">twinkleTwinkle(<span class="string">'bat'</span>);</span><br><span class="line"><span class="comment">//=&gt; Twinkle, twinkle, little bat</span></span><br></pre></td></tr></table></figure></p>
+<p>还没翻译完/…..</p>
+<p>－－－－－－－－－－－－－－－－－</p>
+<p><br><br>未亡待续…<br>[阅读下一节～]</p>
 </span>
       
     </div>
@@ -292,11 +283,13 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
       
         <div class="post-tags">
           
-            <a href="/tags/FE/" rel="tag">#FE</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+            <a href="/tags/前端/" rel="tag">#前端</a>
           
-            <a href="/tags/learning-notes/" rel="tag">#learning notes</a>
+            <a href="/tags/教程/" rel="tag">#教程</a>
+          
+            <a href="/tags/翻译/" rel="tag">#翻译</a>
           
         </div>
       
@@ -305,13 +298,13 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/RN-2-样式style-React-Native-learning-notes.html" rel="prev">[RN]2.样式style--React-Native learning notes</a>
+              <a href="/post/a-gentle-introduction-to-functional-javascript-part-4.html" rel="prev">JavaScript中的函数式编程四(翻译)</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/如何使用webpack—webpack-howto.html" rel="next">如何使用webpack—webpack-howto</a>
+              <a href="/post/a-gentle-introduction-to-functional-javascript-part-2.html" rel="next">JavaScript中的函数式编程二(翻译)</a>
             
           </div>
         </div>
@@ -326,10 +319,10 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html"
-     data-title="[RN]1.环境搭建--React-Native learning notes"
+        <div class="ds-share flat" data-thread-key="post/a-gentle-introduction-to-functional-javascript-part-3.html"
+     data-title="JavaScript中的函数式编程三(翻译)"
      data-content=""
-     data-url="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
+     data-url="http://qiutc.me/post/a-gentle-introduction-to-functional-javascript-part-3.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -356,8 +349,8 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html"
-                   data-title="[RN]1.环境搭建--React-Native learning notes" data-url="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
+              <div class="ds-thread" data-thread-key="post/a-gentle-introduction-to-functional-javascript-part-3.html"
+                   data-title="JavaScript中的函数式编程三(翻译)" data-url="http://qiutc.me/post/a-gentle-introduction-to-functional-javascript-part-3.html">
               </div>
             
           </div>
@@ -470,7 +463,7 @@ Homebrew (包管理器)(用来安装Watchman 和 Flow);
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tip:"><span class="nav-number">1.</span> <span class="nav-text">tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native_for_Android_的环境搭建"><span class="nav-number">2.</span> <span class="nav-text">React-Native for Android 的环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求："><span class="nav-number">2.0.1.</span> <span class="nav-text">要求：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成！"><span class="nav-number">2.1.</span> <span class="nav-text">完成！</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tips"><span class="nav-number">1.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript_函数式编程"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 函数式编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建函数的函数"><span class="nav-number">3.</span> <span class="nav-text">创建函数的函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多的创建块"><span class="nav-number">4.</span> <span class="nav-text">更多的创建块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包和作用域"><span class="nav-number">4.1.</span> <span class="nav-text">闭包和作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特别的参数变量"><span class="nav-number">4.2.</span> <span class="nav-text">特别的参数变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call_和_apply"><span class="nav-number">4.3.</span> <span class="nav-text">call 和 apply</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
