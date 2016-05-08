@@ -1,13 +1,23 @@
-<!doctype html>
-<html class="theme-next use-motion theme-next-mist">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  
-
-<meta charset="UTF-8"/>
-<meta baidu-gxt-verify-token="ca8f032797b876ef3be37c3d492168a0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!-- content-Type -->
+<meta charset="utf-8">
+<!-- 优先使用 IE 最新版本和 Chrome -->
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="baidu-site-verification" content="fRBucd9VmI" />
+<meta name="language" content="en">
+<meta name="robots" content="all">
+<meta name="author" content="TongchengQiu, TongchengQiu@gmail.com">
+<meta name="reply-to" content="TongchengQiu@gmail.com">
+<meta name="owner" content="TongchengQiu">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -17,31 +27,22 @@
 
 
 
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+<meta name="description" content="hello word! 😺" />
 
-
-    <meta name="description" content="hello word! 😺" />
 
 
 
   <meta name="keywords" content="FE,webpack,前端,构建工具," />
-
-
-
-  <link rel="alternate" href="/atom.xml" title="阿城的blog" type="application/atom+xml" />
-
-
-
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
 <meta name="description" content="tipwebpack的入门篇可以看我的这一片博文。《如何使用webpack—webpack-howto》.
@@ -63,27 +64,40 @@
 代码代">
 
 
-<script type="text/javascript" id="hexo.configuration">
-  var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'hide'
-  };
-</script>
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
 <script>
 (function(){
-    var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
 })();
 </script>
 
-  <title> webpack-best-practice-最佳实践-部署生产 | 阿城的blog </title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="http://cdn.bootcss.com/material-design-lite/1.1.1/material.min.js"></script>
+<link href="http://cdn.bootcss.com/material-design-lite/1.1.1/material.min.css" rel="stylesheet">
+
+  <title> webpack-best-practice-最佳实践-部署生产 </title>
 </head>
+<body lang="zh-Hans">
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  <!--[if lte IE 8]>
+  <!--[if lte IE 9]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
       <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
@@ -109,112 +123,113 @@
 
 
 
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
+  <div class="another-layout-transparent mdl-layout mdl-js-layout">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
-      <span class="site-title">阿城的blog</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+    <style>
+.another-layout-transparent .mdl-layout__header,
+.another-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+.another-layout-transparent .mdl-layout__header {
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+}
+</style>
+
+<header class="mdl-layout__header mdl-layout__header--pink">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title"> webpack-best-practice-最佳实践-部署生产 | 阿城的blog </span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation -->
+    
+    <nav class="mdl-navigation">
+      
+        
+        <a class="mdl-navigation__link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="mdl-navigation__link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="mdl-navigation__link" href="/archives" rel="section">
+          归档
+        </a>
+      
+        
+        <a class="mdl-navigation__link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="mdl-navigation__link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+</header>
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout-title"></span>
+  
+  <nav class="mdl-navigation">
+    
+      
+      <a class="mdl-navigation__link" href="/" rel="section">
+        首页
+      </a>
+    
+      
+      <a class="mdl-navigation__link" href="/categories" rel="section">
+        分类
+      </a>
+    
+      
+      <a class="mdl-navigation__link" href="/archives" rel="section">
+        归档
+      </a>
+    
+      
+      <a class="mdl-navigation__link" href="/tags" rel="section">
+        标签
+      </a>
+    
+      
+      <a class="mdl-navigation__link" href="/about" rel="section">
+        关于
+      </a>
+    
+  </nav>
+  
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu ">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            <i class="menu-item-icon icon-next-about"></i> <br />
-            关于
-          </a>
-        </li>
-      
 
+    <main class="mdl-layout__content">
       
-      
-    </ul>
-  
+  <link rel="stylesheet" type="text/css" href="/css/post.css?v=0.4.5.1"/>
 
-  
-</nav>
- </div>
-    </header>
+  <article class="post-article post-type-normal post" itemscope>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content"> 
-
-  <div id="posts" class="posts-expand">
-    
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              webpack-best-practice-最佳实践-部署生产
-            
-          
-        </h1>
+      <h1 class="post-title">
+        webpack-best-practice-最佳实践-部署生产
+      </h1>
       
 
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-02T10:56:39+08:00" content="2015-12-02">
+          <time  datetime="2015-12-02T10:56:39+08:00" content="2015-12-02">
             2015-12-02
           </time>
         </span>
@@ -223,7 +238,7 @@
           <span class="post-category" >
             &nbsp; | &nbsp; 分类于
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+              <span>
                 <a href="/categories/webpack/" itemprop="url" rel="index">
                   <span itemprop="name">webpack</span>
                 </a>
@@ -253,13 +268,13 @@
 
       
       
-
       
-        <span itemprop="articleBody"><p><img src="/img/webpack.png" alt="webpack"></p>
+
+      <div class="content markdown-body"><p><img src="/img/webpack.png" alt="webpack"></p>
 <h1 id="tip">tip</h1><p>webpack的入门篇可以看我的这一片博文。<br><a href="http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html">《如何使用webpack—webpack-howto》</a>.</p>
 <h1 id="前言">前言</h1><p>最近一段时间在项目中使用了webpack和React来开发，总之来说也是遇到了许多坑，webpack毕竟还是比较新的技术，而且也很难有一个很好的构建案例来适应所有的项目，总之，在看了许多项目demo和官方文档以及官方推荐的tutorials之后，也算是自己总结出的一套最佳实践吧。</p>
 <h2 id="代码">代码</h2><p>代码可以在我的<a href="https://github.com/TongchengQiu/webpack-best-practice" target="_blank" rel="external">Github</a>上。<br><a href="https://github.com/TongchengQiu/webpack-best-practice" target="_blank" rel="external">可以戳这里～～</a>。</p>
-<h1 id="package-json_命令配置">package.json 命令配置</h1><p>既然是需要用到的是实际项目的构建，那么必然就要考虑开发环境和生产环境下的配置项了：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"webpack --progress --colors --watch"</span>,</span><br><span class="line">    <span class="string">"watch"</span>: <span class="string">"webpack-dev-server --hot --progress --colors"</span>,</span><br><span class="line">    <span class="string">"dist"</span>: <span class="string">"NODE_ENV=production webpack --progress --colors"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="package-json_命令配置">package.json 命令配置</h1><p>既然是需要用到的是实际项目的构建，那么必然就要考虑开发环境和生产环境下的配置项了：<br><figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"webpack --progress --colors --watch"</span>,</span><br><span class="line">    <span class="string">"watch"</span>: <span class="string">"webpack-dev-server --hot --progress --colors"</span>,</span><br><span class="line">    <span class="string">"dist"</span>: <span class="string">"NODE_ENV=production webpack --progress --colors"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以在目录下执行 <code>npm run build</code> , <code>npm run watch</code> , <code>npm run dist</code><br>解释一下:</p>
 <ul>
 <li>build 是在我们开发环境下执行的构建命令;</li>
@@ -278,44 +293,44 @@
 <li>-d 提供sorcemap</li>
 <li>-p 对打包文件进行压缩</li>
 </ul>
-<h1 id="目录结构">目录结构</h1><p>现在前端模块化的趋势导致目录结构也发生了很大的改变和争议，这只是我自己用到的一种形式，可以参考。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── app                 <span class="comment">#开发目录</span></span><br><span class="line">|<span class="string">   ├──assets           #存放静态资源</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   ├──datas        #存放数据 json 文件</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   ├──images       #存放图片资源文件</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   └──styles       #存放全局sass变量文件和reset文件</span><br><span class="line"></span>|<span class="string">   ├──lib</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   ├──components   #存放数据 模块组件 文件</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">   └──Header</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">       ├──Header.jsx</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">       └──Header.scss</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">       </span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   └──utils        #存放utils工具函数文件</span><br><span class="line"></span>|<span class="string">   </span>|</span><br><span class="line">|<span class="string">   └──views</span><br><span class="line"></span>|<span class="string">       ├──Index        #入口文件</span><br><span class="line"></span>|<span class="string">       </span>|<span class="string">   ├──Index.html #html文件</span><br><span class="line"></span>|<span class="string">       </span>|<span class="string">   ├──Index.jsx</span><br><span class="line"></span>|<span class="string">       </span>|<span class="string">   └──Index.scss</span><br><span class="line"></span>|<span class="string">       └──Index2</span><br><span class="line">├── dist                #发布目录</span><br><span class="line">├── node_modules        #包文件夹</span><br><span class="line">├── .gitignore     </span><br><span class="line">├── .jshintrc      </span><br><span class="line">├── webpack.config.js   #webpack配置文件</span><br><span class="line">└── package.json</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="目录结构">目录结构</h1><p>现在前端模块化的趋势导致目录结构也发生了很大的改变和争议，这只是我自己用到的一种形式，可以参考。<br><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── app                 <span class="comment">#开发目录</span></span><br><span class="line">|<span class="string">   ├──assets           #存放静态资源</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   ├──datas        #存放数据 json 文件</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   ├──images       #存放图片资源文件</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   └──styles       #存放全局sass变量文件和reset文件</span><br><span class="line"></span>|<span class="string">   ├──lib</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   ├──components   #存放数据 模块组件 文件</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">   └──Header</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">       ├──Header.jsx</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">       └──Header.scss</span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   </span>|<span class="string">       </span><br><span class="line"></span>|<span class="string">   </span>|<span class="string">   └──utils        #存放utils工具函数文件</span><br><span class="line"></span>|<span class="string">   </span>|</span><br><span class="line">|<span class="string">   └──views</span><br><span class="line"></span>|<span class="string">       ├──Index        #入口文件</span><br><span class="line"></span>|<span class="string">       </span>|<span class="string">   ├──Index.html #html文件</span><br><span class="line"></span>|<span class="string">       </span>|<span class="string">   ├──Index.jsx</span><br><span class="line"></span>|<span class="string">       </span>|<span class="string">   └──Index.scss</span><br><span class="line"></span>|<span class="string">       └──Index2</span><br><span class="line">├── dist                #发布目录</span><br><span class="line">├── node_modules        #包文件夹</span><br><span class="line">├── .gitignore     </span><br><span class="line">├── .jshintrc      </span><br><span class="line">├── webpack.config.js   #webpack配置文件</span><br><span class="line">└── package.json</span></span><br></pre></td></tr></table></figure></p>
 <p>具体可以到Github上看demo。</p>
-<h1 id="webpack-config-js">webpack.config.js</h1><h2 id="引入包">引入包</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="webpack-config-js">webpack.config.js</h1><h2 id="引入包">引入包</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br></pre></td></tr></table></figure>
 <p>这个毋庸置疑吧。</p>
-<h2 id="判断是否是在当前生产环境">判断是否是在当前生产环境</h2><p>定义函数判断是否是在当前生产环境，这个很重要，一位开发环境和生产环境配置上有一些区别<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isProduction = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> process.env.NODE_ENV === <span class="string">'production'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h2 id="声明文件夹">声明文件夹</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义输出文件夹</span></span><br><span class="line"><span class="keyword">var</span> outputDir = <span class="string">'./dist'</span>;</span><br><span class="line"><span class="comment">// 定义开发文件夹</span></span><br><span class="line"><span class="keyword">var</span> entryPath = <span class="string">'./app/views'</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="定义插件">定义插件</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var plugins = [</span><br><span class="line">  <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">    name: <span class="string">'commons'</span>,</span><br><span class="line">    filename: <span class="string">'js/commons.js'</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    React: <span class="string">'react'</span>,</span><br><span class="line">    ReactDOM: <span class="string">'react-dom'</span>,</span><br><span class="line">    reqwest: <span class="string">'reqwest'</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">];</span><br><span class="line"><span class="keyword">if</span>( isProduction() ) &#123;</span><br><span class="line">  plugins.<span class="keyword">push</span>(</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</span><br><span class="line">      test: <span class="regexp">/(\.jsx|\.js)$/</span>,</span><br><span class="line">      compress: &#123;</span><br><span class="line">        warnings: <span class="keyword">false</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判断是否是在当前生产环境">判断是否是在当前生产环境</h2><p>定义函数判断是否是在当前生产环境，这个很重要，一位开发环境和生产环境配置上有一些区别<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> isProduction = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> process.env.NODE_ENV === <span class="string">'production'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="声明文件夹">声明文件夹</h2><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义输出文件夹</span></span><br><span class="line"><span class="keyword">var</span> outputDir = <span class="string">'./dist'</span>;</span><br><span class="line"><span class="comment">// 定义开发文件夹</span></span><br><span class="line"><span class="keyword">var</span> entryPath = <span class="string">'./app/views'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="定义插件">定义插件</h2><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">var plugins = [</span><br><span class="line">  <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">    name: <span class="string">'commons'</span>,</span><br><span class="line">    filename: <span class="string">'js/commons.js'</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    React: <span class="string">'react'</span>,</span><br><span class="line">    ReactDOM: <span class="string">'react-dom'</span>,</span><br><span class="line">    reqwest: <span class="string">'reqwest'</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">];</span><br><span class="line"><span class="keyword">if</span>( isProduction() ) &#123;</span><br><span class="line">  plugins.<span class="keyword">push</span>(</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</span><br><span class="line">      test: <span class="regexp">/(\.jsx|\.js)$/</span>,</span><br><span class="line">      compress: &#123;</span><br><span class="line">        warnings: <span class="keyword">false</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>CommonsChunkPlugin 插件可以打包所有文件的共用部分生产一个commons.js文件。</li>
 <li>ProvidePlugin 插件可以定义一个共用的入口，比如 下面加的 React ,他会在每个文件自动require了react，所以你在文件中不需要 require(‘react’)，也可以使用 React。</li>
 <li>如果是在生产环境下，则加入插件 UglifyJsPlugin ，执行代码压缩，并且去除 warnings。</li>
 </ol>
-<h2 id="自动遍历多文件入口">自动遍历多文件入口</h2><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var entris = fs.readdirSync(entryPath).reduce(function (o, <span class="keyword">filename</span>) &#123;</span><br><span class="line">    !/\./.test(<span class="keyword">filename</span>) &amp;&amp;</span><br><span class="line">    (o[<span class="keyword">filename</span>] = <span class="string">'./'</span> + path.<span class="keyword">join</span>(entryPath, <span class="keyword">filename</span>, <span class="keyword">filename</span> + <span class="string">'.jsx'</span>));</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">  &#125;, &#123;&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="自动遍历多文件入口">自动遍历多文件入口</h2><figure class="highlight tcl"><table><tr><td class="code"><pre><span class="line">var entris = fs.readdirSync(entryPath).reduce(function (o, <span class="keyword">filename</span>) &#123;</span><br><span class="line">    !/\./.test(<span class="keyword">filename</span>) &amp;&amp;</span><br><span class="line">    (o[<span class="keyword">filename</span>] = <span class="string">'./'</span> + path.<span class="keyword">join</span>(entryPath, <span class="keyword">filename</span>, <span class="keyword">filename</span> + <span class="string">'.jsx'</span>));</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">  &#125;, &#123;&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>函数会自动遍历开发的入口文件夹下面的文件，然后一一生产入口并且返回一个对象－－入口。</p>
-<h2 id="如果在这一步不需要多页面多入口">如果在这一步不需要多页面多入口</h2><p>那么可以使用<a href="https://www.npmjs.com/package/html-webpack-plugin" target="_blank" rel="external">html-webpack-plugin</a>插件，它可以自动为入口生成一个html文件，配置如下：<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line">plugins.push(<span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">  <span class="attribute">title</span>: <span class="string">'index'</span>,</span><br><span class="line">  <span class="attribute">filename</span>: outputDir+<span class="string">'/index.html'</span>,  <span class="comment">#生成html的位置</span></span><br><span class="line">  <span class="attribute">inject</span>: <span class="string">'body'</span>,                     <span class="comment">#插入script在body标签里</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></p>
+<h2 id="如果在这一步不需要多页面多入口">如果在这一步不需要多页面多入口</h2><p>那么可以使用<a href="https://www.npmjs.com/package/html-webpack-plugin" target="_blank" rel="external">html-webpack-plugin</a>插件，它可以自动为入口生成一个html文件，配置如下：<br><figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line">plugins.push(<span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">  <span class="attribute">title</span>: <span class="string">'index'</span>,</span><br><span class="line">  <span class="attribute">filename</span>: outputDir+<span class="string">'/index.html'</span>,  <span class="comment">#生成html的位置</span></span><br><span class="line">  <span class="attribute">inject</span>: <span class="string">'body'</span>,                     <span class="comment">#插入script在body标签里</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></p>
 <p>entry 就可以自定义一个入口就够了</p>
-<h2 id="config的具体配置">config的具体配置</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config = &#123;</span><br><span class="line">  target: <span class="string">'web'</span>,</span><br><span class="line">  cache: <span class="literal">true</span>,</span><br><span class="line">  entry: entris,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: outputDir,</span><br><span class="line">    filename: <span class="string">'js/[name].bundle.js'</span>,</span><br><span class="line">    publicPath: isProduction()? <span class="string">'http://******'</span> : <span class="string">'http://localhost:3000'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="module"><span class="keyword">module</span>: </span>&#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/(\.jsx|\.js)$/</span>,</span><br><span class="line">        loaders: [<span class="string">'babel?presets[]=es2015&amp;presets[]=react'</span>],</span><br><span class="line">        exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.scss$/</span>,</span><br><span class="line">        loaders: [<span class="string">'style'</span>, <span class="string">'css?root='</span>+__dirname, <span class="string">'resolve-url'</span>, <span class="string">'sass'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.json$/</span>,</span><br><span class="line">        loader: <span class="string">'json'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(jpe?g|png|gif|svg)$/</span>,</span><br><span class="line">        loader: <span class="string">'url?limit=1024&amp;name=img/[name].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(woff2?|otf|eot|svg|ttf)$/i</span>,</span><br><span class="line">        loader: <span class="string">'url?name=fonts/[name].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">        loader: <span class="string">'file?name=views/[name].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: plugins,</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'jsx'</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">  devtool: isProduction()?<span class="literal">null</span>:<span class="string">'source-map'</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="config的具体配置">config的具体配置</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> config = &#123;</span><br><span class="line">  target: <span class="string">'web'</span>,</span><br><span class="line">  cache: <span class="literal">true</span>,</span><br><span class="line">  entry: entris,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: outputDir,</span><br><span class="line">    filename: <span class="string">'js/[name].bundle.js'</span>,</span><br><span class="line">    publicPath: isProduction()? <span class="string">'http://******'</span> : <span class="string">'http://localhost:3000'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="module"><span class="keyword">module</span>: </span>&#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/(\.jsx|\.js)$/</span>,</span><br><span class="line">        loaders: [<span class="string">'babel?presets[]=es2015&amp;presets[]=react'</span>],</span><br><span class="line">        exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.scss$/</span>,</span><br><span class="line">        loaders: [<span class="string">'style'</span>, <span class="string">'css?root='</span>+__dirname, <span class="string">'resolve-url'</span>, <span class="string">'sass'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.json$/</span>,</span><br><span class="line">        loader: <span class="string">'json'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(jpe?g|png|gif|svg)$/</span>,</span><br><span class="line">        loader: <span class="string">'url?limit=1024&amp;name=img/[name].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(woff2?|otf|eot|svg|ttf)$/i</span>,</span><br><span class="line">        loader: <span class="string">'url?name=fonts/[name].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">        loader: <span class="string">'file?name=views/[name].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: plugins,</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'jsx'</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">  devtool: isProduction()?<span class="literal">null</span>:<span class="string">'source-map'</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>这里来一一说明：</p>
 <h3 id="对于output">对于output</h3><p>path和filename都不用多说了，path是生成文件的存放目录，filename是文件名，当然可以在前面加上目录位置。<br>这里提醒一下，filename 的相对路径就是 path了，并且下面 静态文件生成的filename也是相对于这里的path的，比如 image 和 html。<br>publicPath 的话是打包的时候生成的文件链接，比如 图片 资源，<br>如果是在生产环境当然是用服务器地址，如果是开发环境就是用本地静态服务器的地址。</p>
 <h3 id="module_loaders_打包加载的处理器">module loaders 打包加载的处理器</h3><p>可以不用夹 loader了 比如 原来 url-loader  现在 url</p>
-<h4 id="js/jsx">js/jsx</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /(\.jsx|\.js)$/,</span><br><span class="line">  loaders: [<span class="string">'babel?presets[]=es2015&amp;presets[]=react'</span>],</span><br><span class="line">  exclude: /node_modules/</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
+<h4 id="js/jsx">js/jsx</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /(\.jsx|\.js)$/,</span><br><span class="line">  loaders: [<span class="string">'babel?presets[]=es2015&amp;presets[]=react'</span>],</span><br><span class="line">  exclude: /node_modules/</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
 <p>对于js文件和jsx文件用了babel来处理，这里注意一下，最新版本的babel吧es2015和react的处理分开了，所有要这么写。</p>
-<h3 id="处理scss文件">处理scss文件</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.scss$/,</span><br><span class="line">  loaders: [<span class="string">'style'</span>, <span class="string">'css?root='</span>+__dirname, <span class="string">'resolve-url'</span>, <span class="string">'sass'</span>]</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
-<p>这里用了sass、css、style的loader这不用多说了。<br>那么root和resolve-url是怎么回事呢，root是定义了scss文件里面声明的url地址是相对于根目录的，然后resolve-url回去相对解析这个路径，而不用require去获取，比如<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span><span class="value">: <span class="function">url</span>(<span class="string">'./assets/images/webpack.png'</span>);</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="处理scss文件">处理scss文件</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.scss$/,</span><br><span class="line">  loaders: [<span class="string">'style'</span>, <span class="string">'css?root='</span>+__dirname, <span class="string">'resolve-url'</span>, <span class="string">'sass'</span>]</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
+<p>这里用了sass、css、style的loader这不用多说了。<br>那么root和resolve-url是怎么回事呢，root是定义了scss文件里面声明的url地址是相对于根目录的，然后resolve-url回去相对解析这个路径，而不用require去获取，比如<br><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span><span class="value">: <span class="function">url</span>(<span class="string">'./assets/images/webpack.png'</span>);</span></span><br></pre></td></tr></table></figure></p>
 <p>这样就可以加载到<code>./assets/images/webpack.png</code>这个文件，而不用使用相对路径和require</p>
-<h3 id="处理json文件">处理json文件</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.json$/,</span><br><span class="line">  loader: <span class="string">'json'</span>,</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="处理json文件">处理json文件</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.json$/,</span><br><span class="line">  loader: <span class="string">'json'</span>,</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
 <p>对于json文件，可以自动请求该模块并且打包。</p>
-<h3 id="处理_图片_字体_资源文件">处理 图片 字体 资源文件</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.(jpe?g|png|gif|svg)$/,</span><br><span class="line">  loader: <span class="string">'url?limit=1024&amp;name=img/[name].[ext]'</span></span><br><span class="line"></span></span></span>&#125;,</span><br><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.(woff2?|otf|eot|svg|ttf)$/i,</span><br><span class="line">  loader: <span class="string">'url?name=fonts/[name].[ext]'</span></span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="处理_图片_字体_资源文件">处理 图片 字体 资源文件</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.(jpe?g|png|gif|svg)$/,</span><br><span class="line">  loader: <span class="string">'url?limit=1024&amp;name=img/[name].[ext]'</span></span><br><span class="line"></span></span></span>&#125;,</span><br><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.(woff2?|otf|eot|svg|ttf)$/i,</span><br><span class="line">  loader: <span class="string">'url?name=fonts/[name].[ext]'</span></span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
 <p>这里使用了 url 这个loader，但是url依赖 file-loader，它是对file-loader的二次封装。<br>在请求图片的时候如果文件大小小于 1024k ，使用内联 base64 URLs，否则会自动导入到name所声明的目录，这里是相对之前声明的 outputDir 路径。<br>字体资源也是一样。</p>
-<h3 id="处理html文件">处理html文件</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.html$/,</span><br><span class="line">  loader: <span class="string">'file?name=views/[name].[ext]'</span></span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="处理html文件">处理html文件</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">test</span>:<span class="value"> /\.html$/,</span><br><span class="line">  loader: <span class="string">'file?name=views/[name].[ext]'</span></span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
 <p>在多页面的项目中需要，可以自动吧html文件导入到指定的生产文件夹下。</p>
-<h2 id="resolve">resolve</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">resolve</span>: <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">extensions</span>:<span class="value"> [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'jsx'</span>],</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="resolve">resolve</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">resolve</span>: <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">extensions</span>:<span class="value"> [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'jsx'</span>],</span><br><span class="line"></span></span></span>&#125;,</span><br></pre></td></tr></table></figure>
 <p>是可以忽略的文件后缀名，比如可以直接<code>require(&#39;Header&#39;);</code>而不用加.jsx。</p>
-<h2 id="devtool">devtool</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">devtool:</span> isProduction()?null:<span class="string">'source-map'</span>,</span><br></pre></td></tr></table></figure>
+<h2 id="devtool">devtool</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">devtool:</span> isProduction()?null:<span class="string">'source-map'</span>,</span><br></pre></td></tr></table></figure>
 <p>规定了在开发环境下才使用 source-map。</p>
 <h1 id="疑问">疑问</h1><p>目前为止，对于多页面项目还是没有找到一个很好的方案去构建自动化。</p>
-</span>
-      
+</div>
+
     </div>
 
     <footer class="post-footer">
@@ -332,442 +347,73 @@
           
         </div>
       
-
-      
-        <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/谈谈-react-router.html" rel="prev">谈谈 react-router</a>
-            
-          </div>
-
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/post/RN-2-样式style-React-Native-learning-notes.html" rel="next">[RN]2.样式style--React-Native learning notes</a>
-            
-          </div>
-        </div>
-      
-
-      
-      
     </footer>
   </article>
 
 
+<style media="screen">
+.post-header {
+  text-align: center;
+}
+  .post-article {
+    width: 980px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px;
+  }
+  .post-footer {
+    padding: 20px;
+    text-align: center;
+  }
+  .post-tags a {
+    margin: 6px 0;
+    display: inline-block;
+  }
+</style>
 
-    <div class="post-spread">
-      
-    </div>
+
+        
+      <style media="screen">
+  .footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    line-height: 30px;
+    color: #777;
+  }
+</style>
+
+<footer class="footer">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015 - 
+    <span itemprop="copyrightYear">2016</span>
+    <span class="with-love">
+      <i class="icon-next-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
   </div>
 
- </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <span id="showDays"></span>
+  <script>
+  var birthDay = new Date("10/03/2015");
+  var now = new Date();
+  var duration = now.getTime() - birthDay.getTime();
+  var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+  document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+  </script>
+  ---
+  <span id="busuanzi_container_site_pv">
+      总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
-              <div class="ds-thread" data-thread-key="post/webpack-best-practice-最佳实践-部署生产.html"
-                   data-title="webpack-best-practice-最佳实践-部署生产" data-url="http://qiutc.me/post/webpack-best-practice-最佳实践-部署生产.html">
-              </div>
-            
-          </div>
-        
-      </div>
-
-      
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/qtc_avatar.jpg" alt="阿城😇" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">阿城😇</p>
-        </div>
-        <p class="site-description motion-element" itemprop="description">hello word! 😺</p>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
-              </a>
-          </div>
-
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">20</span>
-              <span class="site-state-item-name">标签</span>
-              </a>
-          </div>
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/tongchengqiu" target="_blank">GitHub</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/tongchengqiu" target="_blank">Twitter</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/tongchengqiu" target="_blank">Zhihu</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/tongchengqiu" target="_blank">Weibo</a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-          <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
-              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-      </section>
-
-      
-        <section class="post-toc-wrap sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
-          <div class="post-toc">
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tip"><span class="nav-number">1.</span> <span class="nav-text">tip</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#package-json_命令配置"><span class="nav-number">3.</span> <span class="nav-text">package.json 命令配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录结构"><span class="nav-number">4.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-config-js"><span class="nav-number">5.</span> <span class="nav-text">webpack.config.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入包"><span class="nav-number">5.1.</span> <span class="nav-text">引入包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断是否是在当前生产环境"><span class="nav-number">5.2.</span> <span class="nav-text">判断是否是在当前生产环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明文件夹"><span class="nav-number">5.3.</span> <span class="nav-text">声明文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义插件"><span class="nav-number">5.4.</span> <span class="nav-text">定义插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动遍历多文件入口"><span class="nav-number">5.5.</span> <span class="nav-text">自动遍历多文件入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果在这一步不需要多页面多入口"><span class="nav-number">5.6.</span> <span class="nav-text">如果在这一步不需要多页面多入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config的具体配置"><span class="nav-number">5.7.</span> <span class="nav-text">config的具体配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对于output"><span class="nav-number">5.7.1.</span> <span class="nav-text">对于output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module_loaders_打包加载的处理器"><span class="nav-number">5.7.2.</span> <span class="nav-text">module loaders 打包加载的处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js/jsx"><span class="nav-number">5.7.2.1.</span> <span class="nav-text">js/jsx</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理scss文件"><span class="nav-number">5.7.3.</span> <span class="nav-text">处理scss文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理json文件"><span class="nav-number">5.7.4.</span> <span class="nav-text">处理json文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理_图片_字体_资源文件"><span class="nav-number">5.7.5.</span> <span class="nav-text">处理 图片 字体 资源文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理html文件"><span class="nav-number">5.7.6.</span> <span class="nav-text">处理html文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#resolve"><span class="nav-number">5.8.</span> <span class="nav-text">resolve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#devtool"><span class="nav-number">5.9.</span> <span class="nav-text">devtool</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">6.</span> <span class="nav-text">疑问</span></a></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </section>
-      
-
-    </div>
-  </aside>
-
+</footer>
 
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
-  
-  &copy; &nbsp;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="icon-next-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">阿城😇</span>
-</div>
-
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-
-<br/>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="showDays"></span>
-<script>
-var birthDay = new Date("10/03/2015");
-var now = new Date();
-var duration = now.getTime() - birthDay.getTime();
-var total= Math.floor(duration / (1000 * 60 * 60 * 24));
-document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
-</script>
----
-<span id="busuanzi_container_site_pv">
-    总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>
-
- </div>
-    </footer>
-
-    <div class="back-to-top"></div>
   </div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  
-  
-    
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"qiutongcheng"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-    
-     
-
-
-    
-
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
-
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
-
-
-
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
-      }
-    }
-  });
-</script>
-
-
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
-
-  
-
-  
-  
-
-
-  
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
 </body>
 </html>
