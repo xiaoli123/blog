@@ -1119,7 +1119,7 @@ body {
   position: relative;
   width: 100%;
   height: 400px;
-  background: url("http://7xlkda.com1.z0.glb.clouddn.com/type-away-numero-dos.jpg") center/cover;
+  background: url("img/bg.jpg") center/cover;
 }
 .header .mask {
   position: absolute;
@@ -1298,6 +1298,7 @@ body {
   box-sizing: border-box;
   display: block;
   border: 1px solid #ccc;
+  height: 8em;
 }
 .comments #ds-thread #ds-reset .ds-textarea-wrapper textarea:focus {
   border: 1px solid #3f86b5;
@@ -1361,12 +1362,40 @@ body {
   color: #3f51b5;
 }
 .index-content .right-info .about-me img {
-  width: 80%;
+  width: 90%;
   height: auto;
 }
 .index-content .right-info .about-me .description {
   color: #333;
   padding-top: 10px;
+}
+.index-content .right-info .about-me .links-of-author {
+  width: 100%;
+  text-align: left;
+  padding-top: 1rem;
+}
+.index-content .right-info .about-me .links-of-author .links-of-author-item {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  display: inline-block;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.index-content .right-info .about-me .links-of-author .links-of-author-item a:hover {
+  background: #3f86b5;
+}
+.index-content .right-info .about-me .links-of-author .links-of-author-item a {
+  display: block;
+  transition: all 0.3s;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  background: #bababa;
+  position: relative;
+}
+.index-content .right-info .about-me .links-of-author .links-of-author-item a .fa-zhihu:before {
+  content: '知';
 }
 .index-content .posts-list {
   width: 100%;
@@ -1486,4 +1515,23 @@ body {
   color: #fff;
   text-shadow: none;
   background: #3f86b5;
+}
+@media (max-width: 900px) {
+  .header {
+    height: 300px;
+  }
+  .index-content {
+    padding-right: 0;
+  }
+  .right-info {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .header {
+    height: 200px;
+  }
+  .header .header-cont .navigation {
+    padding: 1rem 1rem 0 0;
+  }
 }
