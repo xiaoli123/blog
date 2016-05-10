@@ -1281,6 +1281,26 @@ body {
   border: 1px solid #ccc;
   border-radius: 0;
 }
+.comments #ds-thread #ds-reset .ds-avatar img {
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.22);
+  border-radius: none;
+}
+.comments #ds-thread #ds-reset .ds-textarea-wrapper {
+  background: #fff;
+  border-radius: 0;
+}
+.comments #ds-thread #ds-reset .ds-post-options {
+  background: #fff;
+  border-radius: 0;
+}
+.comments #ds-thread #ds-reset .ds-post-button {
+  background: #fff;
+  border-radius: 0;
+}
+.comments #ds-thread #ds-reset .ds-post-button:hover {
+  background: #3f86b5;
+  color: fff;
+}
 .index-content {
   width: 100%;
   position: relative;
