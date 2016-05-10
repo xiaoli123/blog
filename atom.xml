@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-05-08T12:56:33.000Z</updated>
+  <updated>2016-05-09T14:48:33.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://qiutc.me/post/javascript-array.html"/>
     <id>http://qiutc.me/post/javascript-array.html</id>
     <published>2016-04-29T12:49:51.000Z</published>
-    <updated>2016-05-08T12:56:33.000Z</updated>
+    <updated>2016-05-09T14:48:33.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>系统学习 Array 对象的笔记。</p>
 <p><img src="/img/js.jpeg" alt="js"></p>
 <h1 id="定义">定义</h1><p>数组的标准定义：一个存储元素的线性集合，元素可以通过索引来任意存取，索引通常是数字，用来计算元素之间存储位置的偏移量。<br>在javascript中的数组有些不同，他们其实是特殊的对象，表示偏移量的索引是数组对象的属性（字符串）。效率上不如其他语言高。</p>
