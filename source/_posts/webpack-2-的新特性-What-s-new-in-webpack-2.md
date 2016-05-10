@@ -2,9 +2,7 @@ title: "webpack 2 的新特性 - What's new in webpack 2"
 date: 2016-02-02 17:31:32
 tags:
 - webpack
-- FE
-- 前端
-- 构建工具
+- JavaScript
 categories: [webpack]
 ---
 ![webpack](/img/webpack.png)

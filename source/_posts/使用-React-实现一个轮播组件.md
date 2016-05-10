@@ -2,9 +2,7 @@ title: 使用 React 实现一个轮播组件
 date: 2016-02-19 14:03:49
 tags:
 - React
-- FE
-- 前端
-- 教程
+- JavaScript
 categories: [React]
 ---
 ![React](/img/react.png)

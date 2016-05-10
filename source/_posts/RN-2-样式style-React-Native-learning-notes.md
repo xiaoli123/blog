@@ -2,8 +2,7 @@ title: '[RN]2.样式style--React-Native learning notes'
 date: 2015-11-22 16:27:03
 tags:
 - React-Native
-- learning notes
-- FE
+- Note
 categories: [React-Native]
 ---
 # tip:

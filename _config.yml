@@ -8,6 +8,7 @@ subtitle: 抓啊抓啊~~~
 description: hello word! 😺
 author: 阿城😇
 language: zh-Hans
+# language: en
 timezone: Asia/Shanghai
 
 # URL
@@ -16,8 +17,9 @@ url: http://qiutc.me
 root: /
 permalink: post/:title.html
 permalink_defaults:
+favicon: /favicon.ico
 
-
+#
 # Directory
 source_dir: source
 public_dir: public
@@ -40,10 +42,9 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: true
   tab_replace:
-
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -58,11 +59,11 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 9
+per_page: 5
 pagination_dir: page
 
 index_generator:
-  per_page: 9
+  per_page: 5
 
 archive_generator:
   per_page: 20
@@ -75,7 +76,8 @@ tag_generator:
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: next
+theme: another
+# theme: next
 # date
 since: 2015
 
@@ -83,16 +85,17 @@ since: 2015
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:TongchengQiu/blog.git,
+  repository:
+    github: git@github.com:TongchengQiu/blog.git,
+    coding: git@git.coding.net:tcqiu/blog.git,coding-pages
   branch: gh-pages
+
 # Disqus
 duoshuo_shortname: qiutongcheng
 duoshuo_hotartical: false
+
 baidu_analytics: 47d302b006bf28a09c22990da53cd3da
-baidushare: true
-duoshuo_share: true
-# JiaThis 分享服务
-jiathis: false
+google_analytics: sjadjgdasgd
 
 plugins:
 - hexo-generator-sitemap
@@ -106,9 +109,9 @@ creative_commons: by-nc-sa
 
 # Social links
 social:
-  GitHub: https://github.com/tongchengqiu
-  Twitter: https://twitter.com/tongchengqiu
-  Zhihu: http://www.zhihu.com/people/tongchengqiu
-  Weibo: http://weibo.com/tongchengqiu
+  github: https://github.com/tongchengqiu
+  twitter: https://twitter.com/tongchengqiu
+  zhihu: http://www.zhihu.com/people/tongchengqiu
+  weibo: http://weibo.com/tongchengqiu
 
-avatar: /images/qtc_avatar.jpg
+avatar: /img/qtc_avatar.jpg

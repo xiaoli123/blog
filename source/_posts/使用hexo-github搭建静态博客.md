@@ -2,9 +2,6 @@ title: 使用hexo+github搭建静态博客
 date: 2015-10-04 11:01:31
 tags:
 - hexo
-- nodejs
-- 教程
-- blog
 categories: [hexo]
 ---
 # 认识hexo

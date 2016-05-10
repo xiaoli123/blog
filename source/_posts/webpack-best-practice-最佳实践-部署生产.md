@@ -2,9 +2,7 @@ title: webpack-best-practice-最佳实践-部署生产
 date: 2015-12-02 10:56:39
 tags:
 - webpack
-- FE
-- 前端
-- 构建工具
+- JavaScript
 categories: [webpack]
 ---
 ![webpack](/img/webpack.png)

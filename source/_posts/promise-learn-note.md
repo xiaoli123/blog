@@ -1,7 +1,6 @@
 title: Promise 对象初尝试
 date: 2016-03-27 15:06:49
 tags:
-- 前端
 - Note
 - JavaScript
 categories: [JavaScript]

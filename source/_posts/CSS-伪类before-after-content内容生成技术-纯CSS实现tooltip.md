@@ -1,8 +1,6 @@
 title: CSS 伪类before/after content内容生成技术----纯CSS实现tooltip
 date: 2015-10-17 15:30:41
 tags:
-- 前端
-- 教程
 - CSS
 categories: [CSS]
 ---

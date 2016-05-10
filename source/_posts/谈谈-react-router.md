@@ -1,10 +1,10 @@
 title: 谈谈 react-router
 date: 2015-12-11 09:33:12
 tags:
-- 前端
 - React
 - react-router
-categories: [React, react-router]
+- JavaScript
+categories: [React]
 ---
 # 谈谈
 最近使用的 React + webpack 来开发项目，感觉确实是爽的飞起，然而总感觉还是少了点什么。😫

@@ -1,10 +1,10 @@
 title: redux 大法好 —— 入门实例 TodoList
 date: 2015-12-21 14:24:43
 tags:
-- FE
 - redux
-- react
-categories: [redux]
+- React
+- JavaScript
+categories: [React]
 ---
 ![redux](/img/redux.jpeg)
 # Tip

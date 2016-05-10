@@ -2,8 +2,7 @@ title: '[RN]1.环境搭建--React-Native learning notes'
 date: 2015-11-21 20:57:35
 tags:
 - React-Native
-- learning notes
-- FE
+- Note
 categories: [React-Native]
 ---
 # tip:

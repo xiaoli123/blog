@@ -1,10 +1,9 @@
 title: 如何使用webpack—webpack-howto
 date: 2015-10-21 10:58:10
 tags:
-- 前端
-- 教程
 - webpack
 - 翻译
+- JavaScript
 categories: [webpack]
 ---
 # 如何使用webpack
