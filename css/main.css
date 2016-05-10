@@ -1275,7 +1275,7 @@ body {
 .comments #ds-thread #ds-reset .ds-meta .ds-thread-liked {
   background-color: rgba(255,255,255,0.6);
 }
-.comments #ds-thread #ds-reset .ds-comments-info .ds-comments-tabs .ds-tab .ds-comments-tab-duoshuo .ds-highlight {
+.comments #ds-thread #ds-reset .ds-comments-info .ds-comments-tabs .ds-tab .ds-comments-tab-duoshuo {
   text-shadow: none;
   box-shadow: none;
   border: 1px solid #ccc;
