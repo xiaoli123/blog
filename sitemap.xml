@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/categories/index.html</loc>
+    <lastmod>2016-05-10T03:28:24.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/javascript-array.html</loc>
     <lastmod>2016-05-09T14:48:33.000Z</lastmod>
   </url>
@@ -12,12 +17,7 @@
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/categories/index.html</loc>
+    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
     <lastmod>2016-03-12T01:38:01.000Z</lastmod>
   </url>
   
@@ -37,7 +37,7 @@
   </url>
   
   <url>
-    <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
+    <loc>http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html</loc>
     <lastmod>2016-03-12T01:38:01.000Z</lastmod>
   </url>
   
