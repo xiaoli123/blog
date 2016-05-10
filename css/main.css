@@ -1263,17 +1263,23 @@ body {
   background: #fff;
   color: #3f86b5;
 }
-.comments #ds-thread .ds-reset .ds-meta .ds-like-thread-button {
+.comments #ds-thread #ds-reset .ds-meta .ds-like-thread-button {
   text-shadow: none;
   box-shadow: none;
   border: 1px solid #ccc;
   border-radius: 0;
 }
-.comments #ds-thread .ds-reset .ds-meta .ds-like-thread-button:hover {
+.comments #ds-thread #ds-reset .ds-meta .ds-like-thread-button:hover {
   background: rgba(255,255,255,0.6);
 }
-.comments #ds-thread .ds-reset .ds-meta .ds-thread-liked {
+.comments #ds-thread #ds-reset .ds-meta .ds-thread-liked {
   background-color: rgba(255,255,255,0.6);
+}
+.comments #ds-thread #ds-reset .ds-comments-info .ds-comments-tabs .ds-tab .ds-comments-tab-duoshuo .ds-highlight {
+  text-shadow: none;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  border-radius: 0;
 }
 .index-content {
   width: 100%;
