@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-05-09T14:48:33.000Z</updated>
+  <updated>2016-05-10T03:50:37.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://qiutc.me/post/javascript-array.html"/>
     <id>http://qiutc.me/post/javascript-array.html</id>
     <published>2016-04-29T12:49:51.000Z</published>
-    <updated>2016-05-09T14:48:33.000Z</updated>
+    <updated>2016-05-10T03:50:37.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>系统学习 Array 对象的笔记。</p>
 <p><img src="/img/js.jpeg" alt="js"></p>
 <h1 id="定义">定义</h1><p>数组的标准定义：一个存储元素的线性集合，元素可以通过索引来任意存取，索引通常是数字，用来计算元素之间存储位置的偏移量。<br>在javascript中的数组有些不同，他们其实是特殊的对象，表示偏移量的索引是数组对象的属性（字符串）。效率上不如其他语言高。</p>
@@ -149,13 +149,9 @@
 <h1 id="定义">定义</h1><p>数组的标准定义：一个存储元素的线性集合，元素可以通过索引来任意]]>
     </summary>
     
-      <category term="JavasCript" scheme="http://qiutc.me/tags/JavasCript/"/>
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
     
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="数组" scheme="http://qiutc.me/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="JavasCript" scheme="http://qiutc.me/categories/JavasCript/"/>
+      <category term="JavaScript" scheme="http://qiutc.me/categories/JavaScript/"/>
     
   </entry>
   
@@ -164,7 +160,7 @@
     <link href="http://qiutc.me/post/promise-learn-note.html"/>
     <id>http://qiutc.me/post/promise-learn-note.html</id>
     <published>2016-03-27T07:06:49.000Z</published>
-    <updated>2016-03-27T07:14:17.000Z</updated>
+    <updated>2016-05-10T03:50:48.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/promise-1.png" alt="Promise"></p>
 <h1 id="浏览器支持">浏览器支持</h1><p><img src="/img/promise-3.jpg" alt="Promise"><br><a href="http://caniuse.com/promises/embed/agents=desktop" target="_blank" rel="external">http://caniuse.com/promises/embed/agents=desktop</a></p>
 <h1 id="What_is_Promise?">What is Promise?</h1><p>Promise是抽象异步处理对象以及对其进行各种操作的组件。</p>
@@ -226,8 +222,6 @@
     
       <category term="Note" scheme="http://qiutc.me/tags/Note/"/>
     
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JavaScript" scheme="http://qiutc.me/categories/JavaScript/"/>
     
   </entry>
@@ -237,7 +231,7 @@
     <link href="http://qiutc.me/post/%E4%BD%BF%E7%94%A8-React-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6.html"/>
     <id>http://qiutc.me/post/使用-React-实现一个轮播组件.html</id>
     <published>2016-02-19T06:03:49.000Z</published>
-    <updated>2016-02-19T07:39:13.000Z</updated>
+    <updated>2016-05-10T03:51:51.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/react.png" alt="React"></p>
 <h1 id="tip">tip</h1><p>React 刚出来不久，组件还比较少，不像 jquery 那样已经有很多现成的插件了，当是就自己写了一个基于 React 的轮播组件，当然只是一个小 demo，刚刚有用 es6 的语法重新改了改，就想着写一个小教程给新手，如何实现一个 React 的小组件。<br>先放上仓库地址，可以先 clone 来看看代码：<a href="https://github.com/TongchengQiu/react-slider" target="_blank" rel="external">https://github.com/TongchengQiu/react-slider</a>。<br>react-slider 是一个图片轮播的组件，支持的配置有 图片（必须好不好，要不然轮播毛）、轮播图片的速度、是否自动轮播、自动轮播的时候鼠标放上去是否暂停、自动轮播速度、是否需要前后箭头、是否需要 dot （我不知道怎么表述好，反正意思你懂）。</p>
 <h1 id="第一步，需求">第一步，需求</h1><p>首先，写一个组件必须先考虑改组件的需求有哪些，支持的配置需要哪些。<br>如上已经说了改组件的需求：</p>
@@ -304,13 +298,9 @@
 <h1 id="tip">tip</h1><p>React 刚出来不久，组件还比较少，不像 jquery 那样已经有很多现成的插件了，当是就自己写了一个基于 React 的轮播组件，当然只]]>
     </summary>
     
-      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
     
       <category term="React" scheme="http://qiutc.me/tags/React/"/>
-    
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="教程" scheme="http://qiutc.me/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="React" scheme="http://qiutc.me/categories/React/"/>
     
@@ -321,7 +311,7 @@
     <link href="http://qiutc.me/post/webpack-2-%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7-What-s-new-in-webpack-2.html"/>
     <id>http://qiutc.me/post/webpack-2-的新特性-What-s-new-in-webpack-2.html</id>
     <published>2016-02-02T09:31:32.000Z</published>
-    <updated>2016-02-04T12:46:23.000Z</updated>
+    <updated>2016-05-10T03:52:07.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/webpack.png" alt="webpack"></p>
 <p>原文 <a href="https://gist.github.com/sokra/27b24881210b56bbaff7" target="_blank" rel="external">What’s new in webpack 2</a></p>
 <h1 id="webpack_2_中的新特性">webpack 2 中的新特性</h1><p>创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。</p>
@@ -355,13 +345,9 @@
 <p>原文 <a href="https://gist.github.com/sokra/27b24881210b56bbaff7" target="_blank" rel="ex]]>
     </summary>
     
-      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
     
       <category term="webpack" scheme="http://qiutc.me/tags/webpack/"/>
-    
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="构建工具" scheme="http://qiutc.me/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
       <category term="webpack" scheme="http://qiutc.me/categories/webpack/"/>
     
@@ -372,7 +358,7 @@
     <link href="http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html"/>
     <id>http://qiutc.me/post/redux-大法好-——-入门实例-TodoList.html</id>
     <published>2015-12-21T06:24:43.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:53:46.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/redux.jpeg" alt="redux"></p>
 <h1 id="Tip">Tip</h1><p>前端技术真是日新月异，搞完 React 不搭配个数据流都不好意思了。<br>满怀期待的心去翻了翻 flux，简直被官方那意识流的文档折服了，真是又臭又长还是我智商问题？😖<br>转战 redux ，越看越有意思，跟着文档做了个 TodoList 的入门小例子。</p>
 <p>废话不多说，先贴上文章用到例子的源码 <a href="https://github.com/TongchengQiu/TodoList-as-redux-demo" target="_blank" rel="external">https://github.com/TongchengQiu/TodoList-as-redux-demo</a><br>redux 的 Github 仓库 <a href="https://github.com/rackt/redux" target="_blank" rel="external">https://github.com/rackt/redux</a><br>还有个中文的 gitbook 翻译文档 <a href="http://camsong.github.io/redux-in-chinese/index.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/index.html</a></p>
@@ -436,13 +422,13 @@
 <h1 id="Tip">Tip</h1><p>前端技术真是日新月异，搞完 React 不搭配个数据流都不好意思了。<br>满怀期待的心去翻了翻 flux，简直被官方那意识流的文档折服了]]>
     </summary>
     
-      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
     
-      <category term="react" scheme="http://qiutc.me/tags/react/"/>
+      <category term="React" scheme="http://qiutc.me/tags/React/"/>
     
       <category term="redux" scheme="http://qiutc.me/tags/redux/"/>
     
-      <category term="redux" scheme="http://qiutc.me/categories/redux/"/>
+      <category term="React" scheme="http://qiutc.me/categories/React/"/>
     
   </entry>
   
@@ -451,7 +437,7 @@
     <link href="http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html"/>
     <id>http://qiutc.me/post/谈谈-react-router.html</id>
     <published>2015-12-11T01:33:12.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:53:14.000Z</updated>
     <content type="html"><![CDATA[<h1 id="谈谈">谈谈</h1><p>最近使用的 React + webpack 来开发项目，感觉确实是爽的飞起，然而总感觉还是少了点什么。😫<br>😏对，是多页面，每次请求页面还要后端路由给你？😄多不爽啊，试试 react-router ，简直掌控一切的感觉，只开放一个页面路由接口，其他全给数据接口就👌了，😂可以和后端哥哥说拜拜了。<br>👋👋👋👋👋👋👋👋👋👋👋 啪啪啪啪啪～</p>
 <p><img src="/img/react-router.png" alt="react-router"></p>
 <h1 id="概述">概述</h1><p>先贴上官方文档 <a href="https://github.com/rackt/react-router/tree/master/docs" target="_blank" rel="external">https://github.com/rackt/react-router/tree/master/docs</a>.<br>对了这里还有一份中文文档（不过不是很全）<a href="http://react-guide.github.io/react-router-cn/" target="_blank" rel="external">http://react-guide.github.io/react-router-cn/</a>.<br>react-router 是 React 的完整前端路由解决方案，特别在做一个 spa 应用的时候，他能实现 url 和 视图ui 的同步，并且支持后端渲染，异步按需加载等等😄。<br>由于 react-router 文档的多变，这里的例子以当前版本 1.0.1 为准。（1.0之前文档每一个版本的变动都很大，索多了都是泪）</p>
@@ -535,15 +521,13 @@
     <![CDATA[<h1 id="谈谈">谈谈</h1><p>最近使用的 React + webpack 来开发项目，感觉确实是爽的飞起，然而总感觉还是少了点什么。😫<br>😏对，是多页面，每次请求页面还要后端路由给你？😄多不爽啊，试试 react-router ，简直掌控一切的感觉，只开放]]>
     </summary>
     
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
+    
       <category term="React" scheme="http://qiutc.me/tags/React/"/>
     
       <category term="react-router" scheme="http://qiutc.me/tags/react-router/"/>
     
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="React" scheme="http://qiutc.me/categories/React/"/>
-    
-      <category term="react-router" scheme="http://qiutc.me/categories/React/react-router/"/>
     
   </entry>
   
@@ -552,7 +536,7 @@
     <link href="http://qiutc.me/post/webpack-best-practice-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-%E9%83%A8%E7%BD%B2%E7%94%9F%E4%BA%A7.html"/>
     <id>http://qiutc.me/post/webpack-best-practice-最佳实践-部署生产.html</id>
     <published>2015-12-02T02:56:39.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:51:59.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/webpack.png" alt="webpack"></p>
 <h1 id="tip">tip</h1><p>webpack的入门篇可以看我的这一片博文。<br><a href="http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html">《如何使用webpack—webpack-howto》</a>.</p>
 <h1 id="前言">前言</h1><p>最近一段时间在项目中使用了webpack和React来开发，总之来说也是遇到了许多坑，webpack毕竟还是比较新的技术，而且也很难有一个很好的构建案例来适应所有的项目，总之，在看了许多项目demo和官方文档以及官方推荐的tutorials之后，也算是自己总结出的一套最佳实践吧。</p>
@@ -618,13 +602,9 @@
 <h1 id="tip">tip</h1><p>webpack的入门篇可以看我的这一片博文。<br><a href="http://qiutc.me/post/%E5%A6%82%]]>
     </summary>
     
-      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
     
       <category term="webpack" scheme="http://qiutc.me/tags/webpack/"/>
-    
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="构建工具" scheme="http://qiutc.me/tags/%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"/>
     
       <category term="webpack" scheme="http://qiutc.me/categories/webpack/"/>
     
@@ -635,7 +615,7 @@
     <link href="http://qiutc.me/post/RN-2-%E6%A0%B7%E5%BC%8Fstyle-React-Native-learning-notes.html"/>
     <id>http://qiutc.me/post/RN-2-样式style-React-Native-learning-notes.html</id>
     <published>2015-11-22T08:27:03.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:51:29.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
 <p>😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏</p>
 <h1 id="React-Native_for_Android_样式的使用。">React-Native for Android 样式的使用。</h1><p>React-Native 编写的应用的样式不是靠css来实现的，而是依赖javascript来为你的应用来添加样式，先不讨论这样做的好处与坏处，因为这个实现方法本身就存在着很多争议，我们主要关注他的样式的语法和特性。</p>
@@ -665,11 +645,9 @@
 <p>😏😏😏😏😏😏😏😏😏😏😏😏😏😏]]>
     </summary>
     
-      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+      <category term="Note" scheme="http://qiutc.me/tags/Note/"/>
     
       <category term="React-Native" scheme="http://qiutc.me/tags/React-Native/"/>
-    
-      <category term="learning notes" scheme="http://qiutc.me/tags/learning-notes/"/>
     
       <category term="React-Native" scheme="http://qiutc.me/categories/React-Native/"/>
     
@@ -680,7 +658,7 @@
     <link href="http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html"/>
     <id>http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html</id>
     <published>2015-11-21T12:57:35.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:51:20.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
 <h1 id="React-Native_for_Android_的环境搭建">React-Native for Android 的环境搭建</h1><h3 id="要求：">要求：</h3><ol>
 <li>前提 OS X (假设大家有用Mac了😏ß);</li>
@@ -708,11 +686,9 @@
 <h1 id="React-Native_for_Androi]]>
     </summary>
     
-      <category term="FE" scheme="http://qiutc.me/tags/FE/"/>
+      <category term="Note" scheme="http://qiutc.me/tags/Note/"/>
     
       <category term="React-Native" scheme="http://qiutc.me/tags/React-Native/"/>
-    
-      <category term="learning notes" scheme="http://qiutc.me/tags/learning-notes/"/>
     
       <category term="React-Native" scheme="http://qiutc.me/categories/React-Native/"/>
     
@@ -723,7 +699,7 @@
     <link href="http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html"/>
     <id>http://qiutc.me/post/如何使用webpack—webpack-howto.html</id>
     <published>2015-10-21T02:58:10.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:52:30.000Z</updated>
     <content type="html"><![CDATA[<h1 id="如何使用webpack">如何使用webpack</h1><p>本文章翻译自petehunt的webpack-howto教程，<a href="https://github.com/petehunt/webpack-howto" target="_blank" rel="external">原地址https://github.com/petehunt/webpack-howto</a>，还有源码。</p>
 <h2 id="本教程的目标">本教程的目标</h2><p>这是一本如何使用webpack来处理代码的“烹饪书”，它包括了我们在Instagram用的大多数东西以及我们还没在项目中用到过的。<br>我（作者）的建议：把这本书作为你学习webpack文档的开端，然后配合看官方文档的说明。</p>
 <h2 id="预备知识">预备知识</h2><ul>
@@ -770,11 +746,9 @@
     <![CDATA[<h1 id="如何使用webpack">如何使用webpack</h1><p>本文章翻译自petehunt的webpack-howto教程，<a href="https://github.com/petehunt/webpack-howto" target="_blank" r]]>
     </summary>
     
+      <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
+    
       <category term="webpack" scheme="http://qiutc.me/tags/webpack/"/>
-    
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="教程" scheme="http://qiutc.me/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="翻译" scheme="http://qiutc.me/tags/%E7%BF%BB%E8%AF%91/"/>
     
@@ -787,7 +761,7 @@
     <link href="http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html"/>
     <id>http://qiutc.me/post/CSS-伪类before-after-content内容生成技术-纯CSS实现tooltip.html</id>
     <published>2015-10-17T07:30:41.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:50:22.000Z</updated>
     <content type="html"><![CDATA[<h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。<br>应用before/和after也比较简单，举个例子：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">a</span><span class="pseudo">:after</span> <span class="rules">&#123;</span><br><span class="line">      <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">" after "</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">display</span>:<span class="value">  block</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">coloe</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>可以在浏览器看到，a标签元素后面多出了一段文字 after。（在CSS3中伪类元素使用是如a::after的，不过目前两者并无多大区别）。<br>（伪元素不可通过DOM使用，IE6/7对该属性不支持）</p>
 <p>after和before伪元素有许多用处，还可以简化代码，比如可以写一个计数器、tip小三角形、清除浮动……特别在CSS3中新加的一些属性更是丰富了它的应用，这里有个小教程，用before/after伪元素来实现一个纯CSS3的tooltip。</p>
@@ -812,10 +786,6 @@
     
       <category term="CSS" scheme="http://qiutc.me/tags/CSS/"/>
     
-      <category term="前端" scheme="http://qiutc.me/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="教程" scheme="http://qiutc.me/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="CSS" scheme="http://qiutc.me/categories/CSS/"/>
     
   </entry>
@@ -825,7 +795,7 @@
     <link href="http://qiutc.me/post/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2.html"/>
     <id>http://qiutc.me/post/使用hexo-github搭建静态博客.html</id>
     <published>2015-10-04T03:01:31.000Z</published>
-    <updated>2016-03-12T01:38:01.000Z</updated>
+    <updated>2016-05-10T03:52:12.000Z</updated>
     <content type="html"><![CDATA[<h1 id="认识hexo">认识hexo</h1><p>&#8195;&#8195;hexo是一款基于Node.js的静态博客框架，可以生成静态文件并且一键部署到github pages上，并且他可以使用markdown来编写文章，十分简单。</p>
 <p>他有许多优点：</p>
 <ul>
@@ -915,13 +885,7 @@
 <p>他有许多优点：</]]>
     </summary>
     
-      <category term="blog" scheme="http://qiutc.me/tags/blog/"/>
-    
       <category term="hexo" scheme="http://qiutc.me/tags/hexo/"/>
-    
-      <category term="nodejs" scheme="http://qiutc.me/tags/nodejs/"/>
-    
-      <category term="教程" scheme="http://qiutc.me/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="hexo" scheme="http://qiutc.me/categories/hexo/"/>
     
