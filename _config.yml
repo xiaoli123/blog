@@ -65,13 +65,6 @@ pagination_dir: page
 index_generator:
   per_page: 5
 
-archive_generator:
-  per_page: 20
-  yearly: true
-  monthly: true
-
-tag_generator:
-  per_page: 10
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
@@ -90,12 +83,9 @@ deploy:
     coding: git@git.coding.net:tcqiu/blog.git,coding-pages
   branch: gh-pages
 
-# Disqus
 duoshuo_shortname: qiutongcheng
 duoshuo_hotartical: false
 
-baidu_analytics: 47d302b006bf28a09c22990da53cd3da
-google_analytics: sjadjgdasgd
 
 plugins:
 - hexo-generator-sitemap
@@ -113,5 +103,3 @@ social:
   twitter: https://twitter.com/tongchengqiu
   zhihu: http://www.zhihu.com/people/tongchengqiu
   weibo: http://weibo.com/tongchengqiu
-
-avatar: /img/qtc_avatar.jpg
