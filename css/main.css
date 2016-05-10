@@ -1288,6 +1288,13 @@ body {
 .comments #ds-thread #ds-reset .ds-textarea-wrapper {
   background: #fff;
   border-radius: 0;
+  border: none;
+  padding-right: 0;
+}
+.comments #ds-thread #ds-reset .ds-textarea-wrapper textarea {
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid #ccc;
 }
 .comments #ds-thread #ds-reset .ds-post-options {
   background: #fff;
