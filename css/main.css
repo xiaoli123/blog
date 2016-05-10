@@ -1119,7 +1119,7 @@ body {
   position: relative;
   width: 100%;
   height: 400px;
-  background: url("img/bg.jpg") center/cover;
+  background: url("images/bg.jpg") center/cover;
 }
 .header .mask {
   position: absolute;
