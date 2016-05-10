@@ -1296,12 +1296,17 @@ body {
   display: block;
   border: 1px solid #ccc;
 }
+.comments #ds-thread #ds-reset .ds-textarea-wrapper textarea:focus {
+  border: 1px solid #3f86b5;
+}
 .comments #ds-thread #ds-reset .ds-post-options {
   background: #fff;
   border-radius: 0;
+  border-top: 0;
 }
 .comments #ds-thread #ds-reset .ds-post-button {
   background: #fff;
+  border-top: 0;
   border-radius: 0;
 }
 .comments #ds-thread #ds-reset .ds-post-button:hover {
