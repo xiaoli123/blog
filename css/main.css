@@ -1262,16 +1262,16 @@ body {
   display: inline-block;
   position: relative;
   transform: translateX(-50%);
-  margin-left: 50%;
+  left: 50%;
 }
 .pagination a,
 .pagination span {
   text-decoration: none;
   margin: 0 5px;
   display: inline-block;
-  width: 3.4em;
-  height: 2em;
-  line-height: 2em;
+  width: 3.4rem;
+  height: 2rem;
+  line-height: 2rem;
   border: 1px solid #ccc;
   color: #666;
   transition: all 0.4s;
