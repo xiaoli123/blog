@@ -586,27 +586,27 @@ body {
 }
 
 .markdown-body h2:before {
-  content: "##";
+  content: "#";
   display: inline;
 }
 
 .markdown-body h3:before {
-  content: "###";
+  content: "#";
   display: inline;
 }
 
 .markdown-body h4:before {
-  content: "####";
+  content: "#";
   display: inline;
 }
 
 .markdown-body h5:before {
-  content: "#####";
+  content: "#";
   display: inline;
 }
 
 .markdown-body h6:before {
-  content: "######";
+  content: "#";
   display: inline;
 }
 
