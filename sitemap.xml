@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/cross-domain-collections.html</loc>
+    <lastmod>2016-05-16T18:12:45.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/404.html</loc>
+    <lastmod>2016-05-16T17:50:32.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/about/index.html</loc>
     <lastmod>2016-05-13T12:47:18.000Z</lastmod>
   </url>
@@ -69,11 +79,6 @@
   <url>
     <loc>http://qiutc.me/post/CSS-%E4%BC%AA%E7%B1%BBbefore-after-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF-%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0tooltip.html</loc>
     <lastmod>2016-05-10T03:50:22.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/404.html</loc>
-    <lastmod>2016-03-12T01:38:01.000Z</lastmod>
   </url>
   
   <url>
