@@ -8,7 +8,6 @@ subtitle: 抓啊抓啊~~~
 description: hello word! 😺
 author: 阿城😇
 language: zh-Hans
-# language: en
 timezone: Asia/Shanghai
 
 # URL
@@ -17,7 +16,6 @@ url: http://qiutc.me
 root: /
 permalink: post/:title.html
 permalink_defaults:
-favicon: /favicon.ico
 
 #
 # Directory
@@ -45,6 +43,7 @@ highlight:
   line_number: false
   auto_detect: true
   tab_replace:
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -62,17 +61,10 @@ time_format: HH:mm:ss
 per_page: 5
 pagination_dir: page
 
-index_generator:
-  per_page: 5
-
-
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 theme: another
-# theme: next
-# date
-since: 2015
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -83,23 +75,12 @@ deploy:
     coding: git@git.coding.net:tcqiu/blog.git,coding-pages
   branch: gh-pages
 
-duoshuo_shortname: qiutongcheng
-duoshuo_hotartical: false
-
-
 plugins:
 - hexo-generator-sitemap
-- hexo-generator-index
 - hexo-generator-archive
 - hexo-generator-tag
+
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 creative_commons: by-nc-sa
-
-# Social links
-social:
-  github: https://github.com/tongchengqiu
-  twitter: https://twitter.com/tongchengqiu
-  zhihu: http://www.zhihu.com/people/tongchengqiu
-  weibo: http://weibo.com/tongchengqiu
