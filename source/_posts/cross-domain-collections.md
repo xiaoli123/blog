@@ -7,7 +7,7 @@ bgimage: /img/cross-domain.png
 ---
 # 跨域整理
 
-# 1. 跨域资源共享 CORS
+# 跨域资源共享 CORS
 对于web开发来讲，由于浏览器的同源策略，我们需要经常使用一些hack的方法去跨域获取资源，但是hack的方法总归是hack。直到W3C出了一个标准－CORS－"跨域资源共享"（Cross-origin resource sharing）。
 它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。
 首先来说 CORS 需要浏览器和服务端同时支持的，对于兼容性来说主要是ie10+，其它现代浏览器都是支持的。
@@ -16,9 +16,9 @@ bgimage: /img/cross-domain.png
 使用 CORS 跨域的时候其实和普通的 ajax 过程是一样的，只是浏览器在发现这是一个跨域请求的时候会自动帮我们处理一些事，比如验证等等，所以说只要服务端提供支持，前端是不需要做额外的事情的。
 ## 两种请求
 CORS 的请求分两种，这也是浏览器为了安全做的一些处理，不同情况下浏览器执行的操作也是不一样的，主要分为两种请求，当然这一切我们是不需要做额外处理的，浏览器会自动处理的。
-### 1. 简单请求（simple request）
+## 简单请求（simple request）
 只要同时满足以下两大条件，就属于简单请求。
-#### 条件
+### 条件
 ```
 1) 请求方法是以下三种方法中的一个：
 HEAD
@@ -31,7 +31,7 @@ Content-Language
 Last-Event-ID
 Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
 ```
-#### 过程
+### 过程
 对于简单的跨域请求，浏览器会自动在请求的头信息加上 ``Origin`` 字段，表示本次请求来自哪个源（协议 + 域名 + 端口），服务端会获取到这个值，然后判断是否同意这次请求并返回。
 ```
 // 请求
@@ -42,7 +42,7 @@ Accept-Language: en-US
 Connection: keep-alive
 User-Agent: Mozilla/5.0...
 ```
-##### 1.服务端允许
+#### 1.服务端允许
 如果服务端许可本次请求，就会在返回的头信息多出几个字段：
 ```
 // 返回
@@ -61,16 +61,16 @@ Content-Type: text/html; charset=utf-8
 - Access-Control-Expose-Headers
 可选。CORS请求时，XMLHttpRequest对象的``getResponseHeader()``方法只能拿到6个基本字段：Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma。如果想拿到其他字段，就必须在Access-Control-Expose-Headers里面指定。上面的例子指定，``getResponseHeader('Info')``可以返回Info字段的值。
 
-##### 2.服务端拒绝
+#### 2.服务端拒绝
 当然我们为了防止接口被乱调用，需要限制源，对于不允许的源，服务端还是会返回一个正常的HTTP回应，但是不会带上 ``Access-Control-Allow-Origin`` 字段，浏览器发现这个跨域请求的返回头信息没有该字段，就会抛出一个错误，会被 ``XMLHttpRequest`` 的 ``onerror`` 回调捕获到。
 **这种错误无法通过 HTTP 状态码判断，因为回应的状态码有可能是200**
 
-### 2.非简单请求
-#### 条件
+## 非简单请求
+### 条件
 出了简单请求以外的CORS请求。
 非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。
-#### 过程
-##### 1）预检请求
+### 过程
+#### 1）预检请求
 非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为"预检"请求（preflight）。
 浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHttpRequest请求，否则就报错。
 预检请求的发送请求：
@@ -111,14 +111,14 @@ Content-Type: text/plain
 如果浏览器请求包括Access-Control-Request-Headers字段，则Access-Control-Allow-Headers字段是必需的。它也是一个逗号分隔的字符串，表明服务器支持的所有头信息字段，不限于浏览器在"预检"中请求的字段。
 - Access-Control-Max-Age
 该字段可选，用来指定本次预检请求的有效期，单位为秒。上面结果中，有效期是20天（1728000秒），即允许缓存该条回应1728000秒（即20天），在此期间，不用发出另一条预检请求。
-##### 2）浏览器的正常请求和回应
+#### 2）浏览器的正常请求和回应
 一旦服务器通过了"预检"请求，以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个Origin头信息字段。服务器的回应，也都会有一个Access-Control-Allow-Origin头信息字段。
 
 **参考：**[《跨域资源共享 CORS 详解》]()http://www.ruanyifeng.com/blog/2016/04/cors.html
 )
 阮大神的文章，复制粘贴了不少。
 
-# 2. jsonp
+# jsonp
 jsonp = json + padding
 其实对于常用性来说，jsonp应该是使用最经常的一种跨域方式了，他不受浏览器兼容性的限制。但是他也有他的局限性，只能发送 GET 请求，需要服务端和前端规定好，写法丑陋。
 它的原理在于浏览器请求 script 资源不受同源策略限制，并且请求到 script 资源后立即执行。
@@ -146,7 +146,7 @@ resolveJson({name: 'qiutc'});
 
 在一些第三方库往往都会封装jsonp的操作，比如 jQuery 的``$.getJSON``。
 
-# 3. document.domain
+# document.domain
 一个页面框架（iframe／frame）之间（父子或同辈），是能够获取到彼此的window对象的，但是这个 window 不能拿到方法和属性（尼玛这有什么用，甩脸）。
 ```
 // 当前页面域名 http://blog.qiutc.me/a.html
@@ -182,7 +182,7 @@ document.domain = 'qiutc.me';
 </script>
 ```
 
-# 4. window.name
+# window.name
 window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个 ``window.name`` 的，每个页面对 ``window.name`` 都有读写的权限，``window.name`` 是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。
 比如有一个``www.qiutc.me/a.html``页面，需要通过a.html页面里的js来获取另一个位于不同域上的页面``www.qiutc.com/data.html``里的数据。
 data.html页面里的代码很简单，就是给当前的window.name设置一个a.html页面想要得到的数据值。data.html里的代码：
@@ -218,7 +218,7 @@ window.name = '我是被期望得到的数据';
 ```
 
 
-## 5. HTML5中新引进的window.postMessage
+# window.postMessage
 ``window.postMessage(message, targetOrigin)``  方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源。兼容性：
 ![cross-domain-postmessage](/img/cross-domain-postmessage.png)
 http://caniuse.com/#search=postMessage
@@ -247,12 +247,12 @@ window.onmessage = function(e) {
 </script>
 ```
 
-# 6.CSST (CSS Text Transformation)
+# CSST (CSS Text Transformation)
 一种用 CSS 跨域传输文本的方案。
 优点：相比 JSONP 更为安全，不需要执行跨站脚本。
 缺点：没有 JSONP 适配广，CSST 依赖支持 CSS3 的浏览器。
 原理：通过读取 CSS3 content 属性获取传送内容。
 具体可以参考：[CSST (CSS Text Transformation)](https://github.com/zswang/csst)
 
-# 7.利用flash
+# 利用flash
 flash 嘛，这个东西注定灭亡，不想说了。。。
