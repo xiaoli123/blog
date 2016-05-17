@@ -404,7 +404,7 @@ body {
   font-size: 1.2rem;
   color: #fff;
   right:2.6rem;
-  bottom: 5rem;
+  bottom: 3rem;
   background: rgba(63, 134, 181, 0.78);
   cursor: pointer;
   border-radius: 20px;
@@ -1159,7 +1159,6 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(55,68,84,0.82);
-  z-index: 1;
 }
 .header .header-cont {
   position: absolute;
@@ -1371,6 +1370,75 @@ body {
   color: #fff;
   border: none;
   text-shadow: none;
+}
+.post-sidebar {
+  position: fixed;
+  right: 2.6rem;
+  bottom: 6rem;
+}
+.post-sidebar .toggle-btn {
+  width: 2.6rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  color: #fff;
+  background: rgba(63,134,181,0.78);
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s;
+  text-align: center;
+}
+.post-sidebar .toggle-btn:hover {
+  background: #3f86b5;
+}
+.post-toc-wrap {
+  display: none;
+  position: absolute;
+  right: 3rem;
+  bottom: -2rem;
+  width: 250px;
+  height: auto;
+  background: #fff;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 0 0 1rem #ccc;
+  z-index: 999;
+}
+.post-toc-wrap .toc-title {
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: #555;
+  line-height: 1em;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid #eee;
+}
+.post-toc-wrap .post-toc .post-toc-content ol {
+  list-style: none;
+  width: 100%;
+}
+.post-toc-wrap .post-toc .post-toc-content ol li {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: none;
+  font-size: 0.9rem;
+  line-height: 1.4em;
+}
+.post-toc-wrap .post-toc .post-toc-content ol .nav-level-1,
+.post-toc-wrap .post-toc .post-toc-content ol .nav-level-2 {
+  display: block;
+}
+.post-toc-wrap .post-toc .post-toc-content a {
+  color: #3f86b5;
+}
+.post-toc-wrap .post-toc .post-toc-content .nav-child {
+  padding-left: 1rem;
+}
+.post-toc-wrap.fixed {
+  position: fixed;
+  top: 60px;
 }
 .index-content {
   width: 100%;
