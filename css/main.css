@@ -1375,6 +1375,7 @@ body {
   position: fixed;
   right: 2.6rem;
   bottom: 6rem;
+  z-index: 999;
 }
 .post-sidebar .toggle-btn {
   width: 2.6rem;

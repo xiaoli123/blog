@@ -293,6 +293,22 @@
 <h1 id="未完待续">未完待续</h1><p>关于 <strong><em>根据路由按需异步加载js</em></strong> 和 <strong><em>服务器端渲染路由视图</em></strong> 以及 <strong><em>react-router的更高级用法</em></strong> 会在下一篇文章来探讨。<br>毕竟哥也需要去深入研究一下才敢献丑。😂😂😂<br>🐶</p>
 </div>
 
+      <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谈谈"><span class="nav-text">谈谈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器支持"><span class="nav-text">浏览器支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小例子"><span class="nav-text">小例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不想用_jsx_来写，换个方式吧～"><span class="nav-text">不想用 jsx 来写，换个方式吧～</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#默认的路由"><span class="nav-text">默认的路由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#404_NotFound"><span class="nav-text">404  NotFound</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绝对路径与重定向"><span class="nav-text">绝对路径与重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onEnter_方法表示进入这个路由前执行的方法，在进入_/inbox/messages/:id_的前，执行"><span class="nav-text">onEnter 方法表示进入这个路由前执行的方法，在进入 /inbox/messages/:id 的前，执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同样的也有_onLeave_这个方法"><span class="nav-text">同样的也有 onLeave 这个方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路径匹配原理"><span class="nav-text">路径匹配原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套关系"><span class="nav-text">嵌套关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路径语法"><span class="nav-text">路径语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-text">优先级</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拿到参数路径的"><span class="nav-text">拿到参数路径的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#history_配置"><span class="nav-text">history 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这三个有什么区别呢："><span class="nav-text">这三个有什么区别呢：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#createHashHistory"><span class="nav-text">createHashHistory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#createBrowserHistory"><span class="nav-text">createBrowserHistory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memoryhistory"><span class="nav-text">Memoryhistory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Link&IndexLink"><span class="nav-text">Link&IndexLink</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-text">Link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IndexLink"><span class="nav-text">IndexLink</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未完待续"><span class="nav-text">未完待续</span></a></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
     </div>
 
     <footer class="post-footer">
@@ -308,22 +324,6 @@
         </div>
       
     </footer>
-    
-    <div class="post-sidebar">
-  <div class="toggle-btn" id="toggle-btn">
-    <i class="fa fa-reorder"></i>
-  </div>
-  <section class="post-toc-wrap" id="post-sidebar">
-    <h2 class="toc-title">内容目录</h2>
-    <div class="post-toc">
-      
-      
-        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谈谈"><span class="nav-text">谈谈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器支持"><span class="nav-text">浏览器支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小例子"><span class="nav-text">小例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不想用_jsx_来写，换个方式吧～"><span class="nav-text">不想用 jsx 来写，换个方式吧～</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#默认的路由"><span class="nav-text">默认的路由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#404_NotFound"><span class="nav-text">404  NotFound</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绝对路径与重定向"><span class="nav-text">绝对路径与重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onEnter_方法表示进入这个路由前执行的方法，在进入_/inbox/messages/:id_的前，执行"><span class="nav-text">onEnter 方法表示进入这个路由前执行的方法，在进入 /inbox/messages/:id 的前，执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同样的也有_onLeave_这个方法"><span class="nav-text">同样的也有 onLeave 这个方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路径匹配原理"><span class="nav-text">路径匹配原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套关系"><span class="nav-text">嵌套关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路径语法"><span class="nav-text">路径语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-text">优先级</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拿到参数路径的"><span class="nav-text">拿到参数路径的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#history_配置"><span class="nav-text">history 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这三个有什么区别呢："><span class="nav-text">这三个有什么区别呢：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#createHashHistory"><span class="nav-text">createHashHistory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#createBrowserHistory"><span class="nav-text">createBrowserHistory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memoryhistory"><span class="nav-text">Memoryhistory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Link&IndexLink"><span class="nav-text">Link&IndexLink</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link"><span class="nav-text">Link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IndexLink"><span class="nav-text">IndexLink</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未完待续"><span class="nav-text">未完待续</span></a></li></ol></div>
-      
-    </div>
-  </section>
-</div>
-
 
   </article>
 

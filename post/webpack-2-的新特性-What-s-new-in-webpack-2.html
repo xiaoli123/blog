@@ -242,21 +242,7 @@ webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经�
 <h2 id="Minimize">Minimize</h2><p>在 UglifyJsPlugin 中不再支持让 Loaders 最小化文件的模式了，<code>debug</code> 配置也被移除了，Loaders 不能从 webpack 的配置中读取到他们的配置项了，取代的方案是：<br><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</span><br><span class="line">    test: <span class="regexp">/\.css$/</span>, <span class="comment">// optionally pass test, include and exclude, default affects all loaders</span></span><br><span class="line">    minimize: <span class="keyword">true</span>,</span><br><span class="line">    debug: <span class="keyword">false</span>,</span><br><span class="line">    <span class="keyword">options</span>: &#123;</span><br><span class="line">        <span class="comment">// pass stuff to the loader</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 </div>
 
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
-          
-            <a href="/tags#webpack" rel="tag">#webpack</a>
-          
-        </div>
-      
-    </footer>
-    
-    <div class="post-sidebar">
+      <div class="post-sidebar">
   <div class="toggle-btn" id="toggle-btn">
     <i class="fa fa-reorder"></i>
   </div>
@@ -271,6 +257,20 @@ webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经�
   </section>
 </div>
 
+
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
+          
+            <a href="/tags#webpack" rel="tag">#webpack</a>
+          
+        </div>
+      
+    </footer>
 
   </article>
 
