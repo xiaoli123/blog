@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- content-Type -->
+<meta charset="utf-8">
+
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="language" content="en">
+<meta name="robots" content="all">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<meta name="author" content="theme.author, theme.email">
+<meta name="reply-to" content="theme.email">
+<meta name="owner" content="theme.author">
+
+
+
+
+<meta name="google-site-verification" content="UA-78049587-1" />
+
+
+
+
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+
+
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
+
+
+
+
+<meta name="description" content="hello word! 😺" />
+
+
+
+
+<meta name="keywords" content="JavaScript," />
+
+
+<meta name="description" content="TIP最近在一个项目中需要实现一个移动端上传图片文件的需求，主要需求的是压缩并且按照比例自动裁切图片然后上传。一听是蛮简单的，因为是在移动端使用，所以完全可以使用 HTML5 的新特性以及一些 API。主要的思路是这样：
+
+监听一个 input (type=&amp;#39;file&amp;#39;) 的 change 事件，然后拿到文件的 file;
+把 file 转成 dataURL；
+然后用 canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端文件上传的实践">
+<meta property="og:url" content="http://qiutc.me/post/uploading-image-file-in-mobile-fe.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="TIP最近在一个项目中需要实现一个移动端上传图片文件的需求，主要需求的是压缩并且按照比例自动裁切图片然后上传。一听是蛮简单的，因为是在移动端使用，所以完全可以使用 HTML5 的新特性以及一些 API。主要的思路是这样：
+
+监听一个 input (type=&amp;#39;file&amp;#39;) 的 change 事件，然后拿到文件的 file;
+把 file 转成 dataURL；
+然后用 canvas">
+<meta property="og:updated_time" content="2016-06-01T15:07:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端文件上传的实践">
+<meta name="twitter:description" content="TIP最近在一个项目中需要实现一个移动端上传图片文件的需求，主要需求的是压缩并且按照比例自动裁切图片然后上传。一听是蛮简单的，因为是在移动端使用，所以完全可以使用 HTML5 的新特性以及一些 API。主要的思路是这样：
+
+监听一个 input (type=&amp;#39;file&amp;#39;) 的 change 事件，然后拿到文件的 file;
+把 file 转成 dataURL；
+然后用 canvas">
+
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.0.1" />
+
+
+
+
+
+
+<link href="http://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.0.1"/>
+
+
+<script>
+(function(){
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> 移动端文件上传的实践 </title>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78049587-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+</head>
+<body lang="zh-Hans">
+
+  <!--[if lte IE 9]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <div class="another-theme layout">
+
+    
+<header class="header" id="header">
+
+  <div class="header-cont">
+    <div class="text-area">
+      
+        <h1 class="title"> 移动端文件上传的实践 </h1>
+
+        
+        <div class="post-meta">
+          <div class="post-time">
+            发表于
+            <time  datetime="2016-06-01T21:27:45+08:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </div>
+
+          
+            <div class="post-category" >
+              
+                <span>
+                  <a href="/categories#JavaScript" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <a href="/post/uploading-image-file-in-mobile-fe.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="post/uploading-image-file-in-mobile-fe.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+        
+      
+    </div>
+    <!-- Navigation -->
+    
+    <nav class="navigation clearfix" id="navigation">
+      
+        
+        <a class="nav-link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="nav-link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="nav-link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="nav-link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+  <div class="mask"></div>
+</header>
+
+
+    <main class="container">
+
+      
+
+  <article class="post-article post-type-normal post" itemscope>
+
+    <div class="post-body">
+
+      <div class="content markdown-body"><h1 id="TIP">TIP</h1><p>最近在一个项目中需要实现一个移动端上传图片文件的需求，主要需求的是压缩并且按照比例自动裁切图片然后上传。<br>一听是蛮简单的，因为是在移动端使用，所以完全可以使用 HTML5 的新特性以及一些 API。<br>主要的思路是这样：</p>
+<ol>
+<li>监听一个 <code>input (type=&#39;file&#39;)</code> 的 <code>change</code> 事件，然后拿到文件的 <code>file</code>;</li>
+<li>把 <code>file</code> 转成 <code>dataURL</code>；</li>
+<li>然后用 <code>canvas</code> 绘制图片，绘制的时候经过算法按比例裁剪;</li>
+<li>然后再把 <code>canvas</code> 转成 <code>dataURL</code>;</li>
+<li>再把 <code>dataURL</code> 转成 <code>blob</code>;</li>
+<li>接着把 <code>blob</code> <code>append</code> 到 <code>FormData</code> 的实例对象。</li>
+<li>最后上传。</li>
+</ol>
+<p>主要用到的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" target="_blank" rel="external"><code>FileReader</code></a>、<a href="https://developer.mozilla.org/en-US/docs/Glossary/Canvas" target="_blank" rel="external"><code>canvas</code></a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData" target="_blank" rel="external"><code>FormData</code></a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/Blob" target="_blank" rel="external"><code>Blob</code></a> 这几个 API。</p>
+<p>开发过程遇到了蛮多坑，特别是在android下的微信浏览器内。</p>
+<h1 id="监听_input(type=file)_获取文件内容。">监听 input(type=file) 获取文件内容。</h1><figure class="highlight fsharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// html 片段</span></span><br><span class="line"></span><br><span class="line">&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"file"</span> id=<span class="string">"file-input"</span> name=<span class="string">"image"</span> accept=<span class="string">"image/gif, image/jpeg, image/png"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>对于 <code>type</code> 为 <code>file</code> 的 <code>input</code> 我们可以设置 <code>accept</code> 属性来现在我们要上传的文件类型，这里的目的是上传图片文件，所以我们可以设置：<code>accept=&quot;image/gif, image/jpeg, image/png&quot;</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JavaScript</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'file-input'</span>).onchange= <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 通过 event.target 回去 input 元素对象，然后拿到 files list，取第一个 file</span></span><br><span class="line">  <span class="keyword">let</span> file = event.target.files[<span class="number">0</span>];</span><br><span class="line">  <span class="comment">// compressImage 在下面解释，它接受三个参数，文件、裁剪的长宽比例，回调函数（回调函数获得一个 FormData 对象，文件已经存在里面了）；</span></span><br><span class="line">  compressImage(file, [<span class="number">1</span>, <span class="number">1</span>], (targetFormData) =&gt; &#123;</span><br><span class="line">    <span class="comment">//...... 这里获取到了 targetFormData，就可以直接使用它上传了</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="fileToDataURL：_file_转成_dataURL">fileToDataURL： file 转成 dataURL</h1><p>这里用到的是 <code>FileReader</code> 这个 API。<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/FileReader</a></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * file 转成 dataURL</span><br><span class="line"> * <span class="doctag">@param</span> file 文件</span><br><span class="line"> * <span class="doctag">@param</span> callback 回调函数</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fileToDataURL</span> <span class="params">(file, callback)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> reader = <span class="keyword">new</span> window.FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span><br><span class="line">    callback(e.target.result);</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(file);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="compressDataURL：dataURL_图片绘制_canvas，然后经过处理（裁剪_&amp;_压缩）再转成_dataURL">compressDataURL：dataURL 图片绘制 canvas，然后经过处理（裁剪 &amp; 压缩）再转成 dataURL</h1><p>一开始是这样的</p>
+<ol>
+<li>我们需要创建一个 <code>Image</code> 对象，然后把 <code>src</code> 设置成 <code>dataURL</code> ，获取到这张图片；</li>
+<li>我们需要创建一个 <code>canvas</code> 元素，用来处理绘制图片；</li>
+<li>获取裁剪的长宽比例，然后判断图片的实际长宽比例，按照最大化偏小的长或宽然后另一边采取中间部分，和 css 把 background 设置 center / cover 一个道理；</li>
+<li>调用<code>ctx.drawImage</code>绘制图片；</li>
+<li>使用 <code>canvas.toDataURL</code> 把 <code>canvans</code> 转成 <code>dataURL</code>。</li>
+</ol>
+<figure class="highlight zephir"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 使用 canvas 压缩处理 dataURL</span><br><span class="line"> * <span class="doctag">@param</span> dataURL</span><br><span class="line"> * <span class="doctag">@param</span> ratio 比例</span><br><span class="line"> * <span class="doctag">@param</span> callback</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compressDataURL</span> <span class="params">(dataURL, ratio, callback)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">const</span> img = <span class="keyword">new</span> window.Image();</span><br><span class="line">  img.src = dataURL;</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">const</span> canvas = document.createElement(<span class="string">'canvas'</span>);</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">  <span class="comment">// 3</span></span><br><span class="line">  canvas.width = <span class="number">100</span> * ratio[<span class="number">0</span>];</span><br><span class="line">  canvas.height = <span class="number">100</span> * ratio[<span class="number">2</span>];</span><br><span class="line">  <span class="keyword">const</span> RATIO = canvas.width / canvas.height;</span><br><span class="line">  <span class="keyword">let</span> cutx = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> cuty = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> cutw = img.width;</span><br><span class="line">  <span class="keyword">let</span> cuth = img.height;</span><br><span class="line">  <span class="keyword">if</span> (cutw / cuth &gt; RATIO) &#123;</span><br><span class="line">    <span class="comment">// 宽超过比例了]]</span></span><br><span class="line">    <span class="keyword">let</span> realw = cuth * RATIO;</span><br><span class="line">    cutx = (cutw - realw) / <span class="number">2</span>;</span><br><span class="line">    cutw = realw;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cutw / cuth &lt; RATIO) &#123;</span><br><span class="line">    <span class="comment">// 长超过比例了]]</span></span><br><span class="line">    <span class="keyword">let</span> realh = cutw / RATIO;</span><br><span class="line">    cuty = (cuth - realh) / <span class="number">2</span>;</span><br><span class="line">    cuth = realh;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 4</span></span><br><span class="line">  ctx.drawImage(img, cutx, cuty, cutw, cuth, <span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);</span><br><span class="line">  <span class="keyword">const</span> ndata = canvas.toDataURL(<span class="string">'image/jpeg'</span>, <span class="number">1</span>);</span><br><span class="line">  callback(ndata);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一切的运行在pc端的chrome浏览器下模拟都很好，但是在移动端测试的时候发现 <code>canvas</code> 无法绘制出图片，发现是 <code>img</code> 设置 <code>src</code> 有延迟，导致还没获取到图片图像就开始绘制。<br><strong>改进：监听 <code>img.onload</code> 事件来处理之后的操作：</strong><br><figure class="highlight zephir"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 使用 canvas 压缩 dataURL</span><br><span class="line"> * <span class="doctag">@param</span> dataURL</span><br><span class="line"> * <span class="doctag">@param</span> ratio</span><br><span class="line"> * <span class="doctag">@param</span> callback</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compressDataURL</span> <span class="params">(dataURL, ratio, callback)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> img = <span class="keyword">new</span> window.Image();</span><br><span class="line">  img.src = dataURL;</span><br><span class="line">  <span class="comment">// onload</span></span><br><span class="line">  img.onload = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> canvas = document.createElement(<span class="string">'canvas'</span>);</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">    canvas.width = <span class="number">100</span> * ratio.width;</span><br><span class="line">    canvas.height = <span class="number">100</span> * ratio.height;</span><br><span class="line">    <span class="keyword">const</span> RATIO = canvas.width / canvas.height;</span><br><span class="line">    <span class="keyword">let</span> cutx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> cuty = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> cutw = img.width;</span><br><span class="line">    <span class="keyword">let</span> cuth = img.height;</span><br><span class="line">    <span class="keyword">if</span> (cutw / cuth &gt; RATIO) &#123;</span><br><span class="line">      <span class="comment">// 宽超过比例了]]</span></span><br><span class="line">      <span class="keyword">let</span> realw = cuth * RATIO;</span><br><span class="line">      cutx = (cutw - realw) / <span class="number">2</span>;</span><br><span class="line">      cutw = realw;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cutw / cuth &lt; RATIO) &#123;</span><br><span class="line">      <span class="comment">// 长超过比例了]]</span></span><br><span class="line">      <span class="keyword">let</span> realh = cutw / RATIO;</span><br><span class="line">      cuty = (cuth - realh) / <span class="number">2</span>;</span><br><span class="line">      cuth = realh;</span><br><span class="line">    &#125;</span><br><span class="line">    ctx.drawImage(img, cutx, cuty, cutw, cuth, <span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);</span><br><span class="line">    <span class="keyword">const</span> ndata = canvas.toDataURL(<span class="string">'image/jpeg'</span>, <span class="number">1</span>);</span><br><span class="line">    callback(ndata);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="dataURLtoBlob：dataURL_转成_Blob">dataURLtoBlob：dataURL 转成 Blob</h1><p>这一步我们把 <code>dataURL</code> 转成 <code>Blob</code></p>
+<figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * dataURL 转成 blob</span><br><span class="line"> * @param dataURL</span><br><span class="line"> * @<span class="keyword">return</span> blob</span><br><span class="line"> */</span><br><span class="line">function dataURLtoBlob (dataURL) &#123;</span><br><span class="line">  <span class="keyword">let</span> binaryString = atob(dataURL.split(',')[<span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">let</span> arrayBuffer = new <span class="type">ArrayBuffer</span>(binaryString.length);</span><br><span class="line">  <span class="keyword">let</span> intArray = new <span class="type">Uint8Array</span>(arrayBuffer);</span><br><span class="line">  <span class="keyword">let</span> mime = dataURL.split(',')[<span class="number">0</span>].match(/:(.*?);/)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = binaryString.length; i &lt; j; i++) &#123;</span><br><span class="line">    intArray[i] = binaryString.charCodeAt(i);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> data = [intArray];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> <span class="literal">result</span> = new <span class="type">Blob</span>(data, &#123; <span class="keyword">type</span>: mime &#125;);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很完美了吗，在pc端模拟成功，在移动端chrome浏览器测试成功，但是在微信浏览器中失败，经过 <code>try...catch</code> 发现是在 new <code>Blob</code> 的时候失败。<br>查看之后发现是这个 API 对 Android 的支持还不明。<br>解决方法是利用 <code>BlobBuilder</code> 这个老 API 来解决：<a href="https://developer.mozilla.org/en-US/docs/Web/API/BlobBuilder" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/BlobBuilder</a><br>因为这个 API 已经被遗弃，不同机型和安卓版本兼容性不一致，所以需要一个判断。<br><strong>解决方法：</strong><br><figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * dataURL 转成 blob</span><br><span class="line"> * @param dataURL</span><br><span class="line"> * @<span class="keyword">return</span> blob</span><br><span class="line"> */</span><br><span class="line">function dataURLtoBlob (dataURL) &#123;</span><br><span class="line">  <span class="keyword">let</span> binaryString = atob(dataURL.split(',')[<span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">let</span> arrayBuffer = new <span class="type">ArrayBuffer</span>(binaryString.length);</span><br><span class="line">  <span class="keyword">let</span> intArray = new <span class="type">Uint8Array</span>(arrayBuffer);</span><br><span class="line">  <span class="keyword">let</span> mime = dataURL.split(',')[<span class="number">0</span>].match(/:(.*?);/)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, j = binaryString.length; i &lt; j; i++) &#123;</span><br><span class="line">    intArray[i] = binaryString.charCodeAt(i);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> data = [intArray];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> <span class="literal">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="literal">result</span> = new <span class="type">Blob</span>(data, &#123; <span class="keyword">type</span>: mime &#125;);</span><br><span class="line">  &#125; catch (error) &#123;</span><br><span class="line">    window.<span class="type">BlobBuilder</span> = window.<span class="type">BlobBuilder</span> ||</span><br><span class="line">      window.<span class="type">WebKitBlobBuilder</span> ||</span><br><span class="line">      window.<span class="type">MozBlobBuilder</span> ||</span><br><span class="line">      window.<span class="type">MSBlobBuilder</span>;</span><br><span class="line">    <span class="keyword">if</span> (error.name === '<span class="type">TypeError</span>' &amp;&amp; window.<span class="type">BlobBuilder</span>)&#123;</span><br><span class="line">      <span class="keyword">var</span> builder = new <span class="type">BlobBuilder</span>();</span><br><span class="line">      builder.append(arrayBuffer);</span><br><span class="line">      <span class="literal">result</span> = builder.getBlob(<span class="keyword">type</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      throw new <span class="type">Error</span>('没救了');</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="把获取到的_blob_append_到_FormData_实例，执行回调">把获取到的 blob append 到 FormData 实例，执行回调</h1><p>这一步使用到我们之前的东西。<br><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 压缩图片</span><br><span class="line"> * <span class="doctag">@param</span> file 图片文件</span><br><span class="line"> * <span class="doctag">@param</span> ratio 比例</span><br><span class="line"> * <span class="doctag">@param</span> callback 回调，得到一个 包含文件的 FormData 实例</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compressImage</span> <span class="params">(file, ratio, callback)</span> </span>&#123;</span><br><span class="line">  fileToDataURL(file, (dataURL) =&gt; &#123;</span><br><span class="line">    compressDataURL(dataURL, ratio, (newDataURL) =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> newBlob = dataURLtoBlob(newDataURL);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> oData = <span class="keyword">new</span> FormData();</span><br><span class="line">      oData.append(<span class="string">'file'</span>, blob);</span><br><span class="line"></span><br><span class="line">      callback(oData);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="回到第一步，上传文件">回到第一步，上传文件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JavaScript</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'file-input'</span>).onchange= <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 通过 event.target 回去 input 元素对象，然后拿到 files list，取第一个 file</span></span><br><span class="line">  <span class="keyword">let</span> file = event.target.files[<span class="number">0</span>];</span><br><span class="line">  <span class="comment">// 接受三个参数，文件、裁剪的长宽比例，回调函数（回调函数获得一个 FormData 对象，文件已经存在里面了）；</span></span><br><span class="line">  compressImage(file, [<span class="number">1</span>, <span class="number">1</span>], (targetFormData) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 进度监听</span></span><br><span class="line">    <span class="comment">// xhr.upload.addEventListener('progress', progFoo, false);</span></span><br><span class="line">    <span class="comment">// 加载监听</span></span><br><span class="line">    <span class="comment">// xhr.addEventListener('load', loadFoo, false);</span></span><br><span class="line">    <span class="comment">// 错误监听</span></span><br><span class="line">    <span class="comment">// xhr.addEventListener('error', errorFoo, false);</span></span><br><span class="line"></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">          <span class="comment">// 上传成功，获取到结果 results</span></span><br><span class="line">          <span class="keyword">let</span> results = <span class="built_in">JSON</span>.parse(xhr.responseText);</span><br><span class="line">          <span class="comment">// ......</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">// 上传失败</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(<span class="string">'POST'</span>, <span class="string">'/api/upload'</span>, <span class="literal">true</span>);</span><br><span class="line">    xhr.send(targetFormData);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>一切似乎都很完美，pc 端模拟测试通过，但是到移动端却发现上传了一个空文件，这不科学！！！<br>查文档后发现这么一句话：</p>
+<blockquote>
+<p>Note: XHR in Android 4.0 sends empty content for FormData with blob.</p>
+</blockquote>
+<p>简直蒙蔽。<br>在 上找到了解决方案：<a href="http://stackoverflow.com/questions/15639070/empty-files-uploaded-in-android-native-browser/28809955#28809955" target="_blank" rel="external">http://stackoverflow.com/questions/15639070/empty-files-uploaded-in-android-native-browser/28809955#28809955</a></p>
+<p>通过自己包装 <code>FormDataShim</code> 和重写 <code>XMLHttpRequest.prototype.send</code> 函数：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Android上的AppleWebKit 534以前的内核存在一个Bug，</span></span><br><span class="line"><span class="comment">// 导致FormData加入一个Blob对象后，上传的文件是0字节</span></span><br><span class="line"><span class="comment">// QQ X5浏览器也有这个BUG</span></span><br><span class="line"><span class="keyword">var</span> needsFormDataShim = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> bCheck = ~navigator.userAgent.indexOf(<span class="string">'Android'</span>) &amp;&amp;</span><br><span class="line">               ~navigator.vendor.indexOf(<span class="string">'Google'</span>) &amp;&amp;</span><br><span class="line">              !~navigator.userAgent.indexOf(<span class="string">'Chrome'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> bCheck &amp;&amp; navigator.userAgent.match(<span class="regexp">/AppleWebKit\/(\d+)/</span>).pop() &lt;= <span class="number">534</span> || <span class="regexp">/MQQBrowser/g</span>.test(navigator.userAgent);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重写 Blob 构造函数，在 XMLHttpRequest.prototype.send 中会使用到</span></span><br><span class="line"><span class="keyword">var</span> BlobConstructor = ((<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">new</span> Blob();</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()) ? <span class="built_in">window</span>.Blob : <span class="function"><span class="keyword">function</span> (<span class="params">parts, opts</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> bb = <span class="keyword">new</span> (</span><br><span class="line">    <span class="built_in">window</span>.BlobBuilder ||</span><br><span class="line">    <span class="built_in">window</span>.WebKitBlobBuilder ||</span><br><span class="line">    <span class="built_in">window</span>.MSBlobBuilder ||</span><br><span class="line">    <span class="built_in">window</span>.MozBlobBuilder</span><br><span class="line">  );</span><br><span class="line">  parts.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">p</span>) </span>&#123;</span><br><span class="line">    bb.append(p);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> bb.getBlob(opts ? opts.type : <span class="literal">undefined</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 手动包装 FormData 同时重写 XMLHttpRequest.prototype.send</span></span><br><span class="line"><span class="keyword">var</span> FormDataShim = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> formDataShimNums = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">FormDataShim</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Data to be sent</span></span><br><span class="line">    <span class="keyword">let</span> parts = [];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Boundary parameter for separating the multipart values</span></span><br><span class="line">    <span class="keyword">let</span> boundary = <span class="built_in">Array</span>(<span class="number">21</span>).join(<span class="string">'-'</span>) + (+<span class="keyword">new</span> <span class="built_in">Date</span>() * (<span class="number">1e16</span> * <span class="built_in">Math</span>.random())).toString(<span class="number">36</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Store the current XHR send method so we can safely override it</span></span><br><span class="line">    <span class="keyword">let</span> oldSend = XMLHttpRequest.prototype.send;</span><br><span class="line">    <span class="keyword">this</span>.getParts = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> parts.toString();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.append = <span class="function"><span class="keyword">function</span> (<span class="params">name, value, filename</span>) </span>&#123;</span><br><span class="line">      parts.push(<span class="string">'--'</span> + boundary + <span class="string">'\r\nContent-Disposition: form-data; name="'</span> + name + <span class="string">'"'</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Blob) &#123;</span><br><span class="line">        parts.push(<span class="string">'; filename="'</span> + (filename || <span class="string">'blob'</span>) + <span class="string">'"\r\nContent-Type: '</span> + value.type + <span class="string">'\r\n\r\n'</span>);</span><br><span class="line">        parts.push(value);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        parts.push(<span class="string">'\r\n\r\n'</span> + value);</span><br><span class="line">      &#125;</span><br><span class="line">      parts.push(<span class="string">'\r\n'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    formDataShimNums++;</span><br><span class="line">    XMLHttpRequest.prototype.send = <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> fr;</span><br><span class="line">      <span class="keyword">let</span> data;</span><br><span class="line">      <span class="keyword">let</span> oXHR = <span class="keyword">this</span>;</span><br><span class="line">      <span class="keyword">if</span> (val === o) &#123;</span><br><span class="line">        <span class="comment">// Append the final boundary string</span></span><br><span class="line">        parts.push(<span class="string">'--'</span> + boundary + <span class="string">'--\r\n'</span>);</span><br><span class="line">        <span class="comment">// Create the blob</span></span><br><span class="line">        data = <span class="keyword">new</span> BlobConstructor(parts);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Set up and read the blob into an array to be sent</span></span><br><span class="line">        fr = <span class="keyword">new</span> FileReader();</span><br><span class="line">        fr.onload  = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          oldSend.call(oXHR, fr.result);</span><br><span class="line">        &#125;;</span><br><span class="line">        fr.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">throw</span> err;</span><br><span class="line">        &#125;;</span><br><span class="line">        fr.readAsArrayBuffer(data);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Set the multipart content type and boudary</span></span><br><span class="line">        <span class="keyword">this</span>.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'multipart/form-data; boundary='</span> + boundary);</span><br><span class="line">        formDataShimNums--;</span><br><span class="line">        <span class="keyword">if</span> (formDataShimNums === <span class="number">0</span>) &#123;</span><br><span class="line">          XMLHttpRequest.prototype.send = oldSend;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        oldSend.call(<span class="keyword">this</span>, val);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<h2 id="SUCCESS">SUCCESS</h2><p><strong>重写 <code>compressImage</code></strong><br><figure class="highlight zephir"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 压缩图片</span><br><span class="line"> * <span class="doctag">@param</span> file 图片文件</span><br><span class="line"> * <span class="doctag">@param</span> ratio 比例</span><br><span class="line"> * <span class="doctag">@param</span> callback 回调，得到一个 包含文件的 FormData 实例</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compressImage</span> <span class="params">(file, ratio, callback)</span> </span>&#123;</span><br><span class="line">  fileToDataURL(file, (dataURL) =&gt; &#123;</span><br><span class="line">    compressDataURL(dataURL, ratio, (newDataURL) =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> newBlob = dataURLtoBlob(newDataURL);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 判断是否需要我们之前的重写</span></span><br><span class="line">      <span class="keyword">let</span> NFormData = needsFormDataShim() ? FormDataShim : window.FormData;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> oData = <span class="keyword">new</span> NFormData();</span><br><span class="line">      oData.append(<span class="string">'file'</span>, blob);</span><br><span class="line"></span><br><span class="line">      callback(oData);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>到这一步总算成功。</p>
+</div>
+
+      <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TIP"><span class="nav-text">TIP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监听_input(type=file)_获取文件内容。"><span class="nav-text">监听 input(type=file) 获取文件内容。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fileToDataURL：_file_转成_dataURL"><span class="nav-text">fileToDataURL： file 转成 dataURL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#compressDataURL：dataURL_图片绘制_canvas，然后经过处理（裁剪_&_压缩）再转成_dataURL"><span class="nav-text">compressDataURL：dataURL 图片绘制 canvas，然后经过处理（裁剪 & 压缩）再转成 dataURL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dataURLtoBlob：dataURL_转成_Blob"><span class="nav-text">dataURLtoBlob：dataURL 转成 Blob</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#把获取到的_blob_append_到_FormData_实例，执行回调"><span class="nav-text">把获取到的 blob append 到 FormData 实例，执行回调</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回到第一步，上传文件"><span class="nav-text">回到第一步，上传文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SUCCESS"><span class="nav-text">SUCCESS</span></a></li></ol></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+    </footer>
+
+  </article>
+
+
+
+      
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="post/uploading-image-file-in-mobile-fe.html"
+           data-title="移动端文件上传的实践" data-url="http://qiutc.me/post/uploading-image-file-in-mobile-fe.html">
+      </div>
+    
+  </div>
+
+</style>
+
+
+
+    </main>
+
+    <footer class="footer clearfix">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015-
+    <span itemprop="copyrightYear">2016</span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
+  </div>
+
+  <div class="info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+      <span id="showDays" class="show-days"></span>
+      <script>
+      var birthDay = new Date(10/04/2015);
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+      </script>
+      ---
+    
+    <span id="busuanzi_container_site_pv">
+        总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </div>
+
+</footer>
+
+
+  </div>
+
+  <div class="back-top-btn" id="back-top-btn"><i class="fa fa-chevron-up"></i></div>
+
+
+
+
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+
+
+<script type="text/javascript" src="/js/main.js?v=0.0.1"></script>
+
+
+</body>
+</html>
