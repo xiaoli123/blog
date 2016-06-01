@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-06-01T15:42:10.000Z</updated>
+  <updated>2016-06-01T16:03:38.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[移动端文件上传的实践]]></title>
+    <title><![CDATA[移动端图片上传的实践]]></title>
     <link href="http://qiutc.me/post/uploading-image-file-in-mobile-fe.html"/>
     <id>http://qiutc.me/post/uploading-image-file-in-mobile-fe.html</id>
     <published>2016-06-01T13:27:45.000Z</published>
-    <updated>2016-06-01T15:42:10.000Z</updated>
+    <updated>2016-06-01T16:03:38.000Z</updated>
     <content type="html"><![CDATA[<h1 id="TIP">TIP</h1><p>最近在一个项目中需要实现一个移动端上传图片文件的需求，主要需求的是压缩并且按照比例自动裁切图片然后上传。<br>一听是蛮简单的，因为是在移动端使用，所以完全可以使用 HTML5 的新特性以及一些 API。<br>主要的思路是这样：</p>
 <ol>
 <li>监听一个 <code>input (type=&#39;file&#39;)</code> 的 <code>change</code> 事件，然后拿到文件的 <code>file</code>;</li>
