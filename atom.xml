@@ -285,7 +285,7 @@
     <link href="http://qiutc.me/post/promise-learn-note.html"/>
     <id>http://qiutc.me/post/promise-learn-note.html</id>
     <published>2016-03-27T07:06:49.000Z</published>
-    <updated>2016-06-02T06:49:49.000Z</updated>
+    <updated>2016-06-02T06:53:23.000Z</updated>
     <content type="html"><![CDATA[<p><img src="/img/promise-1.png" alt="Promise"></p>
 <h1 id="浏览器支持">浏览器支持</h1><p><img src="/img/promise-3.jpg" alt="Promise"><br><a href="http://caniuse.com/promises/embed/agents=desktop" target="_blank" rel="external">http://caniuse.com/promises/embed/agents=desktop</a></p>
 <h1 id="What_is_Promise?">What is Promise?</h1><p>Promise是抽象异步处理对象以及对其进行各种操作的组件。</p>
