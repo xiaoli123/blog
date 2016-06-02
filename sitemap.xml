@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/promise-learn-note.html</loc>
+    <lastmod>2016-06-02T06:49:49.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/uploading-image-file-in-mobile-fe.html</loc>
     <lastmod>2016-06-01T16:03:38.000Z</lastmod>
   </url>
@@ -69,11 +74,6 @@
   <url>
     <loc>http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html</loc>
     <lastmod>2016-05-10T03:51:20.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/promise-learn-note.html</loc>
-    <lastmod>2016-05-10T03:50:48.000Z</lastmod>
   </url>
   
   <url>
