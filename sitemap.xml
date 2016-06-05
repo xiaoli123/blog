@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/cross-domain-collections.html</loc>
+    <lastmod>2016-06-05T13:45:51.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/promise-learn-note.html</loc>
     <lastmod>2016-06-02T06:53:23.000Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://qiutc.me/post/uploading-image-file-in-mobile-fe.html</loc>
     <lastmod>2016-06-01T16:03:38.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/cross-domain-collections.html</loc>
-    <lastmod>2016-05-17T07:52:02.000Z</lastmod>
   </url>
   
   <url>

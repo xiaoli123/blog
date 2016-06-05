@@ -78,7 +78,7 @@
     <link href="http://qiutc.me/post/cross-domain-collections.html"/>
     <id>http://qiutc.me/post/cross-domain-collections.html</id>
     <published>2016-05-16T18:09:20.000Z</published>
-    <updated>2016-05-17T07:52:02.000Z</updated>
+    <updated>2016-06-05T13:45:51.000Z</updated>
     <content type="html"><![CDATA[<h1 id="跨域整理">跨域整理</h1><h1 id="跨域资源共享_CORS">跨域资源共享 CORS</h1><p>对于web开发来讲，由于浏览器的同源策略，我们需要经常使用一些hack的方法去跨域获取资源，但是hack的方法总归是hack。直到W3C出了一个标准－CORS－”跨域资源共享”（Cross-origin resource sharing）。<br>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>首先来说 CORS 需要浏览器和服务端同时支持的，对于兼容性来说主要是ie10+，其它现代浏览器都是支持的。<br><a href="http://caniuse.com/#feat=cors" target="_blank" rel="external">http://caniuse.com/#feat=cors</a><br><img src="/img/cross-domain-cors.png" alt="cross-domain-cors"><br>使用 CORS 跨域的时候其实和普通的 ajax 过程是一样的，只是浏览器在发现这是一个跨域请求的时候会自动帮我们处理一些事，比如验证等等，所以说只要服务端提供支持，前端是不需要做额外的事情的。</p>
 <h2 id="两种请求">两种请求</h2><p>CORS 的请求分两种，这也是浏览器为了安全做的一些处理，不同情况下浏览器执行的操作也是不一样的，主要分为两种请求，当然这一切我们是不需要做额外处理的，浏览器会自动处理的。</p>
 <h2 id="简单请求（simple_request）">简单请求（simple request）</h2><p>只要同时满足以下两大条件，就属于简单请求。</p>
