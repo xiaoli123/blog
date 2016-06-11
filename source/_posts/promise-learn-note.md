@@ -4,6 +4,7 @@ tags:
 - Note
 - JavaScript
 categories: [JavaScript]
+bgimage: /img/promise-learn-note-bg.jpg
 ---
 
 ![Promise](/img/promise-1.png)

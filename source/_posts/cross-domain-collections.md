@@ -3,7 +3,7 @@ date: 2016-05-17 02:09:20
 tags:
 - 跨域
 categories: [跨域]
-bgimage: /img/cross-domain.png
+bgimage: /img/cross-domain.jpg
 ---
 # 跨域整理
 
