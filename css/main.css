@@ -1454,8 +1454,9 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   display: none;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   line-height: 1.4em;
+  padding: 5px 0;
 }
 .post-toc-wrap .post-toc .post-toc-content ol .nav-level-1,
 .post-toc-wrap .post-toc .post-toc-content ol .nav-level-2 {
