@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
+    <lastmod>2016-07-26T23:16:27.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/cross-domain-collections.html</loc>
     <lastmod>2016-06-05T13:45:51.000Z</lastmod>
   </url>
@@ -39,11 +44,6 @@
   <url>
     <loc>http://qiutc.me/post/%E8%B0%88%E8%B0%88-react-router.html</loc>
     <lastmod>2016-05-10T03:53:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
-    <lastmod>2016-05-10T03:52:30.000Z</lastmod>
   </url>
   
   <url>
