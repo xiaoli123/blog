@@ -232,3 +232,52 @@ output: {
 __webpack不像模块化？__
 webpack非常的模块化。他能让插件自身集成到编译过程中的许多地方相比于browserify和requireJs.
 许多看起来是在被编写在核心代码中的功能实际上是被默认加载的插件，他们可以被覆盖。
+
+
+# PS
+## 1 关于 ``webpack -p``
+关于 ``webpack -p`` 混淆压缩代码，并剔除死代码，测试如下：
+刚刚测试了下，会删除死代码：
+webpack.config.js：
+```javascript
+const webpack = require('webpack');
+
+module.exports = {
+  entry: './index.js',
+  output: {
+    path: './',
+    filename: 'output.js',
+    publicPath: ''
+  },
+  module: {
+  }
+};
+```
+测试一：
+index.js
+```javascript
+function test() {
+  console.log('tesst');
+}
+```
+执行 webpack -p：
+输出了：
+```bash
+WARNING in output.js from UglifyJs
+Dropping unused function test [./index.js:1,0]
+```
+打开 output.js 看到，除了 webpack 的一些代码，index.js 中的 test 函数并没有被打包进来，一位它没有执行或者输出，是死代码；
+
+测试二：
+给刚刚的 index.js 改变一下：
+```javascript
+function test() {
+  console.log('tesst');
+}
+test();
+```
+执行了 test 函数。
+执行 webpack -p：
+没有刚刚的 WARNING 输出，打开 output.js 看到，test 函数被打包了进来。
+
+ps. 这里的 test 函数名被混淆了，但是可以看函数里面执行的 console.log('test') 来判断函数是否被打包进来。
