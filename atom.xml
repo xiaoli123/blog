@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-07-28T07:25:34.000Z</updated>
+  <updated>2016-07-28T22:58:32.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://qiutc.me/post/es6-cheatsheet.html"/>
     <id>http://qiutc.me/post/es6-cheatsheet.html</id>
     <published>2016-07-27T01:05:05.000Z</published>
-    <updated>2016-07-28T07:25:34.000Z</updated>
+    <updated>2016-07-28T22:58:32.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>原文 <a href="https://github.com/DrkSephy/es6-cheatsheet" target="_blank" rel="external">https://github.com/DrkSephy/es6-cheatsheet</a></p>
 <hr>
-<p><img src="/img/es6.png" alt="es6"></p>
+<p><img src="/img/es6.jpg" alt="es6"></p>
 <h1 id="es6_手册">es6 手册</h1><p>这篇手册包含了 ES2015(ES6) 的使用小技巧、最佳实践以及可以给你每天的工作参考的代码片段。</p>
 <h2 id="内容列表">内容列表</h2><ul>
 <li><a href="#var_和_let/const_的比较">var 和 let/const 的比较</a></li>
@@ -192,7 +192,7 @@
     <link href="http://qiutc.me/post/uploading-image-file-in-mobile-fe.html"/>
     <id>http://qiutc.me/post/uploading-image-file-in-mobile-fe.html</id>
     <published>2016-06-01T13:27:45.000Z</published>
-    <updated>2016-06-01T16:03:38.000Z</updated>
+    <updated>2016-07-28T10:54:27.000Z</updated>
     <content type="html"><![CDATA[<h1 id="TIP">TIP</h1><p>最近在一个项目中需要实现一个移动端上传图片文件的需求，主要需求的是压缩并且按照比例自动裁切图片然后上传。<br>一听是蛮简单的，因为是在移动端使用，所以完全可以使用 HTML5 的新特性以及一些 API。<br>主要的思路是这样：</p>
 <ol>
 <li>监听一个 <code>input (type=&#39;file&#39;)</code> 的 <code>change</code> 事件，然后拿到文件的 <code>file</code>;</li>
@@ -956,7 +956,7 @@
     <link href="http://qiutc.me/post/RN-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-React-Native-learning-notes.html"/>
     <id>http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html</id>
     <published>2015-11-21T12:57:35.000Z</published>
-    <updated>2016-05-10T03:51:20.000Z</updated>
+    <updated>2016-07-28T10:54:28.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
 <h1 id="React-Native_for_Android_的环境搭建">React-Native for Android 的环境搭建</h1><h3 id="要求：">要求：</h3><ol>
 <li>前提 OS X (假设大家有用Mac了😏ß);</li>
