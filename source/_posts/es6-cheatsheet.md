@@ -1,4 +1,4 @@
-title: es6 手册
+title: ES6 手册
 date: 2016-07-27 09:05:05
 tags:
 - JavaScript
@@ -12,7 +12,7 @@ bgimage: /img/es6-cheatsheet.jpg
 ------
 ![es6](/img/es6.jpg)
 
-# es6 手册
+# ES6 手册
 这篇手册包含了 ES2015(ES6) 的使用小技巧、最佳实践以及可以给你每天的工作参考的代码片段。
 
 ## 内容列表
