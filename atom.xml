@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-07-30T09:03:47.000Z</updated>
+  <updated>2016-07-31T09:33:04.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://qiutc.me/post/es6-cheatsheet.html"/>
     <id>http://qiutc.me/post/es6-cheatsheet.html</id>
     <published>2016-07-27T01:05:05.000Z</published>
-    <updated>2016-07-30T09:03:47.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>原文 <a href="https://github.com/DrkSephy/es6-cheatsheet" target="_blank" rel="external">https://github.com/DrkSephy/es6-cheatsheet</a></p>
+    <updated>2016-07-31T09:33:04.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>文章是翻译，主要是很多 ES6 的用法技巧以及最佳时间～<br>原文 <a href="https://github.com/DrkSephy/es6-cheatsheet" target="_blank" rel="external">https://github.com/DrkSephy/es6-cheatsheet</a></p>
 <hr>
 <p><img src="/img/es6.jpg" alt="es6"></p>
 <h1 id="ES6_手册">ES6 手册</h1><p>这篇手册包含了 ES2015(ES6) 的使用小技巧、最佳实践以及可以给你每天的工作参考的代码片段。</p>
@@ -178,7 +178,7 @@
 <p>最新版本的浏览器也在对象中实现了 <code>getter</code> 和 <code>setter</code> 函数，我们可以使用它们来实现 <strong>计算属性</strong>，在设置和获取一个属性之前加上监听器和处理。<br><figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  firstName: <span class="string">'James'</span>,</span><br><span class="line">  lastName: <span class="string">'Bond'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">get</span> <span class="title">fullName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      console.log(<span class="string">'Getting FullName'</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="keyword">set</span> <span class="title">fullName</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">      console.log(<span class="string">'Setting FullName'</span>);</span><br><span class="line">      <span class="keyword">var</span> words = name.toString().split(<span class="string">' '</span>);</span><br><span class="line">      <span class="keyword">this</span>.firstName = words[<span class="number">0</span>] || <span class="string">''</span>;</span><br><span class="line">      <span class="keyword">this</span>.lastName = words[<span class="number">1</span>] || <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.fullName; <span class="comment">// James Bond</span></span><br><span class="line">person.fullName = <span class="string">'Bond 007'</span>;</span><br><span class="line">person.fullName; <span class="comment">// Bond 007</span></span><br></pre></td></tr></table></figure></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="tip">tip</h1><p>原文 <a href="https://github.com/DrkSephy/es6-cheatsheet" target="_blank" rel="external">https://github.com/DrkSephy/e]]>
+    <![CDATA[<h1 id="tip">tip</h1><p>文章是翻译，主要是很多 ES6 的用法技巧以及最佳时间～<br>原文 <a href="https://github.com/DrkSephy/es6-cheatsheet" target="_blank" rel="externa]]>
     </summary>
     
       <category term="JavaScript" scheme="http://qiutc.me/tags/JavaScript/"/>
