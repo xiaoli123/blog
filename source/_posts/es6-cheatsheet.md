@@ -7,7 +7,7 @@ categories: [JavaScript]
 bgimage: /img/es6-cheatsheet.jpg
 ---
 # tip
-文章是翻译，主要是很多 ES6 的用法技巧以及最佳时间～
+文章是翻译，主要是很多 ES6 的用法技巧以及最佳实践～
 原文 [https://github.com/DrkSephy/es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)
 
 ------
