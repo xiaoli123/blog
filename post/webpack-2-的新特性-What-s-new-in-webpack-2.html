@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- content-Type -->
+<meta charset="utf-8">
+
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="language" content="en">
+<meta name="robots" content="all">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<meta name="author" content="theme.author, theme.email">
+<meta name="reply-to" content="theme.email">
+<meta name="owner" content="theme.author">
+
+
+
+
+<meta name="google-site-verification" content="UA-78049587-1" />
+
+
+
+
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+
+
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
+
+
+
+
+<meta name="description" content="hello word! 😺" />
+
+
+
+
+<meta name="keywords" content="JavaScript,webpack," />
+
+
+<meta name="description" content="原文 What’s new in webpack 2
+webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
+主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。import">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack 2 的新特性 - What's new in webpack 2">
+<meta property="og:url" content="http://qiutc.me/post/webpack-2-的新特性-What-s-new-in-webpack-2.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="原文 What’s new in webpack 2
+webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
+主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。import">
+<meta property="og:image" content="http://qiutc.me/img/webpack.png">
+<meta property="og:updated_time" content="2016-05-10T03:52:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack 2 的新特性 - What's new in webpack 2">
+<meta name="twitter:description" content="原文 What’s new in webpack 2
+webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。
+主要的变化ES6 Moduleswebpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 import和export了，而不用把他们转化成 CommonJS 来处理了。import">
+
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.0.1" />
+
+
+
+
+
+
+<link href="http://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.0.1"/>
+
+
+<script>
+(function(){
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> webpack 2 的新特性 - What's new in webpack 2 </title>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78049587-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+</head>
+<body lang="zh-Hans">
+
+  <!--[if lte IE 9]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <div class="another-theme layout">
+
+    
+<header class="header" id="header">
+
+  <div class="header-cont">
+    <div class="text-area">
+      
+        <h1 class="title" data-text="webpack 2 的新特性 - What's new in webpack 2"> webpack 2 的新特性 - What's new in webpack 2 </h1>
+
+        
+        <div class="post-meta">
+          <div class="post-time">
+            发表于
+            <time  datetime="2016-02-02T17:31:32+08:00" content="2016-02-02">
+              2016-02-02
+            </time>
+          </div>
+
+          
+            <div class="post-category" >
+              
+                <span>
+                  <a href="/categories#webpack" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <a href="/post/webpack-2-的新特性-What-s-new-in-webpack-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="post/webpack-2-的新特性-What-s-new-in-webpack-2.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+        
+      
+    </div>
+    <!-- Navigation -->
+    
+    <nav class="navigation clearfix" id="navigation">
+      
+        
+        <a class="nav-link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="nav-link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="nav-link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="nav-link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+  <div class="mask"></div>
+</header>
+
+
+    <main class="container">
+
+      
+
+  <article class="post-article post-type-normal post" itemscope>
+
+    <div class="post-body">
+
+      <div class="content markdown-body"><p><img src="/img/webpack.png" alt="webpack"></p>
+<p>原文 <a href="https://gist.github.com/sokra/27b24881210b56bbaff7" target="_blank" rel="external">What’s new in webpack 2</a></p>
+<h1 id="webpack_2_中的新特性">webpack 2 中的新特性</h1><p>创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。</p>
+<h1 id="主要的变化">主要的变化</h1><h2 id="ES6_Modules">ES6 Modules</h2><p>webpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 <code>import</code>和<code>export</code>了，而不用把他们转化成 CommonJS 来处理了。<br><figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">import &#123; currentPage, readPage &#125; from "./book"<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">currentPage === 0<span class="comment">;</span></span><br><span class="line">readPage()<span class="comment">;</span></span><br><span class="line">currentPage === 1<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// book.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> currentPage = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">readPage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    currentPage++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="string">"This is a book"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="用_ES6_来做代码拆分">用 ES6 来做代码拆分</h3><p>ES6 的模块加载器定义了<code>System.import</code>这一个方法，<code>System.import</code>能够在运行时动态加载 ES6 模块。<br>webpack 把<code>System.import</code>线程作为一个交叉指针然后把被要求的模块放到一个分离的代码块里面。（这里真心看不懂，乱来了😂，反正意思就是那样）<br><code>System.import</code>函数把模块名作为参数，然后返回一个异步回调函数。<br><figure class="highlight openscad"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onClick</span><span class="params">()</span> &#123;</span></span><br><span class="line">    System.<span class="built_in">import</span>(<span class="string">"./module"</span>).then(<span class="function"><span class="keyword">module</span> =</span>&gt; &#123;</span><br><span class="line">        <span class="function"><span class="keyword">module</span>.<span class="title">default</span>;</span><br><span class="line">    &#125;).<span class="title">catch</span><span class="params">(err =&gt; &#123;</span><br><span class="line">        console.log<span class="params">(<span class="string">"Chunk loading failed"</span>)</span>;</span><br><span class="line">    &#125;)</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>好消息：模块加载失败可以被捕捉到错误了。</p>
+<h3 id="动态表达（异步请求js）">动态表达（异步请求js）</h3><p>可以可以把部分代码传递给 <code>System.import</code> ，它的操作其实和 CommonJS 是类似的，给所有可能的文件创建一个环境。意思就是说当你传递那部分代码的模块还不确定的时候，webpack 会自动生成所有可能的模块，然后根据需求加载。<br>这个特性在前端路由的时候很有用，可以实现按需加载资源。<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">route</span><span class="params">(path, query)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> System.<span class="keyword">import</span>(<span class="string">"./routes/"</span> + path + <span class="string">"/route"</span>)</span><br><span class="line">        .then(route =&gt; <span class="keyword">new</span> route.Route(query));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// This creates a separate chunk for each possible route</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="混合使用_ES6_和_AMD_和_CommonJS_(Mixing_ES6_with_AMD_and_CommonJS)">混合使用 ES6 和 AMD 和 CommonJS (Mixing ES6 with AMD and CommonJS)</h3><p>在 AMD 和 CommonJS 模块加载器中，你可以混合使用所有（三种）的模块类型（即使是在同一个文件里面）。在下面的情况中 webpack 的处理时类似的。<br><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line">// CommonJS consuming ES6 Module</span><br><span class="line"><span class="label">var</span> <span class="keyword">book </span>= <span class="preprocessor">require</span>(<span class="string">"./book"</span>)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">book.currentPage;</span><br><span class="line"></span><span class="keyword">book.readPage();</span><br><span class="line"></span><span class="keyword">book.default </span>=== <span class="string">"This is a book"</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ES6 Module consuming CommonJS</span></span><br><span class="line"><span class="keyword">import</span> fs <span class="keyword">from</span> <span class="string">"fs"</span>; <span class="comment">// module.exports map to default</span></span><br><span class="line"><span class="keyword">import</span> &#123; readFileSync &#125; <span class="keyword">from</span> <span class="string">"fs"</span>; <span class="comment">// named exports are read from returned object+</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> fs.readFileSync === <span class="string">"function"</span>;</span><br><span class="line"><span class="keyword">typeof</span> readFileSync === <span class="string">"function"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="babel_和_webpack">babel 和 webpack</h3><p><code>es2015</code> balel 的默认预处理会把 ES6 模块加载器转化成 CommonJS 模块加载。要是想使用 webpack 新增的对原生 ES6 模块加载器的支持，你需要使用 <code>es2015-webpack</code> 来代替。</p>
+<h3 id="对_ES6_优化细述">对 ES6 优化细述</h3><p>ES6 底层支持一些新的优化。比如在很多情况下它可以查明哪些 exports 是使用过的，哪些是未使用过的。<br>很多情况下，当 webpack 可以肯定地认为一个 export 它没有使用过，他会忽略暴漏 export 给其他模块的的声明，这样可以极小成本地标志一个 export 未使用过并且忽略它。<br><br><br>在以下的情况中很可能查明使用状况：</p>
+<ul>
+<li>named import</li>
+<li>default import</li>
+<li>reexport</li>
+</ul>
+<p>在以下的情况中不大可能查明使用状况：</p>
+<ul>
+<li>import * as …</li>
+<li>CommonJS or AMD consuming ES6 module</li>
+<li>System.import</li>
+</ul>
+<h2 id="结构配置">结构配置</h2><p>在过去，由于环境的不同需要去处理不同环境下的结构配置，webpack 2 带来了一种新的方式去配置。<br>配置文件可以暴漏一个返回结构配置的函数，这个函数被 CLI 调用，然后值通过 <code>--env</code> 传递给结构配置的函数。<br>你可以传递一个字符串（–env dev =&gt; “dev”）或者一个复杂的配置对象 (–env.minimize –env.server localhost =&gt; {minimize: true, server: “localhost”}) 给这个函数。我推荐大家使用对象，因为它更具有可扩展性，当是这取决于你。<br>例子：<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// webpack.config.babel.js</span></span><br><span class="line">exports <span class="keyword">default</span> <span class="function"><span class="keyword">function</span><span class="params">(options)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        devtool: options.dev ? <span class="string">"cheap-module-eval-source-map"</span> : <span class="string">"hidden-source-map"</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置项">配置项</h2><p>这里是一些主要的重构<a href="https://github.com/webpack/enhanced-resolve" target="_blank" rel="external">https://github.com/webpack/enhanced-resolve</a>。它意味着配置项也改变了。<br>大多数是简化了配置，或者是让配置更不容易出错。<br>新的配置：<br><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    modules: [path.<span class="built_in">resolve</span>(__dirname, <span class="string">"app"</span>), <span class="string">"node_modules"</span>]</span><br><span class="line">   <span class="comment"> // (was split into `root`, `modulesDirectories` and `fallback` in the old options)</span></span><br><span class="line">   <span class="comment"> // In which folders the resolver look for modules</span></span><br><span class="line">   <span class="comment"> // relative paths are looked up in every parent folder (like node_modules)</span></span><br><span class="line">   <span class="comment"> // absolute paths are looked up directly</span></span><br><span class="line">   <span class="comment"> // the order is respected</span></span><br><span class="line"></span><br><span class="line">    descriptionFiles: [<span class="string">"package.json"</span>, <span class="string">"bower.json"</span>],</span><br><span class="line">   <span class="comment"> // These JSON files are read in directories</span></span><br><span class="line"></span><br><span class="line">    mainFields: [<span class="string">"main"</span>, <span class="string">"browser"</span>],</span><br><span class="line">   <span class="comment"> // These fields in the description files are looked up when trying to resolve the package directory</span></span><br><span class="line"></span><br><span class="line">    mainFiles: [<span class="string">"index"</span>]</span><br><span class="line">   <span class="comment"> // These files are tried when trying to resolve a directory</span></span><br><span class="line"></span><br><span class="line">    aliasFields: [<span class="string">"browser"</span>],</span><br><span class="line">   <span class="comment"> // These fields in the description files offer aliasing in this package</span></span><br><span class="line">   <span class="comment"> // The content of these fields is an object where requests to a key are mapped to the corresponding value</span></span><br><span class="line"></span><br><span class="line">    extensions: [<span class="string">".js"</span>, <span class="string">".json"</span>],</span><br><span class="line">   <span class="comment"> // These extensions are tried when resolving a file</span></span><br><span class="line"></span><br><span class="line">    enforceExtension: <span class="constant">false</span>,</span><br><span class="line">   <span class="comment"> // If false it will also try to use no extension from above</span></span><br><span class="line"></span><br><span class="line">    moduleExtensions: [<span class="string">"-loader"</span>],</span><br><span class="line">   <span class="comment"> // These extensions are tried when resolving a module</span></span><br><span class="line"></span><br><span class="line">    enforceModuleExtension: <span class="constant">false</span>,</span><br><span class="line">   <span class="comment"> // If false it's also try to use no module extension from above</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">alias</span>: &#123;</span><br><span class="line">        jquery: path.<span class="built_in">resolve</span>(__dirname, <span class="string">"vendor/jquery-2.0.0.js"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment"> // These aliasing is used when trying to resolve a module</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="一些大变化">一些大变化</h1><h2 id="Promise_polyfill">Promise polyfill</h2><h2 id="Loaders_的配置">Loaders 的配置</h2><p>在 loaders 的配置中使用了 <code>resourcePath</code> 来替代原来的 <code>resource</code><br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">loaders:</span> [</span><br><span class="line">    &#123;</span><br><span class="line"><span class="label">        test:</span> <span class="regexp">/\.css$/</span>,</span><br><span class="line"><span class="label">        loaders:</span> [</span><br><span class="line">            <span class="string">"style-loader"</span>,</span><br><span class="line">            &#123; <span class="string">loader:</span> <span class="string">"css-loader"</span>, <span class="string">query:</span> &#123; <span class="string">modules:</span> <span class="literal">true</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line"><span class="label">                loader:</span> <span class="string">"sass-loader"</span>,</span><br><span class="line"><span class="label">                query:</span> &#123;</span><br><span class="line"><span class="label">                    includePaths:</span> [</span><br><span class="line">                        path.resolve(__dirname, <span class="string">"some-folder"</span>)</span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Minimize">Minimize</h2><p>在 UglifyJsPlugin 中不再支持让 Loaders 最小化文件的模式了，<code>debug</code> 配置也被移除了，Loaders 不能从 webpack 的配置中读取到他们的配置项了，取代的方案是：<br><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</span><br><span class="line">    test: <span class="regexp">/\.css$/</span>, <span class="comment">// optionally pass test, include and exclude, default affects all loaders</span></span><br><span class="line">    minimize: <span class="keyword">true</span>,</span><br><span class="line">    debug: <span class="keyword">false</span>,</span><br><span class="line">    <span class="keyword">options</span>: &#123;</span><br><span class="line">        <span class="comment">// pass stuff to the loader</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+</div>
+
+      <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack_2_中的新特性"><span class="nav-text">webpack 2 中的新特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要的变化"><span class="nav-text">主要的变化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6_Modules"><span class="nav-text">ES6 Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用_ES6_来做代码拆分"><span class="nav-text">用 ES6 来做代码拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态表达（异步请求js）"><span class="nav-text">动态表达（异步请求js）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合使用_ES6_和_AMD_和_CommonJS_(Mixing_ES6_with_AMD_and_CommonJS)"><span class="nav-text">混合使用 ES6 和 AMD 和 CommonJS (Mixing ES6 with AMD and CommonJS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#babel_和_webpack"><span class="nav-text">babel 和 webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对_ES6_优化细述"><span class="nav-text">对 ES6 优化细述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构配置"><span class="nav-text">结构配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置项"><span class="nav-text">配置项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些大变化"><span class="nav-text">一些大变化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise_polyfill"><span class="nav-text">Promise polyfill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loaders_的配置"><span class="nav-text">Loaders 的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimize"><span class="nav-text">Minimize</span></a></li></ol></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
+          
+            <a href="/tags#webpack" rel="tag">#webpack</a>
+          
+        </div>
+      
+      
+  <style>
+    .donation {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .donation .text {
+      color: #333;
+      font-size: .8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .donation .text:hover {
+      color: rgb(63,134,181);
+    }
+    .donation .img-box {
+      transition: all .3s;
+      width: 0;
+      height: 0;
+      margin: 1rem auto;
+      overflow: hidden;
+    }
+    .donation .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+    .donation #donation {
+      display: none;
+    }
+    .donation #donation:checked + .img-box {
+      width: 16rem;
+      height: 16rem;
+    }
+  </style>
+  <div class="donation">
+    <label class="text" for="donation">
+      如果你觉得文章对你有帮助，并且想为我买一杯咖啡，点这里～
+    </label>
+    <input type="checkbox" name="donation" id="donation">
+    <div class="img-box">
+      <img src="/img/donation.png" alt="donation" />
+    </div>
+    </style>
+  </div>
+
+
+    </footer>
+
+  </article>
+
+
+
+      
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="post/webpack-2-的新特性-What-s-new-in-webpack-2.html"
+           data-title="webpack 2 的新特性 - What's new in webpack 2" data-url="http://qiutc.me/post/webpack-2-的新特性-What-s-new-in-webpack-2.html">
+      </div>
+    
+  </div>
+
+
+
+
+    </main>
+
+    <footer class="footer clearfix">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015-
+    <span itemprop="copyrightYear">2016</span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
+  </div>
+
+  <div class="info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+      <span id="showDays" class="show-days"></span>
+      <script>
+      var birthDay = new Date('10/04/2015');
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+      </script>
+      ---
+    
+    <span id="busuanzi_container_site_pv">
+        总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </div>
+
+</footer>
+
+
+  </div>
+
+  <div class="back-top-btn" id="back-top-btn"><i class="fa fa-chevron-up"></i></div>
+
+
+
+
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+
+
+<script type="text/javascript" src="/js/motto.min.js?v=0.0.1"></script>
+<script type="text/javascript" src="/js/main.js?v=0.0.1"></script>
+
+
+</body>
+</html>
