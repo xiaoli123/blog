@@ -220,9 +220,9 @@ webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经�
 
   <article class="post-article post-type-normal post" itemscope>
 
-    <div class="post-body">
+  <div class="post-body">
 
-      <div class="content markdown-body"><p><img src="/img/webpack.png" alt="webpack"></p>
+    <div class="content markdown-body"><p><img src="/img/webpack.png" alt="webpack"></p>
 <p>原文 <a href="https://gist.github.com/sokra/27b24881210b56bbaff7" target="_blank" rel="external">What’s new in webpack 2</a></p>
 <h1 id="webpack_2_中的新特性">webpack 2 中的新特性</h1><p>创造永无止境，现在 webpack 2 的版本已经更新到了 2.0.5-beta+ 。</p>
 <h1 id="主要的变化">主要的变化</h1><h2 id="ES6_Modules">ES6 Modules</h2><p>webpack 2 已经支持原生的 ES6 的模块加载器了，这意味着 webpack 2 能够理解和处理 <code>import</code>和<code>export</code>了，而不用把他们转化成 CommonJS 来处理了。<br><figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">import &#123; currentPage, readPage &#125; from "./book"<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">currentPage === 0<span class="comment">;</span></span><br><span class="line">readPage()<span class="comment">;</span></span><br><span class="line">currentPage === 1<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
@@ -251,7 +251,7 @@ webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经�
 <h2 id="Minimize">Minimize</h2><p>在 UglifyJsPlugin 中不再支持让 Loaders 最小化文件的模式了，<code>debug</code> 配置也被移除了，Loaders 不能从 webpack 的配置中读取到他们的配置项了，取代的方案是：<br><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</span><br><span class="line">    test: <span class="regexp">/\.css$/</span>, <span class="comment">// optionally pass test, include and exclude, default affects all loaders</span></span><br><span class="line">    minimize: <span class="keyword">true</span>,</span><br><span class="line">    debug: <span class="keyword">false</span>,</span><br><span class="line">    <span class="keyword">options</span>: &#123;</span><br><span class="line">        <span class="comment">// pass stuff to the loader</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 </div>
 
-      <div class="post-sidebar">
+    <div class="post-sidebar">
   <div class="toggle-btn" id="toggle-btn">
     <i class="fa fa-reorder"></i>
   </div>
@@ -267,19 +267,19 @@ webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经�
 </div>
 
 
-    </div>
+  </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
-          
-            <a href="/tags#webpack" rel="tag">#webpack</a>
-          
-        </div>
-      
-      
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
+        
+          <a href="/tags#webpack" rel="tag">#webpack</a>
+        
+      </div>
+    
+    
   <style>
     .donation {
       width: 100%;
@@ -325,9 +325,10 @@ webpack 2 中的新特性创造永无止境，现在 webpack 2 的版本已经�
   </div>
 
 
-    </footer>
+  </footer>
 
-  </article>
+</article>
+
 
 
 

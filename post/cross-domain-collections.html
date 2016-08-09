@@ -215,9 +215,9 @@
 
   <article class="post-article post-type-normal post" itemscope>
 
-    <div class="post-body">
+  <div class="post-body">
 
-      <div class="content markdown-body"><h1 id="跨域整理">跨域整理</h1><h1 id="跨域资源共享_CORS">跨域资源共享 CORS</h1><p>对于web开发来讲，由于浏览器的同源策略，我们需要经常使用一些hack的方法去跨域获取资源，但是hack的方法总归是hack。直到W3C出了一个标准－CORS－”跨域资源共享”（Cross-origin resource sharing）。<br>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>首先来说 CORS 需要浏览器和服务端同时支持的，对于兼容性来说主要是ie10+，其它现代浏览器都是支持的。<br><a href="http://caniuse.com/#feat=cors" target="_blank" rel="external">http://caniuse.com/#feat=cors</a><br><img src="/img/cross-domain-cors.png" alt="cross-domain-cors"><br>使用 CORS 跨域的时候其实和普通的 ajax 过程是一样的，只是浏览器在发现这是一个跨域请求的时候会自动帮我们处理一些事，比如验证等等，所以说只要服务端提供支持，前端是不需要做额外的事情的。</p>
+    <div class="content markdown-body"><h1 id="跨域整理">跨域整理</h1><h1 id="跨域资源共享_CORS">跨域资源共享 CORS</h1><p>对于web开发来讲，由于浏览器的同源策略，我们需要经常使用一些hack的方法去跨域获取资源，但是hack的方法总归是hack。直到W3C出了一个标准－CORS－”跨域资源共享”（Cross-origin resource sharing）。<br>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>首先来说 CORS 需要浏览器和服务端同时支持的，对于兼容性来说主要是ie10+，其它现代浏览器都是支持的。<br><a href="http://caniuse.com/#feat=cors" target="_blank" rel="external">http://caniuse.com/#feat=cors</a><br><img src="/img/cross-domain-cors.png" alt="cross-domain-cors"><br>使用 CORS 跨域的时候其实和普通的 ajax 过程是一样的，只是浏览器在发现这是一个跨域请求的时候会自动帮我们处理一些事，比如验证等等，所以说只要服务端提供支持，前端是不需要做额外的事情的。</p>
 <h2 id="两种请求">两种请求</h2><p>CORS 的请求分两种，这也是浏览器为了安全做的一些处理，不同情况下浏览器执行的操作也是不一样的，主要分为两种请求，当然这一切我们是不需要做额外处理的，浏览器会自动处理的。</p>
 <h2 id="简单请求（simple_request）">简单请求（simple request）</h2><p>只要同时满足以下两大条件，就属于简单请求。</p>
 <h3 id="条件">条件</h3><figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">1) 请求方法是以下三种方法中的一个：</span><br><span class="line">HEAD</span><br><span class="line"><span class="literal">GET</span></span><br><span class="line"><span class="keyword">POST</span></span><br><span class="line">2）HTTP的头信息不超出以下几种字段：</span><br><span class="line">Accept</span><br><span class="line">Accept-Language</span><br><span class="line">Content-Language</span><br><span class="line">Last-Event-ID</span><br><span class="line">Content-<span class="keyword">Type</span>：只限于三个值application/x-www-<span class="keyword">form</span>-urlencoded、multipart/<span class="keyword">form</span>-data、text/plain</span><br></pre></td></tr></table></figure>
@@ -268,7 +268,7 @@
 <h1 id="利用flash">利用flash</h1><p>flash 嘛，这个东西注定灭亡，不想说了。。。</p>
 </div>
 
-      <div class="post-sidebar">
+    <div class="post-sidebar">
   <div class="toggle-btn" id="toggle-btn">
     <i class="fa fa-reorder"></i>
   </div>
@@ -284,17 +284,17 @@
 </div>
 
 
-    </div>
+  </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags#跨域" rel="tag">#跨域</a>
-          
-        </div>
-      
-      
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#跨域" rel="tag">#跨域</a>
+        
+      </div>
+    
+    
   <style>
     .donation {
       width: 100%;
@@ -340,9 +340,10 @@
   </div>
 
 
-    </footer>
+  </footer>
 
-  </article>
+</article>
+
 
 
 

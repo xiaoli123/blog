@@ -214,9 +214,9 @@
 
   <article class="post-article post-type-normal post" itemscope>
 
-    <div class="post-body">
+  <div class="post-body">
 
-      <div class="content markdown-body"><h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。<br>应用before/和after也比较简单，举个例子：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">a</span><span class="pseudo">:after</span> <span class="rules">&#123;</span><br><span class="line">      <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">" after "</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">display</span>:<span class="value">  block</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">coloe</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+    <div class="content markdown-body"><h1 id="一、介绍before/after">一、介绍before/after</h1><p>CSS中的before和after伪类选择器早在CSS2时就被引入，改属性被所有主流浏览器所支持了。<br>before和after顾名思义，分别指的是伪元素在元素前/后添加内容，默认他们是display是inline，但是可以使用CSS设置为block。<br>应用before/和after也比较简单，举个例子：<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">a</span><span class="pseudo">:after</span> <span class="rules">&#123;</span><br><span class="line">      <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">" after "</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">display</span>:<span class="value">  block</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">coloe</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>可以在浏览器看到，a标签元素后面多出了一段文字 after。（在CSS3中伪类元素使用是如a::after的，不过目前两者并无多大区别）。<br>（伪元素不可通过DOM使用，IE6/7对该属性不支持）</p>
 <p>after和before伪元素有许多用处，还可以简化代码，比如可以写一个计数器、tip小三角形、清除浮动……特别在CSS3中新加的一些属性更是丰富了它的应用，这里有个小教程，用before/after伪元素来实现一个纯CSS3的tooltip。</p>
 <h1 id="二、tooltip实现教程">二、tooltip实现教程</h1><p>这里我们主要是用草after/before伪元素content中的attr属性，先来看看实现后的样子：</p>
@@ -235,7 +235,7 @@
 <h1 id="四、tip">四、tip</h1><p>关于after/before还有许多有趣有用的用法，感兴趣的同学可以研究研究哦~</p>
 </div>
 
-      <div class="post-sidebar">
+    <div class="post-sidebar">
   <div class="toggle-btn" id="toggle-btn">
     <i class="fa fa-reorder"></i>
   </div>
@@ -251,17 +251,17 @@
 </div>
 
 
-    </div>
+  </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags#CSS" rel="tag">#CSS</a>
-          
-        </div>
-      
-      
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#CSS" rel="tag">#CSS</a>
+        
+      </div>
+    
+    
   <style>
     .donation {
       width: 100%;
@@ -307,9 +307,10 @@
   </div>
 
 
-    </footer>
+  </footer>
 
-  </article>
+</article>
+
 
 
 
