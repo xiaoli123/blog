@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- content-Type -->
+<meta charset="utf-8">
+
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="language" content="en">
+<meta name="robots" content="all">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<meta name="author" content="theme.author, theme.email">
+<meta name="reply-to" content="theme.email">
+<meta name="owner" content="theme.author">
+
+
+
+
+<meta name="google-site-verification" content="UA-78049587-1" />
+
+
+
+
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+
+
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
+
+
+
+
+<meta name="description" content="hello word! 😺" />
+
+
+
+
+<meta name="keywords" content="Note,React-Native," />
+
+
+<meta name="description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏
+React-Native for Android 样式的使用。React-Native 编写的应用的样式不是靠css来实现的，而是依赖javascript来为你的应用来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[RN]2.样式style--React-Native learning notes">
+<meta property="og:url" content="http://qiutc.me/post/RN-2-样式style-React-Native-learning-notes.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏
+React-Native for Android 样式的使用。React-Native 编写的应用的样式不是靠css来实现的，而是依赖javascript来为你的应用来">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_4.png">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_5.png">
+<meta property="og:updated_time" content="2016-05-10T03:51:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[RN]2.样式style--React-Native learning notes">
+<meta name="twitter:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏
+React-Native for Android 样式的使用。React-Native 编写的应用的样式不是靠css来实现的，而是依赖javascript来为你的应用来">
+
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.0.1" />
+
+
+
+
+
+
+<link href="http://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.0.1"/>
+
+
+<script>
+(function(){
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> [RN]2.样式style--React-Native learning notes </title>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78049587-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+</head>
+<body lang="zh-Hans">
+
+  <!--[if lte IE 9]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <div class="another-theme layout">
+
+    
+<header class="header" id="header">
+
+  <div class="header-cont">
+    <div class="text-area">
+      
+        <h1 class="title" data-text="[RN]2.样式style--React-Native learning notes"> [RN]2.样式style--React-Native learning notes </h1>
+
+        
+        <div class="post-meta">
+          <div class="post-time">
+            发表于
+            <time  datetime="2015-11-22T16:27:03+08:00" content="2015-11-22">
+              2015-11-22
+            </time>
+          </div>
+
+          
+            <div class="post-category" >
+              
+                <span>
+                  <a href="/categories#React-Native" itemprop="url" rel="index">
+                    <span itemprop="name">React-Native</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <a href="/post/RN-2-样式style-React-Native-learning-notes.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="post/RN-2-样式style-React-Native-learning-notes.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+        
+      
+    </div>
+    <!-- Navigation -->
+    
+    <nav class="navigation clearfix" id="navigation">
+      
+        
+        <a class="nav-link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="nav-link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="nav-link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="nav-link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+  <div class="mask"></div>
+</header>
+
+
+    <main class="container">
+
+      
+
+  <article class="post-article post-type-normal post" itemscope>
+
+  <div class="post-body">
+
+    <div class="content markdown-body"><h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<p>😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏</p>
+<h1 id="React-Native_for_Android_样式的使用。">React-Native for Android 样式的使用。</h1><p>React-Native 编写的应用的样式不是靠css来实现的，而是依赖javascript来为你的应用来添加样式，先不讨论这样做的好处与坏处，因为这个实现方法本身就存在着很多争议，我们主要关注他的样式的语法和特性。</p>
+<h1 id="声明样式:">声明样式:</h1><figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> styles = StyleSheet.create(&#123;</span><br><span class="line">     <span class="keyword">base</span>: &#123;</span><br><span class="line">          width: <span class="number">38</span>,</span><br><span class="line">          height: <span class="number">38</span>,</span><br><span class="line">     &#125;,</span><br><span class="line">     background: &#123;</span><br><span class="line">          backgroundColor: <span class="string">'#222222'</span>,</span><br><span class="line">     &#125;,</span><br><span class="line">     active: &#123;</span><br><span class="line">          borderWidth: <span class="number">2</span>,</span><br><span class="line">          borderColor: ‘<span class="preprocessor">#ff00ff',</span></span><br><span class="line">     &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>从语法来看：调用了React-Native的一个构造方法，传入一个对象生成style，如果你写过React就应该很熟悉这种写法，和React的React.createCladd()语法是一样的，传入对象的key就相当于类名（我是这么理解），每个类也是一个对象，可以配置各种样式参数，总体来说和CSS的写法差不多，差别上把CSS的命名又“-”连字符改成驼峰写法，然后长度不用加单位“px”，字符串比如色值需要加引号写成字符串。<br>其实也是和React的行内样式写法的语法一样。</p>
+<h1 id="样式的使用:">样式的使用:</h1><p>所有的核心组件都支持样式属性<br><code>&lt;View style={style.base} /&gt;</code><br>当你需要设置多个属性类的时候，可以传入一个数组<br><code>&lt;View style={[style.base,style.backgroundColor]} /&gt;</code><br>在两个样式又冲突的情况下，以右边的值优先，有些情况下可以加一些条件判断样式是否加载，比如，<br><code>&lt;View style={[style.base,this.state.active&amp;&amp;style.active]} /&gt;</code><br>你也可以在组件中render样式，然而这种做法不推荐，其实就像一般html页面中行内样式不推荐一样，<br><figure class="highlight processing"><table><tr><td class="code"><pre><span class="line">&lt;View</span><br><span class="line">  style=&#123;[styles.base,&#123;<span class="variable">width</span>:<span class="keyword">this</span>.state.<span class="variable">width</span>, <span class="variable">height</span>:<span class="keyword">this</span>.state.<span class="variable">width</span>*<span class="keyword">this</span>.state.aspectRatio&#125;]&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="布局_–_flexbox">布局 – flexbox</h1><p>React-Native 采用flexbox布局方式，flexbox是css3引入的布局模型－－弹性盒子模型，旨在通过弹性的方式对齐和分布容器中的item，使其适应不同的宽度和高度。<br>在 React-Native 中的flexbox 是css3中flexbox的一个子集，并不支持所有的flexbox属性。<br>flexbox  布局分为flexbox container 和 flexbox item ：如下图<br><img src="/img/RN_img_4.png" alt=""><br>flexbox 是一个属性的集合，有些是属于container的有些湿属于item的。<br>可以看下面这幅图：<br><img src="/img/RN_img_5.png" alt=""><br>对于 container 有 main axis（主轴）和cross axis（交叉轴）。main size 和 cross size 分别是container主轴方向的交叉轴方向的宽度，main start 和 main end 分别是主轴的起始和结点，其他同理，container里面包含items。<br>下面介绍一下属性：</p>
+<h2 id="container的属性：">container的属性：</h2><ul>
+<li><p>flexDirection: ‘ row ‘ | ‘ column ‘<br>主轴的方向，水平 | 垂直，默认是 column ，item会按照主轴方向排列。</p>
+</li>
+<li><p>flexWrap: ‘ warp ‘ | ‘ nowrap ’<br>flexbox 会默认将所有元素基于一行，这个属性表示是否折行。</p>
+</li>
+<li><p>alignItems: ‘ flex-start ’ | ’ flex-end ’ | ’ center ’ | ‘ stretch ‘<br>表示item在 cross axis 上的对齐方式，基于cross axis的顶部｜基于cross axis的底部｜基于cross axis的中部｜布满整个。</p>
+</li>
+<li><p>justifyContent: ‘ flex-start ’ | ‘ flex-end ‘ | ‘ center ‘ | ‘ space-between ‘ | ’space-around’<br>表示item在 main axis 上的对齐方式，基于主轴开始｜基于主轴结束｜居中｜左右两边对齐，item间隔相等｜每个item两端间隔相等。</p>
+</li>
+</ul>
+<h2 id="item的属性">item的属性</h2><ul>
+<li><p>flex: num<br>item 所占的比例大小。</p>
+</li>
+<li><p>alignSelf:‘ flex-start ’ | ’ flex-end ’ | ’ center ’ | ‘ stretch ‘<br>它允许项目中当个item和其他itemsyou不一样的对齐方式，会覆盖alignitems的属性。</p>
+</li>
+</ul>
+</div>
+
+    <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tip:"><span class="nav-text">tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native_for_Android_样式的使用。"><span class="nav-text">React-Native for Android 样式的使用。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#声明样式:"><span class="nav-text">声明样式:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样式的使用:"><span class="nav-text">样式的使用:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#布局_–_flexbox"><span class="nav-text">布局 – flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#container的属性："><span class="nav-text">container的属性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#item的属性"><span class="nav-text">item的属性</span></a></li></ol></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#Note" rel="tag">#Note</a>
+        
+          <a href="/tags#React-Native" rel="tag">#React-Native</a>
+        
+      </div>
+    
+    
+  <style>
+    .donation {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .donation .text {
+      color: #333;
+      font-size: .8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .donation .text:hover {
+      color: rgb(63,134,181);
+    }
+    .donation .img-box {
+      transition: all .3s;
+      width: 0;
+      height: 0;
+      margin: 1rem auto;
+      overflow: hidden;
+    }
+    .donation .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+    .donation #donation {
+      display: none;
+    }
+    .donation #donation:checked + .img-box {
+      width: 16rem;
+      height: 16rem;
+    }
+  </style>
+  <div class="donation">
+    <label class="text" for="donation">
+      如果你觉得文章对你有帮助，并且想为我买一杯咖啡，点这里～
+    </label>
+    <input type="checkbox" name="donation" id="donation">
+    <div class="img-box">
+      <img src="/img/donation.png" alt="donation" />
+    </div>
+    </style>
+  </div>
+
+
+  </footer>
+
+</article>
+
+
+
+
+      
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="post/RN-2-样式style-React-Native-learning-notes.html"
+           data-title="[RN]2.样式style--React-Native learning notes" data-url="http://qiutc.me/post/RN-2-样式style-React-Native-learning-notes.html">
+      </div>
+    
+  </div>
+
+
+
+
+    </main>
+
+    <footer class="footer clearfix">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015-
+    <span itemprop="copyrightYear">2016</span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
+  </div>
+
+  <div class="info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+      <span id="showDays" class="show-days"></span>
+      <script>
+      var birthDay = new Date('10/04/2015');
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+      </script>
+      ---
+    
+    <span id="busuanzi_container_site_pv">
+        总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </div>
+
+</footer>
+
+
+  </div>
+
+  <div class="back-top-btn" id="back-top-btn"><i class="fa fa-chevron-up"></i></div>
+
+
+
+
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+
+
+<script type="text/javascript" src="/js/motto.min.js?v=0.0.1"></script>
+<script type="text/javascript" src="/js/main.js?v=0.0.1"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- content-Type -->
+<meta charset="utf-8">
+
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="language" content="en">
+<meta name="robots" content="all">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<meta name="author" content="theme.author, theme.email">
+<meta name="reply-to" content="theme.email">
+<meta name="owner" content="theme.author">
+
+
+
+
+<meta name="google-site-verification" content="UA-78049587-1" />
+
+
+
+
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+
+
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
+
+
+
+
+<meta name="description" content="hello word! 😺" />
+
+
+
+
+<meta name="keywords" content="Note,React-Native," />
+
+
+<meta name="description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+React-Native for Android 的环境搭建要求：
+前提 OS X (假设大家有用Mac了😏ß);
+Homebrew (包管理器)(用来安装Watchman 和 Flow);
+安装node.js 4.0 或者以上;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[RN]1.环境搭建--React-Native learning notes">
+<meta property="og:url" content="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+React-Native for Android 的环境搭建要求：
+前提 OS X (假设大家有用Mac了😏ß);
+Homebrew (包管理器)(用来安装Watchman 和 Flow);
+安装node.js 4.0 或者以上;">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_1.png">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_2.png">
+<meta property="og:image" content="http://qiutc.me/img/RN_img_3.png">
+<meta property="og:updated_time" content="2016-07-28T10:54:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[RN]1.环境搭建--React-Native learning notes">
+<meta name="twitter:description" content="tip:这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。
+React-Native for Android 的环境搭建要求：
+前提 OS X (假设大家有用Mac了😏ß);
+Homebrew (包管理器)(用来安装Watchman 和 Flow);
+安装node.js 4.0 或者以上;">
+
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.0.1" />
+
+
+
+
+
+
+<link href="http://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.0.1"/>
+
+
+<script>
+(function(){
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> [RN]1.环境搭建--React-Native learning notes </title>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78049587-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+</head>
+<body lang="zh-Hans">
+
+  <!--[if lte IE 9]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <div class="another-theme layout">
+
+    
+<header class="header" id="header">
+
+  <div class="header-cont">
+    <div class="text-area">
+      
+        <h1 class="title" data-text="[RN]1.环境搭建--React-Native learning notes"> [RN]1.环境搭建--React-Native learning notes </h1>
+
+        
+        <div class="post-meta">
+          <div class="post-time">
+            发表于
+            <time  datetime="2015-11-21T20:57:35+08:00" content="2015-11-21">
+              2015-11-21
+            </time>
+          </div>
+
+          
+            <div class="post-category" >
+              
+                <span>
+                  <a href="/categories#React-Native" itemprop="url" rel="index">
+                    <span itemprop="name">React-Native</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <a href="/post/RN-1-环境搭建-React-Native-learning-notes.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+        
+      
+    </div>
+    <!-- Navigation -->
+    
+    <nav class="navigation clearfix" id="navigation">
+      
+        
+        <a class="nav-link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="nav-link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="nav-link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="nav-link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+  <div class="mask"></div>
+</header>
+
+
+    <main class="container">
+
+      
+
+  <article class="post-article post-type-normal post" itemscope>
+
+  <div class="post-body">
+
+    <div class="content markdown-body"><h1 id="tip:">tip:</h1><p>这是一篇学习 React-Native for Android 的学习笔记，主要上其实是看官方的文档来自己学习 RN，目前的主要是学习android的开发。</p>
+<h1 id="React-Native_for_Android_的环境搭建">React-Native for Android 的环境搭建</h1><h3 id="要求：">要求：</h3><ol>
+<li>前提 OS X (假设大家有用Mac了😏ß);</li>
+<li><a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> (包管理器)(用来安装Watchman 和 Flow);</li>
+<li>安装<a href="https://nodejs.org/" target="_blank" rel="external">node.js</a> 4.0 或者以上;</li>
+<li>安装 watchman(文件监控) ,在命令行: <code>brew install watchman</code>;</li>
+<li>安装 flow ,在命令行: <code>brew install flow</code>;</li>
+<li>安装最新的 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a>;</li>
+<li>安装 SDK ,在命令行: <code>brew install android-idk</code>;</li>
+<li>配置 android 环境:<br>在 ~/.bashrc, ~/.bash_profile写入<br>  <code>export ANDROID_HOME=/usr/local/opt/android-sdk</code>;<br>(在这一步可以先到~目录下，然后如果没有.bashrc，就创建一个，然后vim .bashrc，然后写入上面代码，按esc键，输入<code>:wq</code>，然后自动保存退出，.bash_profile同理);</li>
+<li>配置 SDK:<br>新开一个shell窗口：运行 <code>android</code>,<br>会弹出 Android SDK Manager窗口，<br>安装下列选项:<br><img src="/img/RN_img_1.png" alt=""><br><img src="/img/RN_img_2.png" alt=""><br>(tip: 这一步可能需要翻墙);</li>
+<li>安装 <a href="https://www.genymotion.com/#!/download/freemium/mac/classical" target="_blank" rel="external">Genymotion</a> (android 的模拟器,推荐使用这个吧);</li>
+<li>安装react native 的命令行工具包,在命令行: <code>npm install -g react-native-cli</code>;</li>
+<li>命令行进入需要创建的文件夹目录下: <code>react-native init AwesomeProject</code>，会自动获取下载react native的包（建议翻墙）;</li>
+<li><p>项目的目录结构如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="tag">android</span>           <span class="id">#android</span>需要的文件夹</span><br><span class="line">├── <span class="tag">ios</span>               <span class="id">#ios</span>需要的文件夹</span><br><span class="line">├── <span class="tag">node_modules</span>      <span class="id">#npm</span>包文件夹</span><br><span class="line">├── <span class="tag">index</span><span class="class">.android</span><span class="class">.js</span>  <span class="id">#android</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">├── <span class="tag">index</span><span class="class">.ios</span><span class="class">.js</span>      <span class="id">#ios</span>应用的入口<span class="tag">js</span>文件</span><br><span class="line">└── <span class="tag">package</span><span class="class">.json</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开Genymotion,下载安装最新的android模拟器，打开;</p>
+</li>
+<li>在文件夹下运行命令行: <code>react-native run-android</code>,等待安装，<br>然后android的模拟器就会出现：<br><img src="/img/RN_img_3.png" alt=""><br>ß<h2 id="完成！">完成！</h2></li>
+</ol>
+</div>
+
+    <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tip:"><span class="nav-text">tip:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native_for_Android_的环境搭建"><span class="nav-text">React-Native for Android 的环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求："><span class="nav-text">要求：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成！"><span class="nav-text">完成！</span></a></li></ol></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#Note" rel="tag">#Note</a>
+        
+          <a href="/tags#React-Native" rel="tag">#React-Native</a>
+        
+      </div>
+    
+    
+  <style>
+    .donation {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .donation .text {
+      color: #333;
+      font-size: .8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .donation .text:hover {
+      color: rgb(63,134,181);
+    }
+    .donation .img-box {
+      transition: all .3s;
+      width: 0;
+      height: 0;
+      margin: 1rem auto;
+      overflow: hidden;
+    }
+    .donation .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+    .donation #donation {
+      display: none;
+    }
+    .donation #donation:checked + .img-box {
+      width: 16rem;
+      height: 16rem;
+    }
+  </style>
+  <div class="donation">
+    <label class="text" for="donation">
+      如果你觉得文章对你有帮助，并且想为我买一杯咖啡，点这里～
+    </label>
+    <input type="checkbox" name="donation" id="donation">
+    <div class="img-box">
+      <img src="/img/donation.png" alt="donation" />
+    </div>
+    </style>
+  </div>
+
+
+  </footer>
+
+</article>
+
+
+
+
+      
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="post/RN-1-环境搭建-React-Native-learning-notes.html"
+           data-title="[RN]1.环境搭建--React-Native learning notes" data-url="http://qiutc.me/post/RN-1-环境搭建-React-Native-learning-notes.html">
+      </div>
+    
+  </div>
+
+
+
+
+    </main>
+
+    <footer class="footer clearfix">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015-
+    <span itemprop="copyrightYear">2016</span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
+  </div>
+
+  <div class="info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+      <span id="showDays" class="show-days"></span>
+      <script>
+      var birthDay = new Date('10/04/2015');
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+      </script>
+      ---
+    
+    <span id="busuanzi_container_site_pv">
+        总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </div>
+
+</footer>
+
+
+  </div>
+
+  <div class="back-top-btn" id="back-top-btn"><i class="fa fa-chevron-up"></i></div>
+
+
+
+
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+
+
+<script type="text/javascript" src="/js/motto.min.js?v=0.0.1"></script>
+<script type="text/javascript" src="/js/main.js?v=0.0.1"></script>
+
+
+</body>
+</html>
