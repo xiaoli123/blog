@@ -19,6 +19,7 @@ CORS 的请求分两种，这也是浏览器为了安全做的一些处理，不
 ## 简单请求（simple request）
 只要同时满足以下两大条件，就属于简单请求。
 ### 条件
+
 ```
 1) 请求方法是以下三种方法中的一个：
 HEAD
@@ -31,8 +32,10 @@ Content-Language
 Last-Event-ID
 Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
 ```
+
 ### 过程
 对于简单的跨域请求，浏览器会自动在请求的头信息加上 ``Origin`` 字段，表示本次请求来自哪个源（协议 + 域名 + 端口），服务端会获取到这个值，然后判断是否同意这次请求并返回。
+
 ```
 // 请求
 GET /cors HTTP/1.1
@@ -42,8 +45,10 @@ Accept-Language: en-US
 Connection: keep-alive
 User-Agent: Mozilla/5.0...
 ```
+
 #### 1.服务端允许
 如果服务端许可本次请求，就会在返回的头信息多出几个字段：
+
 ```
 // 返回
 Access-Control-Allow-Origin: http://api.qiutc.me
@@ -51,6 +56,7 @@ Access-Control-Allow-Credentials: true
 Access-Control-Expose-Headers: Info
 Content-Type: text/html; charset=utf-8
 ```
+
 这三个带有 ``Access-Control`` 开头的字段分别表示：
 - Access-Control-Allow-Origin
 必须。它的值是请求时Origin字段的值或者 ``*``，表示接受任意域名的请求。
@@ -74,6 +80,7 @@ Content-Type: text/html; charset=utf-8
 非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为"预检"请求（preflight）。
 浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHttpRequest请求，否则就报错。
 预检请求的发送请求：
+
 ```
 OPTIONS /cors HTTP/1.1
 Origin: http://api.qiutc.me
@@ -84,6 +91,7 @@ Accept-Language: en-US
 Connection: keep-alive
 User-Agent: Mozilla/5.0...
 ```
+
 "预检"请求用的请求方法是OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。
 除了Origin字段，"预检"请求的头信息包括两个特殊字段。
 - Access-Control-Request-Method
@@ -148,6 +156,7 @@ resolveJson({name: 'qiutc'});
 
 # document.domain
 一个页面框架（iframe／frame）之间（父子或同辈），是能够获取到彼此的window对象的，但是这个 window 不能拿到方法和属性（尼玛这有什么用，甩脸）。
+
 ```
 // 当前页面域名 http://blog.qiutc.me/a.html
 <script>
@@ -159,6 +168,7 @@ function onLoad() {
 </script>
 <iframe src="http://www.qiutc.me/b.html" onload="onLoad()"</iframe>
 ```
+
 这个时候，``document.domain`` 就可以派上用场了，我们只要把 ``http://blog.qiutc.me/a.html`` 和 ``http://www.qiutc.me/b.html`` 这两个页面的 ``document.domain`` 都设成相同的域名就可以了。
 前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致。
 但要注意的是，``document.domain`` 的设置是有限制的，我们只能把 ``document.domain`` 设置成自身或更高一级的父域，且主域必须相同。例如：``a.b.example.com`` 中某个文档的 ``document.domain`` 可以设成``a.b.example.com``、``b.example.com ``、``example.com``中的任意一个，但是不可以设成 ``c.a.b.example.com``,因为这是当前域的子域，也不可以设成``baidu.com``,因为主域已经不相同了。
