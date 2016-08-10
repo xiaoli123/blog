@@ -319,7 +319,7 @@ module.exports = function bar () {};
 ```
 
 ### 使用 ES6 的出口
-在 ES6 中我们可以暴漏多个值，使用 ``Exports``：
+在 ES6 中我们可以暴露多个值，使用 ``Exports``：
 ```
 export let name = 'David';
 export let age  = 25;​​
@@ -371,7 +371,7 @@ export default api;
  */
 ```
 
-> **最佳实践**：总是在模块的最后面使用 ``export default`` 方法，这可以让暴露的东西更加清晰并且可以节省时间去找出暴漏出来值的名字。尤其如此，在 CommonJS 中通常的实践就是暴露一个简单的值或者对象。坚持这种模式，可以让我们的代码更加可读，并且在 ES6 和 CommonJS 模块之间更好地兼容。
+> **最佳实践**：总是在模块的最后面使用 ``export default`` 方法，这可以让暴露的东西更加清晰并且可以节省时间去找出暴露出来值的名字。尤其如此，在 CommonJS 中通常的实践就是暴露一个简单的值或者对象。坚持这种模式，可以让我们的代码更加可读，并且在 ES6 和 CommonJS 模块之间更好地兼容。
 
 ### ES6 中的导入
 在 ES6 中同样提供了多样的导入方式，我们可以这么导入一个整个文件：
@@ -584,10 +584,10 @@ class Personal extends Person {
 
 
 ## Symbols
-``Symbols`` 在 ES6 之前就已经存在，但是我们现在可以直接使用一个开发的接口了。``Symbols`` 是不可改变并且是第一无二的，可以在任意哈希中作一个key。
+``Symbols`` 在 ES6 之前就已经存在，但是我们现在可以直接使用一个开发的接口了。``Symbols`` 是不可改变并且是独一无二的，可以在任意哈希中作一个key。
 
 ### Symbol()
-调用 ``Symbol()`` 或者 ``Symbol(description)`` 可以创造一个第一无二的符号，但是在全局是看不到的。``Symbol()`` 的一个使用情况是给一个类或者命名空间打上补丁，但是可以确定的是你不会去更新它。比如，你想给 ``React.Component`` 类添加一个 ``refreshComponent`` 方法，但是可以确定的是你不会在之后更新这个方法：
+调用 ``Symbol()`` 或者 ``Symbol(description)`` 可以创造一个独一无二的符号，但是在全局是看不到的。``Symbol()`` 的一个使用情况是给一个类或者命名空间打上补丁，但是可以确定的是你不会去更新它。比如，你想给 ``React.Component`` 类添加一个 ``refreshComponent`` 方法，但是可以确定的是你不会在之后更新这个方法：
 ```
 const refreshComponent = Symbol();
 
