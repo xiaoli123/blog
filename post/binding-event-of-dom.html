@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- content-Type -->
+<meta charset="utf-8">
+
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="language" content="en">
+<meta name="robots" content="all">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<meta name="author" content="theme.author, theme.email">
+<meta name="reply-to" content="theme.email">
+<meta name="owner" content="theme.author">
+
+
+
+
+<meta name="google-site-verification" content="UA-78049587-1" />
+
+
+
+
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+
+
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
+
+
+
+
+<meta name="description" content="hello word! 😺" />
+
+
+
+
+<meta name="keywords" content="JavaScript," />
+
+
+<meta name="description" content="事件绑定的方式给 DOM 元素绑定事件分为两大类：在 html 中直接绑定 和 在 JavaScript 中绑定。
+Bind in HTML在 HTML 中绑定事件叫做内联绑定事件，HTML 的元素中有如 onclick 这样的 on*** 属性，它可以给这个 DOM 元素绑定一个类型的事件，主要是这样的：
+&amp;lt;div onclick=&quot;***&quot;&amp;gt;CLICK ME&amp;lt;/div&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从一个事件绑定说起 - DOM">
+<meta property="og:url" content="http://qiutc.me/post/binding-event-of-dom.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="事件绑定的方式给 DOM 元素绑定事件分为两大类：在 html 中直接绑定 和 在 JavaScript 中绑定。
+Bind in HTML在 HTML 中绑定事件叫做内联绑定事件，HTML 的元素中有如 onclick 这样的 on*** 属性，它可以给这个 DOM 元素绑定一个类型的事件，主要是这样的：
+&amp;lt;div onclick=&quot;***&quot;&amp;gt;CLICK ME&amp;lt;/div&amp;gt;">
+<meta property="og:image" content="http://qiutc.me/img/dom-event.png">
+<meta property="og:updated_time" content="2016-08-15T05:19:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从一个事件绑定说起 - DOM">
+<meta name="twitter:description" content="事件绑定的方式给 DOM 元素绑定事件分为两大类：在 html 中直接绑定 和 在 JavaScript 中绑定。
+Bind in HTML在 HTML 中绑定事件叫做内联绑定事件，HTML 的元素中有如 onclick 这样的 on*** 属性，它可以给这个 DOM 元素绑定一个类型的事件，主要是这样的：
+&amp;lt;div onclick=&quot;***&quot;&amp;gt;CLICK ME&amp;lt;/div&amp;gt;">
+
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.0.1" />
+
+
+
+
+
+
+<link href="http://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.0.1"/>
+
+
+<script>
+(function(){
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> 从一个事件绑定说起 - DOM </title>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78049587-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+</head>
+<body lang="zh-Hans">
+
+  <!--[if lte IE 9]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <div class="another-theme layout">
+
+    
+<header class="header" id="header" style="background: url(http://fakeimg.pl/2000x800/ff6a6f/fff/?text=EVENT) center / cover">
+
+  <div class="header-cont">
+    <div class="text-area">
+      
+        <h1 class="title" data-text="从一个事件绑定说起 - DOM"> 从一个事件绑定说起 - DOM </h1>
+
+        
+        <div class="post-meta">
+          <div class="post-time">
+            发表于
+            <time  datetime="2016-08-15T10:45:32+08:00" content="2016-08-15">
+              2016-08-15
+            </time>
+          </div>
+
+          
+            <div class="post-category" >
+              
+                <span>
+                  <a href="/categories#JavaScript" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <a href="/post/binding-event-of-dom.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="post/binding-event-of-dom.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+        
+      
+    </div>
+    <!-- Navigation -->
+    
+    <nav class="navigation clearfix" id="navigation">
+      
+        
+        <a class="nav-link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="nav-link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="nav-link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="nav-link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+  <div class="mask"></div>
+</header>
+
+
+    <main class="container">
+
+      
+
+  <article class="post-article post-type-normal post" itemscope>
+
+  <div class="post-body">
+
+    <div class="content markdown-body"><h1 id="事件绑定的方式">事件绑定的方式</h1><p>给 DOM 元素绑定事件分为两大类：在 html 中直接绑定 和 在 JavaScript 中绑定。</p>
+<h1 id="Bind_in_HTML">Bind in HTML</h1><p>在 HTML 中绑定事件叫做内联绑定事件，HTML 的元素中有如 <code>onclick</code> 这样的 <code>on***</code> 属性，它可以给这个 DOM 元素绑定一个类型的事件，主要是这样的：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> onclick=<span class="string">"***"</span>&gt;CLICK ME&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这里的 <code>***</code> 有两种形式：</p>
+<ul>
+<li>用字符串表示一段函数：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">onclick</span>=<span class="value">"var a = 1; console.log(a); console.log(this);"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>点击可以发现，console:</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line">&lt;<span class="keyword">div</span> onclick=​<span class="string">"var a = 1;​ console.log(a)​;​ console.log(this)​;​"</span>&gt;​CLICK ME​&lt;/<span class="keyword">div</span>&gt;​</span><br></pre></td></tr></table></figure>
+<p><code>var a = 1; console.log(a); console.log(this);</code> 这一段字符串被当作 js 执行了，同时 <code>this</code> 指向当前这个点击的元素。</p>
+<ul>
+<li>用函数名表示：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">onclick</span>=<span class="value">"foo(this)"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里需要添加 <code>script</code> 去定义函数：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">_this</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(_this);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以观察到，console：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> onclick=​<span class="string">"var a = 1;​ console.log(a)​;​ console.log(this)​;​"</span>&gt;​CLICK ME​&lt;/<span class="keyword">div</span>&gt;​</span><br><span class="line">window</span><br></pre></td></tr></table></figure>
+<p>这里的 <code>this</code> 指向了全局，传入的参数是点击的 DOM 元素，其实和第一种方式是一样的，都是在 <code>onclick=</code> 后面指向了一段js的字符串，不同的是在这个字符串中是执行了一个函数名，而这个函数我们在全局中定义了，所以点击的时候可以执行，然后传入的参数 <code>this</code> 也就是一样的道理了。</p>
+<p>或者多说一句，这里的字符串才是真正赋值给 <code>onclick</code> 的函数，这里我们是在函数里面再执行了 <code>foo</code> 函数。</p>
+<p><strong>然而这内联的方式绑定时间不利于分离，所以一般我们不推荐这种做法，所以也就不再多阐述了</strong></p>
+<h1 id="Bind_in_JavaScript">Bind in JavaScript</h1><h2 id="dom-onclick">dom.onclick</h2><p>先上栗子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>观察 console：<br><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="tag">clickme</span></span><br><span class="line"><span class="tag">MouseEvent</span> &#123;<span class="attribute">isTrusted</span>: true, <span class="attribute">screenX</span>: <span class="number">65</span>, <span class="attribute">screenY</span>: <span class="number">87</span>, <span class="attribute">clientX</span>: <span class="number">65</span>, <span class="attribute">clientY</span>: <span class="number">13</span>…&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先，我们获取到了 <code>dom</code> 元素，然后给它的 <code>onclick</code> 属性赋值了一个函数；</p>
+<p>点击 <code>dom</code> 我们发现那个函数执行了，同时发现函数中的 <code>this</code> 是指向当前的这个 <code>dom</code> 元素；</p>
+<p>细细一想，其实这和前面用的在 <code>html</code> 中 <strong><em>内联</em></strong> 绑定函数是一样的，我们同样是给 <code>dom</code> 的 <code>onclick</code> 属性赋值一个函数，然后函数中的 <code>this</code> 指向当前元素，只是这个过程这里我们是在 js 中做的；</p>
+<p>而还有一点区别就是前面的是赋值一段 js 字符串，这里是赋值一个函数，所以可以接受一个参数：<code>event</code>，这个参数是点击的事件对象。<br><br></p>
+<p>用赋值绑定函数的一个缺点就是它只能绑定一次：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可以看到这里只打印了一次 <code>clickme</code>。</p>
+<h2 id="addEventListener">addEventListener</h2><p><strong>这个才是我们需要重点介绍的一个函数</strong></p>
+<h3 id="语法">语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">target.addEventListener(type, listener[, useCapture]);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>target</code> : 表示要监听事件的目标对象，可以是一个文档上的元素 <code>Document</code> <code>本身，Window</code> 或者 <code>XMLHttpRequest</code>；</li>
+<li><code>type</code> : 表示事件类型的字符串，比如: <code>click</code>、<code>change</code>、<code>touchstart</code> …；</li>
+<li><code>listener</code> : 当指定的事件类型发生时被通知到的一个对象。该参数必是实现 EventListener 接口的一个对象或函数。</li>
+<li><code>useCapture</code> : 设置事件的 <strong>捕获或者冒泡</strong> (后文阐述) ，<code>true</code>: 捕获，<code>false</code>: 冒泡*，默认为 <code>false</code>。</li>
+</ul>
+<h3 id="简单栗子">简单栗子</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">  <span class="built_in">console</span>.log(event);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>观察 console：<br><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="tag">clickme</span></span><br><span class="line"><span class="tag">MouseEvent</span> &#123;<span class="attribute">isTrusted</span>: true, <span class="attribute">screenX</span>: <span class="number">37</span>, <span class="attribute">screenY</span>: <span class="number">88</span>, <span class="attribute">clientX</span>: <span class="number">37</span>, <span class="attribute">clientY</span>: <span class="number">14</span>…&#125;</span><br></pre></td></tr></table></figure></p>
+<p>监听函数中的 <code>this</code> 指向当前的 <code>dom</code> 元素，函数接受一个 <code>event</code> 参数。</p>
+<h3 id="绑定函数">绑定函数</h3><h4 id="绑定多个函数">绑定多个函数</h4><p><code>addEventListener</code> 可以给同一个 <code>dom</code> 元素绑定多个函数：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1);</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到 console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br></pre></td></tr></table></figure></p>
+<p>我们可以看到两个函数都执行了，并且执行顺序按照绑定的顺序执行。</p>
+<p><strong><em>改变一下</em></strong>，如果我们的 <code>useCapture</code> 参数不同呢？<br>看下面 3 组对比：</p>
+<h5 id="1">1</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2">2</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3">3</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">false</span>);</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，console 并没有改变，所以执行顺序只和绑定顺序有关，和 <code>useCapture</code> 无关。</p>
+<p>结论：<br><strong>我们可以给一个 <code>dom</code> 元素绑定多个函数，并且它的执行顺序按照绑定的顺序执行。</strong></p>
+<h4 id="同一个元素绑定同一个函数">同一个元素绑定同一个函数</h4><p>我们给一个 <code>dom</code> 元素绑定同一个函数两次试试：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1);</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>观察 console:<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">111</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到函数只执行了一次；</p>
+<p>换一种方式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>观察 console:<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">111</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到函数执行了两次。</p>
+<p>结论：<br><strong>我们可以给一个 <code>dom</code> 元素绑定同一个函数，最多只能绑定 <code>useCapture</code> 类型不同的两次。</strong></p>
+<h3 id="IE下使用attachEvent/detachEvent">IE下使用attachEvent/detachEvent</h3><p><code>addEventListener</code> 只支持到 IE 9，所以为了兼容性考虑，在兼容 IE 8 以及以下浏览器可以用 <code>attachEvent</code> 函数，和 <code>addEventListener</code> 函数表现一样，除了它绑定函数的 <code>this</code> 会指向全局这个缺点以外</p>
+<h1 id="事件执行顺序的_PK">事件执行顺序的 PK</h1><h2 id="1-_addEventListener_和_dom-onclick">1. addEventListener 和 dom.onclick</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br><span class="line">clickme.onclick = foo2;</span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo3, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo3</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">333</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>观察 console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">333</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>可见执行顺序只和绑定顺序有关</strong></p>
+<h2 id="2-_addEventListener_间的比较">2. addEventListener 间的比较</h2><p><a href="#绑定多个函数">见上文</a></p>
+<h1 id="事件的解绑">事件的解绑</h1><p>与事件绑定相对应的就是事件解绑了。</p>
+<h2 id="1-_通过_dom_的_on**_属性设置的事件">1. 通过 dom 的 on** 属性设置的事件</h2><p><strong>对于 Bind in HTML 和 <code>dom.onclick</code> 绑定的事件都可以用 <code>dom.onclick = null</code> 来解绑事件。</strong></p>
+<h2 id="2-_removeEventListener">2. removeEventListener</h2><p>通过 <code>addEventListener</code> 绑定的事件可以使用 <code>removeEventListener</code> 来解绑， <code>removeEventListener</code> 接受的参数和 <code>addEventListener</code> 是一样的</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clickme = <span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>);</span><br><span class="line"></span><br><span class="line">clickme.addEventListener(<span class="string">'click'</span>, foo1);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line">clickme.removeEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>这里发现事件并没有取消绑定，发现 <code>removeEventListener</code> 的 <code>useCapture</code> 的参数原来和绑定时候传入的不一致，我们改成 <code>false</code> 之后发现事件取消了。</p>
+<p>结论：<br><strong>对于使用 <code>removeEventListener</code> 函数解绑事件，需要传入的 <code>listener</code> <code>useCapture</code> 应和 <code>addEventListener</code> 一致才可以解绑事件。</strong></p>
+<h2 id="3-_detachEvent">3. detachEvent</h2><p>与 <code>attachEvent</code> 对应</p>
+<h1 id="DOM_事件">DOM 事件</h1><p><img src="/img/dom-event.png" alt="DEMO"></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div2"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div3"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="事件冒泡">事件冒泡</h2><p>事件开始时由最具体的元素接受，然后逐级向上传播到较为不具体的节点。</p>
+<p>比如上面的 HTML ，冒泡的顺序： div3 -&gt; div3 -&gt; div1 -&gt; body -&gt; html -&gt; document (-&gt; window)</p>
+<h2 id="事件捕获">事件捕获</h2><p>事件捕获的思想是不太具体的DOM节点应该更早接收到事件，而最具体的节点应该最后接收到事件。与事件冒泡的顺序相反。</p>
+<p>比如上面的 HTML ，捕获的顺序： document -&gt; html -&gt; body -&gt; div1 -&gt; div2 -&gt; div3</p>
+<h2 id="DOM事件流">DOM事件流</h2><p>DOM事件流包括三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。首先发生的事件捕获，为截获事件提供机会。然后是实际的目标接受事件。最后一个阶段是时间冒泡阶段，可以在这个阶段对事件做出响应。</p>
+<h2 id="回到_addEventListener">回到 addEventListener</h2><p>我们来做几个小对比：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"wrap"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="栗子_1">栗子 1</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'wrap'</span>).addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">false</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">111</span></span><br></pre></td></tr></table></figure></p>
+<p>这里两个事件都是冒泡类型，所以是从内到外；</p>
+<h3 id="栗子_2">栗子 2</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'wrap'</span>).addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br></pre></td></tr></table></figure></p>
+<p>这里两个事件都是捕获类型，所以是从外到内；</p>
+<h3 id="栗子_3">栗子 3</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'wrap'</span>).addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">false</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">111</span></span><br></pre></td></tr></table></figure></p>
+<p>wrap 事件是冒泡，clickme 事件是捕获，根据 dom 的事件流，先执行了捕获阶段（这里是目标阶段）再到冒泡阶段。</p>
+<h3 id="栗子_4">栗子 4</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'wrap'</span>).addEventListener(<span class="string">'click'</span>, foo1, <span class="literal">true</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).addEventListener(<span class="string">'click'</span>, foo2, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br></pre></td></tr></table></figure></p>
+<p>clickme 事件是冒泡，wrap 事件是捕获，根据 dom 的事件流，先执行了捕获阶段（这里是目标阶段）再到冒泡阶段。</p>
+<h2 id="阻止_冒泡／捕获">阻止 冒泡／捕获</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"wrap"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"clickme"</span>&gt;</span>CLICK ME<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'wrap'</span>).addEventListener(<span class="string">'click'</span>, foo1);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'clickme'</span>).addEventListener(<span class="string">'click'</span>, foo2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  event.stopPropagation();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>console：<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">222</span></span><br></pre></td></tr></table></figure></p>
+<p>这里我们在 <code>clickme</code> 的目标阶段阻止了事件流，所以事件不会继续冒泡，所以 <code>wrap</code> 的冒泡事件不会执行。</p>
+<p>tip:<br>IE8以及以前可以通过 <code>window.event.cancelBubble=true</code> 来阻止事件流。</p>
+</div>
+
+    <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件绑定的方式"><span class="nav-text">事件绑定的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bind_in_HTML"><span class="nav-text">Bind in HTML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bind_in_JavaScript"><span class="nav-text">Bind in JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dom-onclick"><span class="nav-text">dom.onclick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addEventListener"><span class="nav-text">addEventListener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单栗子"><span class="nav-text">简单栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定函数"><span class="nav-text">绑定函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定多个函数"><span class="nav-text">绑定多个函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-text">1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2"><span class="nav-text">2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3"><span class="nav-text">3</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同一个元素绑定同一个函数"><span class="nav-text">同一个元素绑定同一个函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE下使用attachEvent/detachEvent"><span class="nav-text">IE下使用attachEvent/detachEvent</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件执行顺序的_PK"><span class="nav-text">事件执行顺序的 PK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_addEventListener_和_dom-onclick"><span class="nav-text">1. addEventListener 和 dom.onclick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_addEventListener_间的比较"><span class="nav-text">2. addEventListener 间的比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件的解绑"><span class="nav-text">事件的解绑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_通过_dom_的_on**_属性设置的事件"><span class="nav-text">1. 通过 dom 的 on** 属性设置的事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_removeEventListener"><span class="nav-text">2. removeEventListener</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_detachEvent"><span class="nav-text">3. detachEvent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM_事件"><span class="nav-text">DOM 事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件冒泡"><span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获"><span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件流"><span class="nav-text">DOM事件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回到_addEventListener"><span class="nav-text">回到 addEventListener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栗子_1"><span class="nav-text">栗子 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栗子_2"><span class="nav-text">栗子 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栗子_3"><span class="nav-text">栗子 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栗子_4"><span class="nav-text">栗子 4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止_冒泡／捕获"><span class="nav-text">阻止 冒泡／捕获</span></a></li></ol></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
+        
+      </div>
+    
+    
+  <style>
+    .donation {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .donation .text {
+      color: #333;
+      font-size: .8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .donation .text:hover {
+      color: rgb(63,134,181);
+    }
+    .donation .img-box {
+      transition: all .3s;
+      width: 0;
+      height: 0;
+      margin: 1rem auto;
+      overflow: hidden;
+    }
+    .donation .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+    .donation #donation {
+      display: none;
+    }
+    .donation #donation:checked + .img-box {
+      width: 16rem;
+      height: 16rem;
+    }
+  </style>
+  <div class="donation">
+    <label class="text" for="donation">
+      如果你觉得文章对你有帮助，并且想为我买一杯咖啡，点这里～
+    </label>
+    <input type="checkbox" name="donation" id="donation">
+    <div class="img-box">
+      <img src="/img/donation.png" alt="donation" />
+    </div>
+    </style>
+  </div>
+
+
+  </footer>
+
+</article>
+
+
+
+
+      
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="post/binding-event-of-dom.html"
+           data-title="从一个事件绑定说起 - DOM" data-url="http://qiutc.me/post/binding-event-of-dom.html">
+      </div>
+    
+  </div>
+
+
+
+
+    </main>
+
+    <footer class="footer clearfix">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015-
+    <span itemprop="copyrightYear">2016</span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
+  </div>
+
+  <div class="info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+      <span id="showDays" class="show-days"></span>
+      <script>
+      var birthDay = new Date('10/04/2015');
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+      </script>
+      ---
+    
+    <span id="busuanzi_container_site_pv">
+        总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </div>
+
+</footer>
+
+
+  </div>
+
+  <div class="back-top-btn" id="back-top-btn"><i class="fa fa-chevron-up"></i></div>
+
+
+
+
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+
+
+<script type="text/javascript" src="/js/motto.min.js?v=0.0.1"></script>
+<script type="text/javascript" src="/js/main.js?v=0.0.1"></script>
+
+
+</body>
+</html>
