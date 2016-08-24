@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-08-24T05:29:19.000Z</updated>
+  <updated>2016-08-24T06:47:30.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://qiutc.me/post/this-this-this-in-javascript.html"/>
     <id>http://qiutc.me/post/this-this-this-in-javascript.html</id>
     <published>2016-08-24T02:35:29.000Z</published>
-    <updated>2016-08-24T05:29:19.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章和无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
+    <updated>2016-08-24T06:47:30.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章很无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
 <p>但是，我还是想写一篇关于 js 中的 this 的文章，算是一个总结归纳吧；（大神们可以绕行看我的其他文章😂）</p>
 <p>在 js 中，this 这个上下文总是变化莫测，很多时候出现 bug 总是一头雾水，其实，只要分清楚不同的情况下如何执行就 ok 了。</p>
 <h1 id="全局执行">全局执行</h1><p>首先，我们在全局环境中看看它的 this 是什么：</p>
@@ -106,7 +106,7 @@
 <p>只要记住箭头函数大法好，不变的 <code>this</code>。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章和无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
+    <![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章很无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
 <p>但是，我还是想写一篇关于 js 中的 this 的文章，算是一个总结归纳吧；（大神们可以绕行看我的其他文章�]]>
     </summary>
     
