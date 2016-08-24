@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-08-24T05:16:51.000Z</updated>
+  <updated>2016-08-24T05:29:19.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://qiutc.me/post/this-this-this-in-javascript.html"/>
     <id>http://qiutc.me/post/this-this-this-in-javascript.html</id>
     <published>2016-08-24T02:35:29.000Z</published>
-    <updated>2016-08-24T05:16:51.000Z</updated>
+    <updated>2016-08-24T05:29:19.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章和无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
 <p>但是，我还是想写一篇关于 js 中的 this 的文章，算是一个总结归纳吧；（大神们可以绕行看我的其他文章😂）</p>
 <p>在 js 中，this 这个上下文总是变化莫测，很多时候出现 bug 总是一头雾水，其实，只要分清楚不同的情况下如何执行就 ok 了。</p>
@@ -103,7 +103,7 @@
 <h3 id="为箭头函数指定_this">为箭头函数指定 this</h3><p>我们来定义一个全局下的箭头函数，因此这个箭头函数中的 <code>this</code> 必然会指向全局对象，如果用 <code>call</code> 方法改变 <code>this</code> 呢：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> afoo = (a) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">afoo(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'qiutc'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">afoo.call(obj, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// Window</span></span><br></pre></td></tr></table></figure>
 <p>可以看到，这里的 <code>call</code> 指向 <code>this</code> 的操作并没有成功，所以可以得出： <strong>箭头函数中的 this 在定义它的时候已经决定了（执行定义它的作用域中的 this），与如何调用以及在哪里调用它无关，包括 (call, apply, bind) 等操作都无法改变它的 this</strong>。</p>
-<p>随意记住箭头函数大法好，不变的 <code>this</code>。</p>
+<p>只要记住箭头函数大法好，不变的 <code>this</code>。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章和无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
