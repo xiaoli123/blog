@@ -4,7 +4,7 @@
   <subtitle><![CDATA[抓啊抓啊~~~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiutc.me/"/>
-  <updated>2016-08-24T06:58:58.000Z</updated>
+  <updated>2016-08-25T00:37:30.000Z</updated>
   <id>http://qiutc.me/</id>
   
   <author>
@@ -19,19 +19,15 @@
     <link href="http://qiutc.me/post/this-this-this-in-javascript.html"/>
     <id>http://qiutc.me/post/this-this-this-in-javascript.html</id>
     <published>2016-08-24T02:35:29.000Z</published>
-    <updated>2016-08-24T06:58:58.000Z</updated>
+    <updated>2016-08-25T00:37:30.000Z</updated>
     <content type="html"><![CDATA[<h1 id="tip">tip</h1><p>首先，我知道这篇文章很无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；</p>
 <p>但是，我还是想写一篇关于 js 中的 this 的文章，算是一个总结归纳吧；（大神们可以绕行看我的其他文章😂）</p>
 <p>在 js 中，this 这个上下文总是变化莫测，很多时候出现 bug 总是一头雾水，其实，只要分清楚不同的情况下如何执行就 ok 了。</p>
 <h1 id="全局执行">全局执行</h1><p>首先，我们在全局环境中看看它的 this 是什么：</p>
-<ol>
-<li>浏览器：</li>
-</ol>
+<p>first. 浏览器：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Window &#123;speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage, sessionStorage: Storage, webkitStorageInfo: DeprecatedStorageInfo…&#125;</span></span><br></pre></td></tr></table></figure>
 <p>可以看到打印出了 <code>window</code> 对象；</p>
-<ol>
-<li>node：</li>
-</ol>
+<p>second. node：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// global</span></span><br></pre></td></tr></table></figure>
 <p>可以看到打印出了 <code>global</code> 对象；</p>
 <p><strong>总结</strong>：在全局作用域中它的 <code>this</code> 执行当前的全局对象（浏览器端是 <code>Window</code>，node 中是 <code>global</code>）。</p>
