@@ -7,7 +7,8 @@ bgimage: /img/jsjs.png
 ---
 
 # tip
-首先，我知道这篇文章和无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；
+
+首先，我知道这篇文章很无聊，无非就是关于 js 中的 this，并且也已经有千千万万的文章写过这部分内容了；
 
 但是，我还是想写一篇关于 js 中的 this 的文章，算是一个总结归纳吧；（大神们可以绕行看我的其他文章😂）
 
@@ -17,7 +18,7 @@ bgimage: /img/jsjs.png
 
 首先，我们在全局环境中看看它的 this 是什么：
 
-1. 浏览器：
+first. 浏览器：
 
 ```js
 console.log(this);
@@ -27,7 +28,7 @@ console.log(this);
 
 可以看到打印出了 `window` 对象；
 
-2. node：
+second. node：
 
 ```js
 console.log(this);
@@ -56,6 +57,31 @@ test();
 ```
 
 我们可以看到，一个函数被直接调用的时候，属于全局调用，这时候它的 `this` 指向 全局对象；
+
+### 严格模式 'use strict';
+如果在严格模式的情况下执行纯粹的函数调用，那么这里的的 `this` 并不会指向全局，而是 `undefined`，这样的做法是为了消除 js 中一些不严谨的行为：
+
+```js
+'use strict';
+function test() {
+  console.log(this);
+};
+
+test();
+
+// undefined
+```
+
+当然，把它放在一个立即执行函数中会更好，避免了污染全局：
+
+```js
+(function (){
+  "use strict";
+　console.log(this);
+})();
+
+// undefined
+```
 
 ## 作为对象的方法调用
 
@@ -163,6 +189,30 @@ obj.foo2();
 ```
 
 可以看到直接用 `this` 仍然是 `Window`；因为 `foo2` 中的 `this` 是指向 `obj`，我们可以先用一个变量 `_this` 来储存，然后在回调函数中使用 `_this`，就可以指向当前的这个对象了；
+
+### setTimeout 的另一个坑
+
+之前啊说过，如果直接执行回调函数而没有绑定作用域，那么它的 `this` 是指向全局对象(`window`)，在严格模式下会指向 `undefined`，然而在 `setTimeout` 中的回调函数在严格模式下却表现出不同：
+
+```js
+'use strict';
+
+function foo() {
+  console.log(this);
+}
+
+setTimeout(foo, 1);
+
+// window
+```
+
+按理说我们加了严格模式，foo 调用也没有指定 `this`，应该是出来 `undefined`，但是这里仍然出现了全局对象，难道是严格模式失效了吗？
+
+并不，即使在严格模式下，`setTimeout` 方法在调用传入函数的时候，如果这个函数没有指定了的 `this`，那么它会做一个隐式的操作----自动地注入全局上下文，等同于调用 `foo.apply(window)` 而非 `foo()`；
+
+当然，如果我们在传入函数的时候已经指定 `this`，那么就不会被注入全局对象，比如： `setTimeout(foo.bind(obj), 1);`；
+
+[http://stackoverflow.com/questions/21957030/why-is-window-still-defined-in-this-strict-mode-code](http://stackoverflow.com/questions/21957030/why-is-window-still-defined-in-this-strict-mode-code)
 
 ## 作为一个构造函数使用
 在 js 中，为了实现类，我们需要定义一些构造函数，在调用一个构造函数的时候需要加上 `new` 这个关键字：
