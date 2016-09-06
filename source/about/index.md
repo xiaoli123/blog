@@ -4,7 +4,7 @@ type: "about"
 
 ## 简历
 
-[resume.qiutc.me](resume.qiutc.me);
+[http://resume.qiutc.me/](http://resume.qiutc.me/)
 
 ### 个人信息
 - 姓名：邱同城
