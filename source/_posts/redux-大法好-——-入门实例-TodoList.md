@@ -33,7 +33,7 @@ redux 分为三大部分，store ， action ，reducer 。
 
 ## store
 整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。
-或者这么说 store 的指责有这些：
+或者这么说 store 的职责有这些：
 + 维护整个应用的 state
 + 提供 getState() 方法获取 state；
 + 提供 dispatch(action) 方法更新 state；
