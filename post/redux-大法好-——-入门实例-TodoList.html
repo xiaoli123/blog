@@ -62,7 +62,7 @@
 <meta property="og:description" content="Tip前端技术真是日新月异，搞完 React 不搭配个数据流都不好意思了。满怀期待的心去翻了翻 flux，简直被官方那意识流的文档折服了，真是又臭又长还是我智商问题？😖转战 redux ，越看越有意思，跟着文档做了个 TodoList 的入门小例子。
 废话不多说，先贴上文章用到例子的源码 https://github.com/TongchengQiu/TodoList-as-redux-demo">
 <meta property="og:image" content="http://qiutc.me/img/redux.jpeg">
-<meta property="og:updated_time" content="2016-05-10T03:53:46.000Z">
+<meta property="og:updated_time" content="2016-10-06T01:03:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redux 大法好 —— 入门实例 TodoList">
 <meta name="twitter:description" content="Tip前端技术真是日新月异，搞完 React 不搭配个数据流都不好意思了。满怀期待的心去翻了翻 flux，简直被官方那意识流的文档折服了，真是又臭又长还是我智商问题？😖转战 redux ，越看越有意思，跟着文档做了个 TodoList 的入门小例子。
@@ -225,7 +225,7 @@
 <h1 id="advantage">advantage</h1><p>随着spa（不是SPA，是单页应用）的发展，以 react 来说，组件化和状态机的思想真是解放了烦恼的 dom 操作，一切都为状态。state 来操纵 views 的变化。<br>然而，因为页面的组件化，导致每个组件都必须维护自身的一套状态，对于小型应用还好。<br>但是对于比较大的应用来说，过多的状态显得错综复杂，到最后难以维护，很难清晰地组织所有的状态，在多人开发中也是如此，导致经常会出现一些不明所以的变化，越到后面调试上也是越麻烦，很多时候 state 的变化已经不受控制。对于组件间通行、服务端渲染、路由跳转、更新调试，我们很需要一套机制来清晰的组织整个应用的状态，redux 应然而生，这种数据流的思想真是了不起。</p>
 <h1 id="state_根对象的结构">state 根对象的结构</h1><p>在 react 中，我们尽量会把状态放在顶层的组件，在顶层组件使用 redux 或者 router。<br>这就把组件分为了两种：容器组件和展示组件。<br>容器组件：和 redux 和 router 交互，维护一套状态和触发 action。<br>展示组件：展示组件是在容器组件的内部，他们不维护状态，所有数据通过 props 传给他们，所有操作也是通过回调完成。<br>这样，我们整套应用的架构就显得清晰了。</p>
 <h1 id="part">part</h1><p>redux 分为三大部分，store ， action ，reducer 。</p>
-<h2 id="store">store</h2><p>整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。<br>或者这么说 store 的指责有这些：</p>
+<h2 id="store">store</h2><p>整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。<br>或者这么说 store 的职责有这些：</p>
 <ul>
 <li>维护整个应用的 state</li>
 <li>提供 getState() 方法获取 state；</li>

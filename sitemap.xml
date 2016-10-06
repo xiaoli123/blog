@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
+    <lastmod>2016-10-06T01:03:50.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/about/index.html</loc>
     <lastmod>2016-09-06T16:51:44.000Z</lastmod>
   </url>
@@ -59,11 +64,6 @@
   <url>
     <loc>http://qiutc.me/categories/index.html</loc>
     <lastmod>2016-05-10T03:55:47.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
-    <lastmod>2016-05-10T03:53:46.000Z</lastmod>
   </url>
   
   <url>
