@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- content-Type -->
+<meta charset="utf-8">
+
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="language" content="en">
+<meta name="robots" content="all">
+
+
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<meta name="author" content="theme.author, theme.email">
+<meta name="reply-to" content="theme.email">
+<meta name="owner" content="theme.author">
+
+
+
+
+<meta name="google-site-verification" content="UA-78049587-1" />
+
+
+
+
+<meta name="baidu-site-verification" content="fRBucd9VmI" />
+
+
+
+
+<meta name="baidu-gxt-verify-token" content="ca8f032797b876ef3be37c3d492168a0" />
+
+
+
+
+<meta name="description" content="hello word! 😺" />
+
+
+
+
+<meta name="keywords" content="JavaScript,Redux," />
+
+
+<meta name="description" content="TIPRedux 是 JavaScript 状态容器，提供可预测化的状态管理。
+作为 React 全家桶的一份子，Redux 可谓说也是名声响响，在 2016 年学习 JavaScript 想必没有多少人没听过吧。
+这里，本文不是来教大家如何使用 Redux 的 API 的，这一类的文章已经很多，对于 Redux 的介绍和学习可以点击下列链接：
+
+官方文档
+官方Github
+中文文档
+redux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解析 Redux 源码">
+<meta property="og:url" content="http://qiutc.me/post/read-the-source-code-of-Rudex.html">
+<meta property="og:site_name" content="阿城的blog">
+<meta property="og:description" content="TIPRedux 是 JavaScript 状态容器，提供可预测化的状态管理。
+作为 React 全家桶的一份子，Redux 可谓说也是名声响响，在 2016 年学习 JavaScript 想必没有多少人没听过吧。
+这里，本文不是来教大家如何使用 Redux 的 API 的，这一类的文章已经很多，对于 Redux 的介绍和学习可以点击下列链接：
+
+官方文档
+官方Github
+中文文档
+redux">
+<meta property="og:image" content="http://qiutc.me/img/redux.jpeg">
+<meta property="og:updated_time" content="2016-10-07T17:25:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解析 Redux 源码">
+<meta name="twitter:description" content="TIPRedux 是 JavaScript 状态容器，提供可预测化的状态管理。
+作为 React 全家桶的一份子，Redux 可谓说也是名声响响，在 2016 年学习 JavaScript 想必没有多少人没听过吧。
+这里，本文不是来教大家如何使用 Redux 的 API 的，这一类的文章已经很多，对于 Redux 的介绍和学习可以点击下列链接：
+
+官方文档
+官方Github
+中文文档
+redux">
+
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.0.1" />
+
+
+
+
+
+
+<link href="http://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.0.1"/>
+
+
+<script>
+(function(){
+  var bp = document.createElement('script');
+  bp.src = '//push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+  <title> 解析 Redux 源码 </title>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78049587-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?47d302b006bf28a09c22990da53cd3da";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+</head>
+<body lang="zh-Hans">
+
+  <!--[if lte IE 9]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <div class="another-theme layout">
+
+    
+<header class="header" id="header" style="background: url(/img/bg-redux.png) center / cover">
+
+  <div class="header-cont">
+    <div class="text-area">
+      
+        <h1 class="title" data-text="解析 Redux 源码"> 解析 Redux 源码 </h1>
+
+        
+        <div class="post-meta">
+          <div class="post-time">
+            发表于
+            <time  datetime="2016-10-07T22:21:43+08:00" content="2016-10-07">
+              2016-10-07
+            </time>
+          </div>
+
+          
+            <div class="post-category" >
+              
+                <span>
+                  <a href="/categories#JavaScript" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <a href="/post/read-the-source-code-of-Rudex.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="post/read-the-source-code-of-Rudex.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+        </div>
+        
+      
+    </div>
+    <!-- Navigation -->
+    
+    <nav class="navigation clearfix" id="navigation">
+      
+        
+        <a class="nav-link" href="/" rel="section">
+          首页
+        </a>
+      
+        
+        <a class="nav-link" href="/categories" rel="section">
+          分类
+        </a>
+      
+        
+        <a class="nav-link" href="/tags" rel="section">
+          标签
+        </a>
+      
+        
+        <a class="nav-link" href="/about" rel="section">
+          关于
+        </a>
+      
+    </nav>
+    
+  </div>
+  <div class="mask"></div>
+</header>
+
+
+    <main class="container">
+
+      
+
+  <article class="post-article post-type-normal post" itemscope>
+
+  <div class="post-body">
+
+    <div class="content markdown-body"><p><img src="/img/redux.jpeg" alt="redux"></p>
+<h1 id="TIP">TIP</h1><p>Redux 是 JavaScript 状态容器，提供可预测化的状态管理。</p>
+<p>作为 React 全家桶的一份子，Redux 可谓说也是名声响响，在 2016 年学习 JavaScript 想必没有多少人没听过吧。</p>
+<p>这里，本文不是来教大家如何使用 Redux 的 API 的，这一类的文章已经很多，对于 Redux 的介绍和学习可以点击下列链接：</p>
+<ul>
+<li><a href="http://redux.js.org/" target="_blank" rel="external">官方文档</a></li>
+<li><a href="https://github.com/reactjs/redux" target="_blank" rel="external">官方Github</a></li>
+<li><a href="http://cn.redux.js.org/index.html" target="_blank" rel="external">中文文档</a></li>
+<li><a href="http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html">redux 大法好 —— 入门实例 TodoList(本人的渣渣文章)</a></li>
+</ul>
+<p>Redux 体小精悍（只有2kB）且没有任何依赖，因此本文想通过阅读 Redux 的源码来学习 Redux 的使用以及思想。</p>
+<h1 id="源码结构">源码结构</h1><p>Redux 的源码结构很简单，我们可以直接看 <code>src</code> 目录下的代码：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="class">.src</span></span><br><span class="line">├── utils                #工具函数</span><br><span class="line">├── applyMiddleware<span class="class">.js</span></span><br><span class="line">├── bindActionCreators<span class="class">.js</span>        </span><br><span class="line">├── combineReducers<span class="class">.js</span>     </span><br><span class="line">├── compose<span class="class">.js</span>       </span><br><span class="line">├── createStore<span class="class">.js</span>  </span><br><span class="line">└── index<span class="class">.js</span>             #入口 js</span><br></pre></td></tr></table></figure>
+<h1 id="index-js">index.js</h1><p>这个是整个代码的入口：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> createStore <span class="keyword">from</span> <span class="string">'./createStore'</span></span><br><span class="line"><span class="keyword">import</span> combineReducers <span class="keyword">from</span> <span class="string">'./combineReducers'</span></span><br><span class="line"><span class="keyword">import</span> bindActionCreators <span class="keyword">from</span> <span class="string">'./bindActionCreators'</span></span><br><span class="line"><span class="keyword">import</span> applyMiddleware <span class="keyword">from</span> <span class="string">'./applyMiddleware'</span></span><br><span class="line"><span class="keyword">import</span> compose <span class="keyword">from</span> <span class="string">'./compose'</span></span><br><span class="line"><span class="keyword">import</span> warning <span class="keyword">from</span> <span class="string">'./utils/warning'</span></span><br><span class="line"></span><br><span class="line">function isCrushed() &#123;&#125;</span><br><span class="line"></span><br><span class="line">if (</span><br><span class="line">  process.env.NODE_ENV !== <span class="string">'production'</span> &amp;&amp;</span><br><span class="line">  typeof isCrushed.name === <span class="string">'string'</span> &amp;&amp;</span><br><span class="line">  isCrushed.name !== <span class="string">'isCrushed'</span></span><br><span class="line">) &#123;</span><br><span class="line">  warning(</span><br><span class="line">    <span class="string">'。。。'</span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export &#123;</span><br><span class="line">  createStore,</span><br><span class="line">  combineReducers,</span><br><span class="line">  bindActionCreators,</span><br><span class="line">  applyMiddleware,</span><br><span class="line">  compose</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的 <code>isCrushed</code> 函数主要是为了验证在非生产环境下 Redux 是否被压缩（因为如果被压缩了那么 <code>(isCrushed.name !== &#39;isCrushed&#39;)</code> 就是 <code>true</code>），如果被压缩会给开发者一个 warn 提示）。</p>
+<p>然后就是暴露 <code>createStore</code> <code>combineReducers</code> <code>bindActionCreators</code> <code>applyMiddleware</code> <code>compose</code> 这几个接口给开发者使用，我们来逐一解析这几个 API。</p>
+<h1 id="createStore-js">createStore.js</h1><p>这个是 Redux 最主要的一个 API 了，它创建一个 Redux store 来以存放应用中所有的 state，应用中应有且仅有一个 store。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> isPlainObject <span class="keyword">from</span> <span class="string">'lodash/isPlainObject'</span></span><br><span class="line"><span class="keyword">import</span> $$observable from <span class="string">'symbol-observable'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 私有 action</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> ActionTypes = &#123;</span><br><span class="line">  INIT: <span class="string">'@@redux/INIT'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">createStore</span>(<span class="params">reducer, preloadedState, enhancer</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断接受的参数个数，来指定 reducer 、 preloadedState 和 enhancer</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> preloadedState === <span class="string">'function'</span> &amp;&amp; <span class="keyword">typeof</span> enhancer === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    enhancer = preloadedState</span><br><span class="line">    preloadedState = <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果 enhancer 存在并且适合合法的函数，那么调用 enhancer，并且终止当前函数执行</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> enhancer !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> enhancer !== <span class="string">'function'</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Expected the enhancer to be a function.'</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> enhancer(createStore)(reducer, preloadedState)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> reducer !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Expected the reducer to be a function.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 储存当前的 currentReducer</span></span><br><span class="line">  <span class="keyword">var</span> currentReducer = reducer</span><br><span class="line">  <span class="comment">// 储存当前的状态</span></span><br><span class="line">  <span class="keyword">var</span> currentState = preloadedState</span><br><span class="line">  <span class="comment">// 储存当前的监听函数列表</span></span><br><span class="line">  <span class="keyword">var</span> currentListeners = []</span><br><span class="line">  <span class="comment">// 储存下一个监听函数列表</span></span><br><span class="line">  <span class="keyword">var</span> nextListeners = currentListeners</span><br><span class="line">  <span class="keyword">var</span> isDispatching = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 这个函数可以根据当前监听函数的列表生成新的下一个监听函数列表引用</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ensureCanMutateNextListeners</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nextListeners === currentListeners) &#123;</span><br><span class="line">      nextListeners = currentListeners.slice()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ... getState ...</span><br><span class="line"></span><br><span class="line">  ... subscribe ...</span><br><span class="line"></span><br><span class="line">  ... dispatch ...</span><br><span class="line"></span><br><span class="line">  ... replaceReducer ...</span><br><span class="line"></span><br><span class="line">  ... observable ...</span><br><span class="line"></span><br><span class="line">  dispatch(&#123; type: ActionTypes.INIT &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    dispatch,</span><br><span class="line">    subscribe,</span><br><span class="line">    getState,</span><br><span class="line">    replaceReducer,</span><br><span class="line">    [$$observable]: observable</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先定义了一个 <code>ActionTypes</code> 对象，它是一个 action，是一个 Redux 的私有 action，不允许外界触发，用来初始化 Store 的状态树和改变 reducers 后初始化 Store 的状态树。</p>
+<h4 id="createStore">createStore</h4><p>然后着重来看 <code>createStore</code> 函数：</p>
+<h5 id="接受">接受</h5><p>它可以接受三个参数，reducer、preloadedState、enhancer：</p>
+<ul>
+<li>reducer：是一个函数，返回下一个状态，接受两个参数：当前状态 和 触发的 action；</li>
+<li>preloadedState：初始状态对象，可以很随意指定，比如服务端渲染的初始状态，但是如果使用 combineReducers 来生成 reducer，那必须保持状态对象的 key 和 combineReducers 中的 key 相对应；</li>
+<li>enhancer：store 的增强器函数，可以指定为 第三方的中间件，时间旅行，持久化 等等，但是这个函数只能用 Redux 提供的 applyMiddleware 函数来生成；</li>
+</ul>
+<p>根据传入参数的个数和类型，判断 reducer 、 preloadedState 、 enhancer；</p>
+<h5 id="返回">返回</h5><p>调用完函数它返回的接口是 <code>dispatch</code> <code>subscribe</code> <code>getState</code> <code>replaceReducer</code> 和  <code>[$$observable]</code></p>
+<p>这也是我们开发中主要使用的几个接口。</p>
+<h5 id="enhancer">enhancer</h5><p>如果 enhancer 参数传入并且是个合法的函数，那么就是调用 <code>enhancer</code> 函数（传入 <code>createStore</code> 来给它操作），<code>enhancer</code> 函数返回的也是一个函数，在这里传入 <code>reducer</code> 和 <code>preloadedState</code>，并且返回函数调用结果，终止当前函数执行；<br>在 enhancer 函数里面是如何操作使用的可以看 <code>applyMiddleware</code> 部分；</p>
+<h5 id="getState">getState</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> currentState</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数可以获取当前的状态，<code>createStore</code> 中的 <code>currentState</code> 储存当前的状态树，这是一个闭包，这个参数会持久存在，并且所有的操作状态都是改变这个引用，<code>getState</code> 函数返回当前的 <code>currentState</code>。</p>
+<h5 id="subscribe">subscribe</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">listener</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断传入的参数是否为函数</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> listener !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Expected listener to be a function.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> isSubscribed = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  ensureCanMutateNextListeners()</span><br><span class="line">  nextListeners.push(listener)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">unsubscribe</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!isSubscribed) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    isSubscribed = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    ensureCanMutateNextListeners()</span><br><span class="line">    <span class="keyword">var</span> index = nextListeners.indexOf(listener)</span><br><span class="line">    nextListeners.splice(index, <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数可以给 store 的状态添加订阅监听函数，一旦调用 <code>dispatch</code> ，所有的监听函数就会执行；<br><code>nextListeners</code> 就是储存当前监听函数的列表，调用 <code>subscribe</code>，传入一个函数作为参数，那么就会给 <code>nextListeners</code> 列表 <code>push</code> 这个函数；<br>同时调用 <code>subscribe</code> 函数会返回一个 <code>unsubscribe</code> 函数，用来解绑当前传入的函数，同时在 <code>subscribe</code> 函数定义了一个 <code>isSubscribed</code> 标志变量来判断当前的订阅是否已经被解绑，解绑的操作就是从 <code>nextListeners</code> 列表中删除当前的监听函数。</p>
+<h5 id="dispatch">dispatch</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dispatch</span>(<span class="params">action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!isPlainObject(action)) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(</span><br><span class="line">      <span class="string">'Actions must be plain objects. '</span> +</span><br><span class="line">      <span class="string">'Use custom middleware for async actions.'</span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断 action 是否有 type｛必须｝ 属性</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> action.type === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(</span><br><span class="line">      <span class="string">'Actions may not have an undefined "type" property. '</span> +</span><br><span class="line">      <span class="string">'Have you misspelled a constant?'</span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果正在 dispatch 则抛出错误</span></span><br><span class="line">  <span class="keyword">if</span> (isDispatching) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Reducers may not dispatch actions.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 对抛出 error 的兼容，但是无论如何都会继续执行 isDispatching = false 的操作</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    isDispatching = <span class="literal">true</span></span><br><span class="line">    <span class="comment">// 使用 currentReducer 来操作传入 当前状态和action，放回处理后的状态</span></span><br><span class="line">    currentState = currentReducer(currentState, action)</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    isDispatching = <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> listeners = currentListeners = nextListeners</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; listeners.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> listener = listeners[i]</span><br><span class="line">    listener()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> action</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数是用来触发状态改变的，他接受一个 action 对象作为参数，然后 reducer 根据 action 的属性 以及 当前 store 的状态来生成一个新的状态，赋予当前状态，改变 store 的状态；<br>即 <code>currentState = currentReducer(currentState, action)</code>；<br>这里的 <code>currentReducer</code> 是一个函数，他接受两个参数：当前状态 和 action，然后返回计算出来的新的状态；<br>然后遍历 <code>nextListeners</code> 列表，调用每个监听函数；</p>
+<h5 id="replaceReducer">replaceReducer</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceReducer</span>(<span class="params">nextReducer</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断参数是否是函数类型</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> nextReducer !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Expected the nextReducer to be a function.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  currentReducer = nextReducer</span><br><span class="line">  dispatch(&#123; type: ActionTypes.INIT &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数可以替换 store 当前的 reducer 函数，首先直接把 <code>currentReducer = nextReducer</code>，直接替换；<br>然后 <code>dispatch({ type: ActionTypes.INIT })</code> ，用来初始化替换后 reducer 生成的初始化状态并且赋予 store 的状态；</p>
+<h5 id="observable">observable</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">observable</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> outerSubscribe = subscribe</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    subscribe(observer) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> observer !== <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Expected the observer to be an object.'</span>)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">observeState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (observer.next) &#123;</span><br><span class="line">          observer.next(getState())</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      observeState()</span><br><span class="line">      <span class="keyword">var</span> unsubscribe = outerSubscribe(observeState)</span><br><span class="line">      <span class="keyword">return</span> &#123; unsubscribe &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    [$$observable]() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于这个函数，是不直接暴露给开发者的，它提供了给其他观察者模式／响应式库的交互操作，具体可看 <a href="https://github.com/zenparsing/es-observable" target="_blank" rel="external">https://github.com/zenparsing/es-observable</a></p>
+<h5 id="last">last</h5><p>最后执行 <code>dispatch({ type: ActionTypes.INIT })</code>，用来根据 reducer 初始化 store 的状态。</p>
+<h1 id="compose-js">compose.js</h1><p><code>compose</code> 可以接受一组函数参数，从右到左来组合多个函数，然后返回一个组合函数；</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...funcs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (funcs.length === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arg =&gt; arg</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (funcs.length === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> funcs[<span class="number">0</span>]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> last = funcs[funcs.length - <span class="number">1</span>]</span><br><span class="line">  <span class="keyword">const</span> rest = funcs.slice(<span class="number">0</span>, -<span class="number">1</span>)</span><br><span class="line">  <span class="keyword">return</span> (...args) =&gt; rest.reduceRight((composed, f) =&gt; f(composed), last(...args))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="applyMiddleware-js">applyMiddleware.js</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">applyMiddleware</span>(<span class="params">...middlewares</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 这个返回的函数就是 enhancer，接受 createStore 函数，再返回一个函数，接受的其实只有 reducer 和 preloadedState；</span></span><br><span class="line">  <span class="keyword">return</span> (createStore) =&gt; (reducer, preloadedState, enhancer) =&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> store = createStore(reducer, preloadedState, enhancer)</span><br><span class="line">    <span class="keyword">var</span> dispatch = store.dispatch</span><br><span class="line">    <span class="keyword">var</span> chain = []</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 暴漏 getState 和 dispatch 给 第三方中间价使用</span></span><br><span class="line">    <span class="keyword">var</span> middlewareAPI = &#123;</span><br><span class="line">      getState: store.getState,</span><br><span class="line">      dispatch: (action) =&gt; dispatch(action)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 创造第三方中间件使用 middlewareAPI 后返回的函数组成的数组</span></span><br><span class="line">    chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 结合这一组函数 和 dispatch 组成的新的 dispatch，然后这个暴漏给用户使用，而原有的 store.dispatch 是不变的，但是不暴漏</span></span><br><span class="line">    dispatch = compose(...chain)(store.dispatch)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...store,</span><br><span class="line">      dispatch</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>applyMiddleware</code> 函数的作用是组合 多个 中间件等等，然后返回一个函数（<code>enhancer</code>）</p>
+<p>还记得在 <code>createStore</code> 中的一段吗：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> enhancer !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> enhancer !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Expected the enhancer to be a function.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> enhancer(createStore)(reducer, preloadedState)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里 <code>enhancer === applyMiddleware(...)</code>；</p>
+<p>然后再执行 <code>enhancer(createStore)</code> 继续之后的操作；</p>
+<p>这里 <code>enhancer(createStore) 等同于 (reducer, preloadedState, enhancer) =&gt; { ... }</code></p>
+<p>然后再执行 <code>enhancer(createStore)(reducer, preloadedState)</code>；</p>
+<p>再回到 <code>applyMiddleware</code> ，这里调用了 <code>var store = createStore(reducer, preloadedState, enhancer)</code> ；<br>如上所见，这里执行的时候已经没有 <code>enhancer</code> 参数了，因此会再次执行 <code>createStore</code> 函数的全部部分，然后得到一个返回的实例 <code>store</code>；</p>
+<p>之后会生成一个新的 <code>dispatch</code> ，先保存下来原生的 <code>dispatch</code> ： <code>var dispatch = store.dispatch</code>；</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> middlewareAPI = &#123;</span><br><span class="line">  getState: store.getState,</span><br><span class="line">  dispatch: (action) =&gt; dispatch(action)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这一步是把 store 的 <code>getState</code> 和 <code>dispatch</code> 接口暴露给中间件来操作： <code>chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))</code>；</p>
+<p>最后组合 全部中间件的返回值（函数）<code>chain</code> 和 <code>store.dispatch</code>，然后返回新的 <code>dispatch</code> ： <code>dispatch = compose(...chain)(store.dispatch)</code></p>
+<p>这里的 <code>dispatch</code> 并不是原有的 store 的，而是经过组合中间件之后新的 <code>dispatch</code>；</p>
+<p>最后返回暴露给用户的接口：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">  ...store,</span><br><span class="line">  dispatch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主要还是 store 原有的接口，但是用新的 dispatch 替换了原有的；</p>
+<p><strong>这个函数其实就是根据中间件和store的接口生成新的 dispatch 然后暴露给用户</strong></p>
+<h1 id="combineReducers-js">combineReducers.js</h1><p>这个函数可以组合一组 reducers(对象) ，然后返回一个新的 reducer 函数给 <code>createStore</code> 使用。</p>
+<p>它接受一组 reducers 组成的对象，对象的 key 是对应 value（reducer函数）的状态名称；</p>
+<p>比如： <code>{ userInfo: getUserInfo, list: getList }</code></p>
+<p><code>userInfo</code> 是根据 <code>getUserInfo</code> 函数计算出来的；</p>
+<p>那么 store 里面的 state 结构就会是: <code>{ userInfo: ..., list: ... }</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">combineReducers</span>(<span class="params">reducers</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 根据 reducers 生成最终合法的 finalReducers：value 为 函数</span></span><br><span class="line">  <span class="keyword">var</span> reducerKeys = <span class="built_in">Object</span>.keys(reducers)</span><br><span class="line">  <span class="keyword">var</span> finalReducers = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; reducerKeys.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> key = reducerKeys[i]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> reducers[key] === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        warning(<span class="string">`No reducer provided for key "<span class="subst">$&#123;key&#125;</span>"`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> reducers[key] === <span class="string">'function'</span>) &#123;</span><br><span class="line">      finalReducers[key] = reducers[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> finalReducerKeys = <span class="built_in">Object</span>.keys(finalReducers)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> unexpectedKeyCache = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 验证 reducer 是否合法</span></span><br><span class="line">  <span class="keyword">var</span> sanityError</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    assertReducerSanity(finalReducers)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    sanityError = e</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回最终生成的 reducer</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">combination</span>(<span class="params">state = &#123;&#125;, action</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sanityError) &#123;</span><br><span class="line">      <span class="keyword">throw</span> sanityError</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> warningMessage = getUnexpectedStateShapeWarningMessage(state, finalReducers, action, unexpectedKeyCache)</span><br><span class="line">      <span class="keyword">if</span> (warningMessage) &#123;</span><br><span class="line">        warning(warningMessage)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> hasChanged = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">var</span> nextState = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; finalReducerKeys.length; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> key = finalReducerKeys[i]</span><br><span class="line">      <span class="keyword">var</span> reducer = finalReducers[key]</span><br><span class="line">      <span class="keyword">var</span> previousStateForKey = state[key]</span><br><span class="line">      <span class="keyword">var</span> nextStateForKey = reducer(previousStateForKey, action)</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> nextStateForKey === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> errorMessage = getUndefinedStateErrorMessage(key, action)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(errorMessage)</span><br><span class="line">      &#125;</span><br><span class="line">      nextState[key] = nextStateForKey</span><br><span class="line">      hasChanged = hasChanged || nextStateForKey !== previousStateForKey</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历一遍看是否改变，然后返回原有状态值或者新的状态值</span></span><br><span class="line">    <span class="keyword">return</span> hasChanged ? nextState : state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最终返回一个 <code>combination</code> 也就是真正传入 <code>createStore</code> 的 reducer 函数；</p>
+<p>这是一个标准的 reducer 函数，接受一个初始化状态 和 一个 action 参数；</p>
+<p>每次调用的时候会去遍历 <code>finalReducer</code> （有效的 reducer 列表），获取列表中每个 reducer 对应的先前状态： <code>var previousStateForKey = state[key]</code>；<br>看到这里就应该明白传入的 <code>reducers</code> 组合为什么 <code>key</code> 要和 store 里面的 state 的 <code>key</code> 相对应；</p>
+<p>然后得到当前遍历项的下一个状态： <code>var nextStateForKey = reducer(previousStateForKey, action)</code> ；<br>然后把它添加到整体的下一个状态： <code>nextState[key] = nextStateForKey</code></p>
+<p>每次遍历会判断整体状态是否改变： <code>hasChanged = hasChanged || nextStateForKey !== previousStateForKey</code></p>
+<p>在最后，如果没有改变就返回原有状态，如果改变了就返回新生成的状态对象： <code>return hasChanged ? nextState : state</code>。</p>
+<h1 id="bindActionCreators-js">bindActionCreators.js</h1><p><code>bindActionCreators</code> 函数可以生成直接触发 action 的函数；</p>
+<p>实质上它只说做了这么一个操作 <code>bindActionFoo = (...args) =&gt; dispatch(actionCreator(...args))</code></p>
+<p>因此我们直接调用 <code>bindActionFoo</code> 函数就可以改变状态了；</p>
+<p>接受两个参数，一个是 <code>actionCreators（</code> actionCreator 组成的对象，key 对于生成的函数名／或者是一个 actionCreator ），一个是 <code>dispatch，</code> store 实例中获取；</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindActionCreator</span>(<span class="params">actionCreator, dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (...args) =&gt; dispatch(actionCreator(...args))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">bindActionCreators</span>(<span class="params">actionCreators, dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 是一个函数，直接返回一个 bindActionCreator 函数，这个函数调用 dispatch 触发 action</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> actionCreators === <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> bindActionCreator(actionCreators, dispatch)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> actionCreators !== <span class="string">'object'</span> || actionCreators === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(</span><br><span class="line">      <span class="string">`bindActionCreators expected an object or a function, instead received <span class="subst">$&#123;actionCreators === null ? 'null' : typeof actionCreators&#125;</span>. `</span> +</span><br><span class="line">      <span class="string">`Did you write "import ActionCreators from" instead of "import * as ActionCreators from"?`</span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 遍历对象，然后对每个遍历项的 actionCreator 生成函数，将函数按照原来的 key 值放到一个对象中，最后返回这个对象</span></span><br><span class="line">  <span class="keyword">var</span> keys = <span class="built_in">Object</span>.keys(actionCreators)</span><br><span class="line">  <span class="keyword">var</span> boundActionCreators = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> key = keys[i]</span><br><span class="line">    <span class="keyword">var</span> actionCreator = actionCreators[key]</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> actionCreator === <span class="string">'function'</span>) &#123;</span><br><span class="line">      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> boundActionCreators</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结">总结</h1><p>阅读了一遍 Redux 的源码，实在是太精妙了，少依赖，少耦合，纯函数式。</p>
+</div>
+
+    <div class="post-sidebar">
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="fa fa-reorder"></i>
+  </div>
+  <section class="post-toc-wrap" id="post-sidebar">
+    <h2 class="toc-title">内容目录</h2>
+    <div class="post-toc">
+      
+      
+        <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TIP"><span class="nav-text">TIP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码结构"><span class="nav-text">源码结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#index-js"><span class="nav-text">index.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#createStore-js"><span class="nav-text">createStore.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#createStore"><span class="nav-text">createStore</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#接受"><span class="nav-text">接受</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回"><span class="nav-text">返回</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#enhancer"><span class="nav-text">enhancer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getState"><span class="nav-text">getState</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#subscribe"><span class="nav-text">subscribe</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dispatch"><span class="nav-text">dispatch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#replaceReducer"><span class="nav-text">replaceReducer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#observable"><span class="nav-text">observable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#last"><span class="nav-text">last</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#compose-js"><span class="nav-text">compose.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#applyMiddleware-js"><span class="nav-text">applyMiddleware.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#combineReducers-js"><span class="nav-text">combineReducers.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bindActionCreators-js"><span class="nav-text">bindActionCreators.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+      
+    </div>
+  </section>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    
+      <div class="post-tags">
+        
+          <a href="/tags#JavaScript" rel="tag">#JavaScript</a>
+        
+          <a href="/tags#Redux" rel="tag">#Redux</a>
+        
+      </div>
+    
+    
+  <style>
+    .donation {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .donation .text {
+      color: #333;
+      font-size: .8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .donation .text:hover {
+      color: rgb(63,134,181);
+    }
+    .donation .img-box {
+      transition: all .3s;
+      width: 0;
+      height: 0;
+      margin: 1rem auto;
+      overflow: hidden;
+    }
+    .donation .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+    .donation #donation {
+      display: none;
+    }
+    .donation #donation:checked + .img-box {
+      width: 16rem;
+      height: 16rem;
+    }
+  </style>
+  <div class="donation">
+    <label class="text" for="donation">
+      如果你觉得文章对你有帮助，并且想为我买一杯咖啡，点这里～
+    </label>
+    <input type="checkbox" name="donation" id="donation">
+    <div class="img-box">
+      <img src="/img/donation.png" alt="donation" />
+    </div>
+    </style>
+  </div>
+
+
+  </footer>
+
+</article>
+
+
+
+
+      
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="post/read-the-source-code-of-Rudex.html"
+           data-title="解析 Redux 源码" data-url="http://qiutc.me/post/read-the-source-code-of-Rudex.html">
+      </div>
+    
+  </div>
+
+
+
+
+    </main>
+
+    <footer class="footer clearfix">
+  <div class="copyright" >
+    <span>Copyright</span>
+    
+    &copy;  2015-
+    <span itemprop="copyrightYear">2016</span>
+    <span class="author" itemprop="copyrightHolder">阿城😇</span>
+  </div>
+
+  <div class="info">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+      <span id="showDays" class="show-days"></span>
+      <script>
+      var birthDay = new Date('10/04/2015');
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+      </script>
+      ---
+    
+    <span id="busuanzi_container_site_pv">
+        总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </div>
+
+  <div class="my-theme">
+    Theme by <a href="//qiutc.me">qiutc</a> | <iframe style="margin-left: 5px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=TongchengQiu&amp;repo=hexo-theme-another&amp;type=star&amp;count=true"></iframe>
+  </div>
+
+</footer>
+
+
+  </div>
+
+  <div class="back-top-btn" id="back-top-btn"><i class="fa fa-chevron-up"></i></div>
+
+
+
+
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiutongcheng"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+
+
+
+
+<script type="text/javascript" src="/js/motto.min.js?v=0.0.1"></script>
+<script type="text/javascript" src="/js/main.js?v=0.0.1"></script>
+
+
+</body>
+</html>

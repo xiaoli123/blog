@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiutc.me/post/read-the-source-code-of-Rudex.html</loc>
+    <lastmod>2016-10-07T17:25:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://qiutc.me/post/promise-learn-note.html</loc>
+    <lastmod>2016-10-07T14:23:04.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiutc.me/post/redux-%E5%A4%A7%E6%B3%95%E5%A5%BD-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B-TodoList.html</loc>
     <lastmod>2016-10-06T01:03:50.000Z</lastmod>
   </url>
@@ -49,11 +59,6 @@
   <url>
     <loc>http://qiutc.me/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webpack%E2%80%94webpack-howto.html</loc>
     <lastmod>2016-07-26T23:16:27.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://qiutc.me/post/promise-learn-note.html</loc>
-    <lastmod>2016-06-02T06:53:23.000Z</lastmod>
   </url>
   
   <url>
