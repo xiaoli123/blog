@@ -1688,10 +1688,8 @@ header.header .header-cont .navigation.scrolled .nav-link {
   margin: 0;
   font-size: 15px;
   color: #666;
-  padding-top: 20px;
-  padding-bottom: 10px;
   border-top: 1px solid #999;
-  padding-left: 5px;
+  padding: 20px 5px 10px 5px;
 }
 .index-content .right-info .tags {
   margin-bottom: 24px;
@@ -1712,6 +1710,23 @@ header.header .header-cont .navigation.scrolled .nav-link {
   border: 1px solid #3f51b5;
   color: #3f51b5;
 }
+.index-content .right-info .friend-links a {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  line-height: 1.1em;
+  font-size: 0.85rem;
+  color: #4d4d4c;
+}
+.index-content .right-info .friend-links a:hover {
+  text-decoration: underline;
+  color: #3f86b5;
+}
+.index-content .right-info .friend-links .tip {
+  color: #d6d6d6;
+  font-size: 0.7rem;
+  padding: 5px;
+}
 .index-content .right-info .about-me img {
   width: 90%;
   height: auto;
@@ -1723,7 +1738,7 @@ header.header .header-cont .navigation.scrolled .nav-link {
 .index-content .right-info .about-me .links-of-author {
   width: 100%;
   text-align: left;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 .index-content .right-info .about-me .links-of-author .links-of-author-item {
   width: 36px;
